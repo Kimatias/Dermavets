@@ -3,6 +3,7 @@ const login = document.querySelector('.tab--2');
 
 const display = document.querySelector('#main__container');
 const form = document.querySelector('#form');
+const spanTitleImg = document.querySelector('.img-title');
 
 const imgCat = document.querySelector('#img-cat');
 const imgDog = document.querySelector('#img-dog');
@@ -15,8 +16,14 @@ register.addEventListener('click', () => {
     },400)
     setTimeout(()=>{
         display.style.flexDirection = 'row-reverse';
+
         imgCat.style.opacity = 0;
         imgDog.style.opacity = 1;
+
+        spanTitleImg.style.textAlign = 'end';
+        spanTitleImg.style.color = '#279ea0';
+        spanTitleImg.style.right = '2%';
+        spanTitleImg.innerHTML = 'SIGN UP';
 
         form.innerHTML = `<label for="form__email" class="fs-2 fw-bold">Correo</label>
                     <input type="email" name="user" class="fs-4" id="form__email"
@@ -53,8 +60,14 @@ login.addEventListener('click', () => {
     },400)
     setTimeout(()=>{
         display.style.flexDirection = 'row';
+
         imgCat.style.opacity = 1;
         imgDog.style.opacity = 0;
+
+        spanTitleImg.style.textAlign = 'start';
+        spanTitleImg.style.color = '#ec4555';
+        spanTitleImg.style.right = '-2%';
+        spanTitleImg.innerHTML = 'LOGIN';
 
         form.innerHTML = `<label for="form__user" class="fs-2 fw-bold">Usuario</label>
                     <input type="text" name="user" class="fs-4" id="form__email" placeholder="Intoduzca su Usuario"
