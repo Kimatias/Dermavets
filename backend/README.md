@@ -17,10 +17,11 @@
    - Crear un archivo `.env` en la raíz del proyecto con la siguiente estructura:
 
    ```plaintext
-   PORT=4000
+   FRONTEND_PORT=
+   DB_NAME=dermavets
    DB_HOST=localhost
-   DB_USER=tu_usuario
-   DB_PASSWORD=tu_contraseña
-   DB_NAME=ecommerce
+   DB_USER=root
+   DB_PASSWORD=
+   DB_PORT=3306
    JWT_SECRET=tu_clave_secreta
    ```
