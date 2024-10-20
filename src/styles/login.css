@@ -20,60 +20,62 @@ html {
     font-size: 62.5%;
 }
 
+body{
+    background: linear-gradient(45deg, #279ea077, #ec455577);
+}
 
-#main__container{
+#main__container {
     transition: .2s ease;
     flex-direction: row-reverse;
 }
 
 main {
     width: 100%;
-    height: 100vh;
+    height: 90%;
 }
 
 /* SECTION IMG */
 #section-img {
     height: 100vh;
-    position: relative;
-    overflow: hidden;
 }
 
-.img-title{
-    position: absolute;
-    top: 5%;
-    display: flex;
-    align-items: end;
-    right: 2%;
+#container-img {
+    box-shadow: 0 0 20px 0 var(--casinegro);
+    position: relative;
+    overflow: hidden;
+    height: 90%;
     width: 100%;
-    height: 100%;
-    font-size: 15rem;
-    font-family: var(--primary-font);
+    border-radius: 20px;
+}
+
+.img-title {
+    position: absolute;
+    display: flex;
     text-align: end;
+
+    bottom: -65px;
+    right: 5px;
+    font-size: 13rem;
+
+    font-family: var(--primary-font);
     color: var(--verde);
     text-shadow: 0 0 10px var(--verdeoscuro);
 }
 
-#img-cat{
-    opacity: 0;
-}
-
-#img-dog{
-    position: absolute;
-    top: 46px;
-    left: 0;
-}
-
-#section-img img{
+#container-img img {
     width: 100%;
-    height: 90%;
+    height: 100%;
     object-fit: cover;
 
-    border-radius: 20px;
+}
+
+#img-cat {
+    display: none;
 }
 
 /* SECTION FORM */
 
-#form__container-logo{
+#form__container-logo {
     width: 90%;
 }
 
@@ -81,8 +83,8 @@ form {
     font-family: var(--secondary-font);
 }
 
-.form__logo{
-    width: 30%;
+.form__logo {
+    width: 50%;
 }
 
 input {
@@ -124,7 +126,7 @@ input {
     transition: all 0.2s ease-out;
 }
 
-.indicator2{
+.indicator2 {
     left: 132px;
 }
 
@@ -168,19 +170,22 @@ input {
 
 
 /* FORM */
-.bi{
-    width: 20px;
-    height: 20px;
+#section-form{
+    padding: 30px 0;
 }
 
-#form__container-btn-login,
+.bi {
+    /* width: 20px;
+    height: 20px; */
+}
+
 #form__container-btn-register {
     width: 100%;
 }
 
 
-#login__btn-submit,
 #register__btn-submit {
+    justify-content: start;
     padding: 10px 40px;
     border-radius: 10px;
     background-color: var(--verde);
@@ -189,7 +194,6 @@ input {
     transition: .2s ease;
 }
 
-#login__btn-submit:hover,
 #register__btn-submit:hover {
     background-color: var(--verdeoscuro);
     border: 2px solid var(--verdeoscuro);
@@ -197,7 +201,7 @@ input {
 
 @media (max-width: 1023px) {
     #main__container-login {
-        display: none!important;
+        display: none !important;
         flex-direction: column-reverse;
         margin: 30px 0;
         gap: 30px;

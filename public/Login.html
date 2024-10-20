@@ -25,16 +25,17 @@
 </head>
 
 <body>
-    <main class="container">
-        <div id="main__container" class="hidden container row col-12">
-            <section id="section-img"
-                class="col-8 d-flex justify-content-center align-items-center container">
+    <main class="container d-flex justify-content-center align-items-center">
+        <div id="main__container" class="container row col-12">
+            <section id="section-img" class="col-8 d-flex justify-content-center align-items-center container">
+                <div id="container-img">
+                    <img src="../src/assets/img/gatos/Gato-desenfocado.JPG" alt="Imagen de gato desenfocado"
+                        id="img-cat">
 
-                <img src="../src/assets/img/gatos/Gato-desenfocado.JPG" alt="Imagen de gato desenfocado" id="img-cat">
+                    <img src="../src/assets/img/perros/dog 1.png" alt="Imagen de perro" id="img-dog">
 
-                <img src="../src/assets/img/perros/dog 1.png" alt="Imagen de perro" id="img-dog">
-
-                <span class="img-title">SIGN UP</span>
+                    <span class="img-title">SIGN UP</span>
+                </div>
             </section>
             <section id="section-form"
                 class="col-4 container d-flex justify-content-center gap-4 align-items-center flex-column">
@@ -57,31 +58,80 @@
                     <div class="indicator"></div>
                 </div>
 
-                <form method="post" id="form"
-                    class="d-flex justify-content-center align-items-start flex-column gap-3 col-10">
+                <form method="post" 
+                id="form"
+                class="d-flex justify-content-center align-items-start flex-column gap-3 col-10">
 
-                    <label for="form__email" class="fs-2 fw-bold">Correo</label>
-                    <input type="email" name="user" class="fs-4" id="form__email"
-                        placeholder="Intoduzca su Correo" required>
+                    <label for="form__email" 
+                    class="fs-2 fw-bold" 
+                    id="label-email">Correo</label>
 
-                    <label for="form__user" class="fs-2 fw-bold">Usuario</label>
-                    <input type="text" name="user" class="fs-4" id="form__email" placeholder="Intoduzca su Usuario"
-                        required>
+                    <input type="email" 
+                    name="user" 
+                    class="fs-4 clear" 
+                    id="form__email" 
+                    placeholder="Intoduzca su Correo"
+                    required>
 
-                    <label for="form__password" class="fs-2 fw-bold">Contraseña</label>
-                    <input type="password" name="password" class="fs-4" id="form__password"
-                        placeholder="Introduzca su Contraseña" required>
+                    <span id="span-email" 
+                    class="form-registrar clear"></span>
+
+                    <label for="form__name" 
+                    class="fs-2 fw-bold form-registrar" 
+                    id="label-name">Nombre</label>
+
+                    <input type="text" 
+                    name="name" 
+                    class="fs-4 form-registrar clear" 
+                    id="form__name" 
+                    placeholder="Intoduzca su Usuario"
+                    required>
+
+                    <span id="span-name" 
+                    class="form-registrar clear"></span>
+
+                    <label for="form__password" 
+                    class="fs-2 fw-bold" 
+                    id="label-password">Contraseña</label>
+
+                    <input type="password" 
+                    name="password" 
+                    class="fs-4 clear" 
+                    id="form__password"
+                    placeholder="Introduzca su Contraseña" 
+                    required>
 
                     <i class="bi bi-eye-slash-fill"></i>
 
-                    <label for="form__password-confirm" class="fs-2 fw-bold">Confirmar Contraseña</label>
-                    <input type="password" name="password" class="fs-4" id="form__password-confirm"
-                        placeholder="Confirma su Contraseña" required>
+                    <span id="span-password" 
+                    class="clear"></span>
+
+
+                    <label 
+                    for="form__password-confirm" 
+                    class="fs-2 fw-bold form-registrar" 
+                    id="label-password-confirm">Confirmar Contraseña</label>
+
+                    <input 
+                    type="password" 
+                    name="password" 
+                    class="fs-4 form-registrar clear" 
+                    id="form__password-confirm"
+                    placeholder="Confirma su Contraseña" 
+                    required>
 
                     <i class="bi bi-eye-slash-fill"></i>
 
-                    <div id="form__container-btn-register" class="d-flex justify-content-start align-items-center">
-                        <button type="submit" class="fs-4" id="register__btn-submit">Registrar</button>
+                    <span id="span-password-confirm" 
+                    class="form-registrar clear"></span>
+
+
+                    <div id="form__container-btn-register" 
+                    class="d-flex align-items-center">
+                        <button type="submit" 
+                        class="fs-4" 
+                        value="register"
+                        id="register__btn-submit">Registrar</button>
                     </div>
                 </form>
             </section>

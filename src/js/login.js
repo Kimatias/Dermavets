@@ -1,89 +1,260 @@
-const register = document.querySelector('.tab--1');
-const login = document.querySelector('.tab--2');
-
 const display = document.querySelector('#main__container');
 const form = document.querySelector('#form');
-const spanTitleImg = document.querySelector('.img-title');
 
+const spanTitleImg = document.querySelector('.img-title');
 const imgCat = document.querySelector('#img-cat');
 const imgDog = document.querySelector('#img-dog');
 
+const elementsRegister = document.querySelectorAll('.form-registrar');
+const clearElementes = document.querySelectorAll('.clear');
 
 
-register.addEventListener('click', () => {
-    setTimeout(()=>{
+let isOkPassword;
+let isOkName;
+let isOkEmail;
+
+let isInRegister = true;
+
+const btnSubmit = document.querySelector('#register__btn-submit');
+btnSubmit.disabled = true;
+btnSubmit.style.backgroundColor = 'grey';
+
+// CONFIRMA SI TODO FUE DIGITADO CORRECTAMENTE
+function isAllGood() {
+    if (isInRegister) {
+        if (isOkPassword && isOkName && isOkEmail) {
+            btnSubmit.disabled = false;
+            btnSubmit.style.backgroundColor = '#279ea0';
+        } else {
+            btnSubmit.disabled = true;
+            btnSubmit.style.backgroundColor = 'grey';
+        }
+    } else {
+        if (isOkPassword && isOkEmail) {
+            btnSubmit.disabled = false;
+            btnSubmit.style.backgroundColor = '#279ea0';
+        } else {
+            btnSubmit.disabled = true;
+            btnSubmit.style.backgroundColor = 'grey';
+        }
+    }
+
+}
+
+// CONFIRMA SI LAS DOS CONTRASEÑAS SON IGUALES
+function isPasswordIqual() {
+    if (isInRegister) {
+        const passwordConfirm = document.querySelector('#form__password-confirm').value;
+
+        const password = document.querySelector('#form__password').value;
+
+        if (password == passwordConfirm) {
+            isOkPassword = true;
+            isAllGood();
+        } else {
+            isOkPassword = false;
+            isAllGood();
+        }
+    }
+}
+
+// CONFIRMA EN TIEMPO REAL SI LA CONTRASEÑA DE CONFIRMACIÓN ES IGUAL A LA DIGITADA.
+function passwordConfirmFunction() {
+    if (isInRegister) {
+        const passwordConfirm = document.querySelector('#form__password-confirm').value;
+        const password = document.querySelector('#form__password').value;
+        const spanPasswordConfirm = document.querySelector('#span-password-confirm');
+
+
+        if (password === passwordConfirm) {
+            spanPasswordConfirm.textContent = 'La contraseña es la misma!';
+            spanPasswordConfirm.style.color = 'green';
+
+            isPasswordIqual();
+        } else {
+            spanPasswordConfirm.textContent = 'La contraseña no es la misma!';
+            spanPasswordConfirm.style.color = 'red';
+
+            isPasswordIqual();
+        }
+    }
+}
+
+// CONFIRMA EN TIEMPO REAL SI LA CONTRASEÑA CUMPLE CON PARAMETROS
+function passwordFunction() {
+    const password = document.querySelector('#form__password').value;
+    const spanPasword = document.querySelector('#span-password');
+
+    if (isInRegister) {
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>_\-]).{8,}$/;
+
+        if (passwordPattern.test(password)) {
+            spanPasword.textContent = '¡Contraseña válida!';
+            spanPasword.style.color = 'green';
+            passwordConfirmFunction();
+        } else {
+            spanPasword.textContent = 'La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y un carácter especial (incluyendo - o _).';
+            spanPasword.style.color = 'red';
+            passwordConfirmFunction();
+        }
+    } else {
+        if (password) {
+            isOkPassword = true;
+            isAllGood();
+        } else {
+            isOkPassword = false;
+            isAllGood();
+        }
+    }
+}
+
+// CONFIRMA EN TIEMPO REAL SI EL NOMBRE CUMPLE CON PARAMETROS
+function nameFunction() {
+    if (isInRegister) {
+        const name = document.querySelector('#form__name').value;
+        const namePattern = /^[a-zA-Z\s]{3,}$/;
+
+        const spanName = document.querySelector('#span-name');
+
+        if (namePattern.test(name)) {
+            spanName.textContent = '¡Usuario válido!';
+            spanName.style.color = 'green';
+
+            isOkName = true;
+            isAllGood();
+        } else {
+            spanName.textContent = 'El Usuario no es válido!';
+            spanName.style.color = 'red';
+
+            isOkName = false;
+            isAllGood();
+        }
+    }
+}
+
+// CONFIRMA EN TIEMPO REAL SI EL EMAIL CUMPLE CON PARAMETROS
+function emailFunction() {
+    const email = document.querySelector('#form__email').value;
+    if (isInRegister) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        const spanEmail = document.querySelector('#span-email');
+
+        if (emailPattern.test(email)) {
+            spanEmail.textContent = '¡Email válido!';
+            spanEmail.style.color = 'green';
+
+            isOkEmail = true;
+            isAllGood();
+        } else {
+            spanEmail.textContent = 'El Email no es válido!';
+            spanEmail.style.color = 'red';
+
+            isOkEmail = false;
+            isAllGood();
+        }
+    } else {
+        if (email) {
+            isOkEmail = true;
+            isAllGood();
+        } else {
+            isOkEmail = false;
+            isAllGood();
+        }
+    }
+}
+
+document.querySelector('#form__name').addEventListener('input', nameFunction);
+
+document.querySelector('#form__password-confirm').addEventListener('input', passwordConfirmFunction);
+
+document.querySelector('#form__password').addEventListener('input', passwordFunction);
+
+document.querySelector('#form__email').addEventListener('input', emailFunction);
+
+// CAMBIA LOS ESTILOS DE LA PÁGINA PARA MOSTRAR EL REGISTRO
+document.querySelector('.tab--1').addEventListener('click', () => {
+    setTimeout(() => {
         display.style.opacity = 0;
-    },400)
-    setTimeout(()=>{
+    }, 300)
+    setTimeout(() => {
+
         display.style.flexDirection = 'row-reverse';
+
+        imgCat.style.display = 'none';
+        imgDog.style.display = 'flex';
 
         imgCat.style.opacity = 0;
         imgDog.style.opacity = 1;
 
-        spanTitleImg.style.textAlign = 'end';
         spanTitleImg.style.color = '#279ea0';
-        spanTitleImg.style.right = '2%';
+        spanTitleImg.style.left = 'unset';
+        spanTitleImg.style.right = '5px';
         spanTitleImg.innerHTML = 'SIGN UP';
 
-        form.innerHTML = `<label for="form__email" class="fs-2 fw-bold">Correo</label>
-                    <input type="email" name="user" class="fs-4" id="form__email"
-                        placeholder="Intoduzca su Correo" required>
+        elementsRegister.forEach(element => {
+            element.style.display = 'flex';
+        })
 
-                    <label for="form__user" class="fs-2 fw-bold">Usuario</label>
-                    <input type="text" name="user" class="fs-4" id="form__email" placeholder="Intoduzca su Usuario"
-                        required>
+        clearElementes.forEach(element => {
+            element.innerHTML = '';
+            element.value = '';
+        })
 
-                    <label for="form__password" class="fs-2 fw-bold">Contraseña</label>
-                    <input type="password" name="password" class="fs-4" id="form__password"
-                        placeholder="Introduzca su Contraseña" required>
+        btnSubmit.innerHTML = 'Registrar';
+        btnSubmit.value = 'register';
 
-                    <i class="bi bi-eye-slash-fill"></i>
-
-                    <label for="form__password-confirm" class="fs-2 fw-bold">Confirmar Contraseña</label>
-                    <input type="password" name="password" class="fs-4" id="form__password-confirm"
-                        placeholder="Confirma su Contraseña" required>
-
-                    <i class="bi bi-eye-slash-fill"></i>
-
-                    <div id="form__container-btn-register" class="d-flex justify-content-start align-items-center">
-                        <button type="submit" class="fs-4" id="register__btn-submit">Registrar</button>
-                    </div>
-        `
+        document.querySelector('#form__container-btn-register').style.justifyContent = 'start';
 
         display.style.opacity = 1;
-    },800)
+
+        isInRegister = true;
+        isOkPassword = false;
+        isOkEmail = false;
+        isOkName = false;
+    }, 900)
 });
 
-login.addEventListener('click', () => {
-    setTimeout(()=>{
+// CAMBIA LOS ESTILOS DE LA PÁGINA PARA MOSTRAR EL LOGIN
+document.querySelector('.tab--2').addEventListener('click', () => {
+    setTimeout(() => {
         display.style.opacity = 0;
-    },400)
-    setTimeout(()=>{
+    }, 300)
+    setTimeout(() => {
         display.style.flexDirection = 'row';
+
+        imgDog.style.display = 'none';
+        imgCat.style.display = 'flex';
+
 
         imgCat.style.opacity = 1;
         imgDog.style.opacity = 0;
 
-        spanTitleImg.style.textAlign = 'start';
         spanTitleImg.style.color = '#ec4555';
-        spanTitleImg.style.right = '-2%';
+        spanTitleImg.style.left = '5px';
+        spanTitleImg.style.right = 'unset';
         spanTitleImg.innerHTML = 'LOGIN';
 
-        form.innerHTML = `<label for="form__user" class="fs-2 fw-bold">Usuario</label>
-                    <input type="text" name="user" class="fs-4" id="form__email" placeholder="Intoduzca su Usuario"
-                        required>
+        elementsRegister.forEach(element => {
+            element.style.display = 'none';
+        })
 
-                    <label for="form__password" class="fs-2 fw-bold">Contraseña</label>
-                    <input type="password" name="password" class="fs-4" id="form__password"
-                        placeholder="Introduzca su Contraseña" required>
+        clearElementes.forEach(element => {
+            element.innerHTML = '';
+            element.value = '';
+        })
 
-                    <i class="bi bi-eye-slash-fill"></i>
+        btnSubmit.innerHTML = 'Login';
+        btnSubmit.value = 'login';
 
-                    <div id="form__container-btn-login" class="d-flex justify-content-end align-items-center">
-                        <button type="submit" class="fs-4" id="login__btn-submit">Login</button>
-                    </div>
-        `
+        document.querySelector('#form__container-btn-register').style.justifyContent = 'end';
 
         display.style.opacity = 1;
-    },800)
+
+        isInRegister = false;
+        isOkPassword = false;
+        isOkEmail = false;
+        isOkName = false;
+    }, 900)
 });
+
