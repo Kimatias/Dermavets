@@ -17,7 +17,7 @@ export const pool = mysql.createPool({
 export const verifyDBConnection = async () => {
   try {
     const connection = await pool.getConnection();
-    console.log("📦 Conexión exitosa a la base de datos");
+    console.log("🗄️ Conexión exitosa a la base de datos");
     connection.release(); // Liberar conexión una vez verificada
   } catch (error) {
     console.error("❌ Error de conexión:", error.message);
