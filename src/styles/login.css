@@ -22,6 +22,7 @@ html {
 
 body{
     background: linear-gradient(45deg, #279ea077, #ec455577);
+    transition: .2s ease;
 }
 
 #main__container {
@@ -36,6 +37,7 @@ main {
 
 /* SECTION IMG */
 #section-img {
+    display: flex;
     height: 100vh;
 }
 
@@ -74,6 +76,9 @@ main {
 }
 
 /* SECTION FORM */
+#section-form{
+    padding: 30px 0;
+}
 
 #form__container-logo {
     width: 90%;
@@ -92,12 +97,13 @@ input {
     height: 40px;
     border-radius: 10px;
     padding: 10px;
+
+    border: 2px solid var(--casinegro);
+    background-color: var(--blancofrio);
 }
 
 /* BTNS CHANGE OPTION */
-
-.tab-container,
-.tab-container2 {
+.tab-container{
     position: relative;
 
     display: flex;
@@ -110,8 +116,7 @@ input {
     border-radius: 30px;
 }
 
-.indicator,
-.indicator2 {
+.indicator {
     content: "";
     width: 145px;
     height: 40px;
@@ -126,12 +131,7 @@ input {
     transition: all 0.2s ease-out;
 }
 
-.indicator2 {
-    left: 132px;
-}
-
-.tab,
-.tab2 {
+.tab{
     width: 130px;
     height: 28px;
     position: absolute;
@@ -140,8 +140,7 @@ input {
     opacity: 0;
 }
 
-.tab_label,
-.tab_label2 {
+.tab_label{
     width: 130px;
     height: 28px;
     color: var(--blancofrio);
@@ -170,13 +169,31 @@ input {
 
 
 /* FORM */
-#section-form{
-    padding: 30px 0;
+.form__container-input-icon{
+    width: 100%;
 }
 
-.bi {
-    /* width: 20px;
-    height: 20px; */
+#form__password-confirm,
+#form__password{
+    border-radius: 10px 0 0 10px;
+    border: 2px solid black;
+    border-right: 0;
+}
+
+.form__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 100%;
+
+    border: 2px solid var(--casinegro);
+    background-color: var(--blancofrio);
+    color: var(--cereza);
+    border-radius: 0 10px 10px 0;
+    
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 #form__container-btn-register {
@@ -200,22 +217,15 @@ input {
 }
 
 @media (max-width: 1023px) {
-    #main__container-login {
-        display: none !important;
-        flex-direction: column-reverse;
-        margin: 30px 0;
-        gap: 30px;
+    #main__container{
+        min-height: 100vh;
     }
 
-    #login__section-img-cat,
-    #login__section-form,
-    #register__section-img-dog,
-    #register__section-form {
-        width: 100%;
+    #section-img {
+        display: none;
     }
 
-    #login__section-img-cat,
-    #register__section-img-dog {
-        height: 100%;
+    #section-form{
+        width: 90%;
     }
 }

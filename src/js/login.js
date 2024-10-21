@@ -1,3 +1,22 @@
+const colores = {
+    cereza: '#ec4555',
+    verde: '#279ea0',
+    verdeClaro: '#008000',
+    verdeOscuro: '#2a4a54',
+    gray: '#808080'
+}
+
+const messages = {
+    passwordConfirmValid: '¡La contraseña es la misma!',
+    passwordConfirmInalid: '¡La contraseña no es la misma!',
+    passwordValid: '¡Contraseña válida!',
+    passwordInvalid: 'La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y un carácter especial (incluyendo - o _).',
+    nameValid: '¡Usuario válido!',
+    nameInvalid: 'El Usuario no es válido!',
+    emailValid: '¡Email válido!',
+    emailInvalid: 'El Email no es válido!',
+};
+
 const display = document.querySelector('#main__container');
 const form = document.querySelector('#form');
 
@@ -8,41 +27,29 @@ const imgDog = document.querySelector('#img-dog');
 const elementsRegister = document.querySelectorAll('.form-registrar');
 const clearElementes = document.querySelectorAll('.clear');
 
+const iconPassword = document.querySelector('.icon-password');
+const iconPasswordConfirm = document.querySelector('.icon-password-confirm');
+
+const btnSubmit = document.querySelector('#register__btn-submit');
+eventoBtn(false);
 
 let isOkPassword;
 let isOkName;
 let isOkEmail;
 
 let isInRegister = true;
-
-const btnSubmit = document.querySelector('#register__btn-submit');
-btnSubmit.disabled = true;
-btnSubmit.style.backgroundColor = 'grey';
+let isIconPasswordActive = false;
+let isIconPasswordConfirmActive = false;
 
 // CONFIRMA SI TODO FUE DIGITADO CORRECTAMENTE
 function isAllGood() {
-    if (isInRegister) {
-        if (isOkPassword && isOkName && isOkEmail) {
-            btnSubmit.disabled = false;
-            btnSubmit.style.backgroundColor = '#279ea0';
-        } else {
-            btnSubmit.disabled = true;
-            btnSubmit.style.backgroundColor = 'grey';
-        }
-    } else {
-        if (isOkPassword && isOkEmail) {
-            btnSubmit.disabled = false;
-            btnSubmit.style.backgroundColor = '#279ea0';
-        } else {
-            btnSubmit.disabled = true;
-            btnSubmit.style.backgroundColor = 'grey';
-        }
-    }
+    const conditions = isInRegister ? isOkPassword && isOkName && isOkEmail : isOkPassword && isOkEmail;
+    eventoBtn(conditions);
 
 }
 
 // CONFIRMA SI LAS DOS CONTRASEÑAS SON IGUALES
-function isPasswordIqual() {
+function isPasswordEqual() {
     if (isInRegister) {
         const passwordConfirm = document.querySelector('#form__password-confirm').value;
 
@@ -67,15 +74,15 @@ function passwordConfirmFunction() {
 
 
         if (password === passwordConfirm) {
-            spanPasswordConfirm.textContent = 'La contraseña es la misma!';
-            spanPasswordConfirm.style.color = 'green';
+            spanPasswordConfirm.textContent = messages.passwordConfirmValid;
+            spanPasswordConfirm.style.color = colores.verdeClaro;
 
-            isPasswordIqual();
+            isPasswordEqual();
         } else {
-            spanPasswordConfirm.textContent = 'La contraseña no es la misma!';
-            spanPasswordConfirm.style.color = 'red';
+            spanPasswordConfirm.textContent = messages.passwordConfirmInalid;
+            spanPasswordConfirm.style.color = colores.cereza;
 
-            isPasswordIqual();
+            isPasswordEqual();
         }
     }
 }
@@ -89,12 +96,12 @@ function passwordFunction() {
         const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>_\-]).{8,}$/;
 
         if (passwordPattern.test(password)) {
-            spanPasword.textContent = '¡Contraseña válida!';
-            spanPasword.style.color = 'green';
+            spanPasword.textContent = messages.passwordValid;
+            spanPasword.style.color = colores.verdeClaro;
             passwordConfirmFunction();
         } else {
-            spanPasword.textContent = 'La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y un carácter especial (incluyendo - o _).';
-            spanPasword.style.color = 'red';
+            spanPasword.textContent = messages.passwordInvalid;
+            spanPasword.style.color = colores.cereza;
             passwordConfirmFunction();
         }
     } else {
@@ -117,14 +124,14 @@ function nameFunction() {
         const spanName = document.querySelector('#span-name');
 
         if (namePattern.test(name)) {
-            spanName.textContent = '¡Usuario válido!';
-            spanName.style.color = 'green';
+            spanName.textContent = messages.nameValid;
+            spanName.style.color = colores.verdeClaro;
 
             isOkName = true;
             isAllGood();
         } else {
-            spanName.textContent = 'El Usuario no es válido!';
-            spanName.style.color = 'red';
+            spanName.textContent = messages.nameInvalid;
+            spanName.style.color = colores.cereza;
 
             isOkName = false;
             isAllGood();
@@ -141,14 +148,14 @@ function emailFunction() {
         const spanEmail = document.querySelector('#span-email');
 
         if (emailPattern.test(email)) {
-            spanEmail.textContent = '¡Email válido!';
-            spanEmail.style.color = 'green';
+            spanEmail.textContent = messages.emailValid;
+            spanEmail.style.color = colores.verdeClaro;
 
             isOkEmail = true;
             isAllGood();
         } else {
-            spanEmail.textContent = 'El Email no es válido!';
-            spanEmail.style.color = 'red';
+            spanEmail.textContent = messages.emailInvalid;
+            spanEmail.style.color = colores.cereza;
 
             isOkEmail = false;
             isAllGood();
@@ -164,6 +171,89 @@ function emailFunction() {
     }
 }
 
+function colorIcon(bollean, typeOfPassword){
+    if (typeOfPassword == 'password'){
+        if(bollean){
+            iconPassword.classList.remove('bi-eye-slash-fill');
+            iconPassword.classList.add('bi-eye-fill');
+            iconPassword.style.color = colores.verde;
+        }else{
+            iconPassword.classList.remove('bi-eye-fill');
+            iconPassword.classList.add('bi-eye-slash-fill');
+            iconPassword.style.color = colores.cereza;
+        }
+    }
+    if(typeOfPassword == 'password-confirm'){
+        if(bollean){
+            iconPasswordConfirm.classList.remove('bi-eye-slash-fill');
+            iconPasswordConfirm.classList.add('bi-eye-fill');
+            iconPasswordConfirm.style.color = colores.verde;
+        }else{
+            iconPasswordConfirm.classList.remove('bi-eye-fill');
+            iconPasswordConfirm.classList.add('bi-eye-slash-fill');
+            iconPasswordConfirm.style.color = colores.cereza;
+        }
+    }
+
+}
+
+function iconFunction(typeOfPassword){
+    if (typeOfPassword == 'password'){
+        isIconPasswordActive = isIconPasswordActive? false: true;
+        if (isIconPasswordActive){
+            document.querySelector('#form__password').type = 'text';
+            colorIcon(true, 'password');
+        } else {
+            document.querySelector('#form__password').type = 'password';
+            colorIcon(false, 'password');
+        }
+    }
+
+    if (typeOfPassword == 'passwordConfirm'){
+        isIconPasswordConfirmActive = isIconPasswordConfirmActive? false: true;
+        if (isIconPasswordConfirmActive){
+            document.querySelector('#form__password-confirm').type = 'text';
+            colorIcon(true, 'password-confirm');
+        } else {
+            document.querySelector('#form__password-confirm').type = 'password';
+            colorIcon(false, 'password-confirm');
+        }
+    }
+}
+
+function eventoBtn(key) {
+    if (key){
+        btnSubmit.disabled = false;
+        btnSubmit.style.backgroundColor = colores.verde;
+        btnSubmit.style.border = colores.verde;
+
+        btnSubmit.addEventListener('mouseover', ()=>{
+            btnSubmit.style.backgroundColor = colorVerdeOcuro;
+            btnSubmit.style.border = colores.verdeOscuro;
+        })
+
+        btnSubmit.addEventListener('mouseout', ()=>{
+            btnSubmit.style.backgroundColor = colores.verde;
+            btnSubmit.style.border = colores.verde;
+        })
+    }else {
+        btnSubmit.disabled = true;
+        btnSubmit.style.backgroundColor = colores.gray;
+        btnSubmit.style.border = colores.gray;
+
+        btnSubmit.addEventListener('mouseover', ()=>{
+            btnSubmit.style.backgroundColor = colores.gray;
+            btnSubmit.style.border = colores.gray;
+        })
+
+        btnSubmit.addEventListener('mouseout', ()=>{
+            btnSubmit.style.backgroundColor = colores.gray;
+            btnSubmit.style.border = colores.gray;
+        })
+    }
+}
+
+// SELECCIÓN DESDE EL DOM Y ADDEVENTLISTENER
 document.querySelector('#form__name').addEventListener('input', nameFunction);
 
 document.querySelector('#form__password-confirm').addEventListener('input', passwordConfirmFunction);
@@ -172,13 +262,21 @@ document.querySelector('#form__password').addEventListener('input', passwordFunc
 
 document.querySelector('#form__email').addEventListener('input', emailFunction);
 
+iconPassword.addEventListener('click', () =>{
+    iconFunction('password');
+});
+
+iconPasswordConfirm.addEventListener('click', () =>{
+    iconFunction('passwordConfirm');
+});
+
 // CAMBIA LOS ESTILOS DE LA PÁGINA PARA MOSTRAR EL REGISTRO
 document.querySelector('.tab--1').addEventListener('click', () => {
     setTimeout(() => {
         display.style.opacity = 0;
     }, 300)
     setTimeout(() => {
-
+        eventoBtn(false);
         display.style.flexDirection = 'row-reverse';
 
         imgCat.style.display = 'none';
@@ -187,7 +285,7 @@ document.querySelector('.tab--1').addEventListener('click', () => {
         imgCat.style.opacity = 0;
         imgDog.style.opacity = 1;
 
-        spanTitleImg.style.color = '#279ea0';
+        spanTitleImg.style.color = colores.verde;
         spanTitleImg.style.left = 'unset';
         spanTitleImg.style.right = '5px';
         spanTitleImg.innerHTML = 'SIGN UP';
@@ -212,6 +310,16 @@ document.querySelector('.tab--1').addEventListener('click', () => {
         isOkPassword = false;
         isOkEmail = false;
         isOkName = false;
+        isIconPasswordActive = false;
+        isIconPasswordConfirmActive = false;
+
+        // RECETEO DE INPUTS
+        document.querySelector('#form__password').type = 'password';
+
+        document.querySelector('#form__password-confirm').type = 'password';
+
+        colorIcon(false, 'password');
+        colorIcon(false, 'password-confirm');
     }, 900)
 });
 
@@ -230,7 +338,7 @@ document.querySelector('.tab--2').addEventListener('click', () => {
         imgCat.style.opacity = 1;
         imgDog.style.opacity = 0;
 
-        spanTitleImg.style.color = '#ec4555';
+        spanTitleImg.style.color = colores.cereza;
         spanTitleImg.style.left = '5px';
         spanTitleImg.style.right = 'unset';
         spanTitleImg.innerHTML = 'LOGIN';
@@ -255,6 +363,15 @@ document.querySelector('.tab--2').addEventListener('click', () => {
         isOkPassword = false;
         isOkEmail = false;
         isOkName = false;
+        isIconPasswordActive = false;
+        isIconPasswordConfirmActive = false;
+
+        document.querySelector('#form__password').type = 'password';
+
+        eventoBtn(false);
+        
+        colorIcon(false, 'password');
+        colorIcon(false, 'password-confirm');
     }, 900)
 });
 
