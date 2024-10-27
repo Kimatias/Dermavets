@@ -21,13 +21,19 @@ html {
 }
 
 body{
-    background: linear-gradient(45deg, #279ea077, #ec455577);
-    transition: .2s ease;
+    background: linear-gradient(45deg, #279ea077, var(--blancofrio));
+    transition: background .8s ease;
+
+    height: 100vh;
 }
 
 #main__container {
     transition: .2s ease;
     flex-direction: row-reverse;
+}
+
+.hidden-form{
+    display: none;
 }
 
 main {
@@ -38,7 +44,7 @@ main {
 /* SECTION IMG */
 #section-img {
     display: flex;
-    height: 100vh;
+    height: 750px;
 }
 
 #container-img {
@@ -85,6 +91,7 @@ main {
 }
 
 form {
+    display: flex;
     font-family: var(--secondary-font);
 }
 
@@ -169,12 +176,14 @@ input {
 
 
 /* FORM */
-.form__container-input-icon{
+#register__container-input-icon,
+#login__container-input-icon{
     width: 100%;
 }
 
-#form__password-confirm,
-#form__password{
+#register__password-confirm,
+#register__password,
+#login__password{
     border-radius: 10px 0 0 10px;
     border: 2px solid black;
     border-right: 0;
@@ -185,7 +194,6 @@ input {
     align-items: center;
     justify-content: center;
     width: 40px;
-    height: 100%;
 
     border: 2px solid var(--casinegro);
     background-color: var(--blancofrio);
@@ -196,12 +204,14 @@ input {
     cursor: pointer;
 }
 
-#form__container-btn-register {
+#register__container-btn,
+#login__container-btn {
     width: 100%;
 }
 
 
-#register__btn-submit {
+#register__btn-submit,
+#login__btn-submit {
     justify-content: start;
     padding: 10px 40px;
     border-radius: 10px;
@@ -211,7 +221,12 @@ input {
     transition: .2s ease;
 }
 
-#register__btn-submit:hover {
+#login__container-btn{
+    justify-content: end;
+}
+
+#register__btn-submit:hover,
+#login__btn-submit:hover {
     background-color: var(--verdeoscuro);
     border: 2px solid var(--verdeoscuro);
 }
