@@ -45,7 +45,7 @@ export class authCustomerModel {
     }
   }
 
-  static async insertCustomer(id, username, email, password, name) {
+  static async insertCustomer(id, username, email, password) {
     let connection;
     try {
       // Obtener conexión del pool
@@ -53,8 +53,8 @@ export class authCustomerModel {
 
       // Insertar el nuevo cliente
       const [result] = await connection.query(
-        "INSERT INTO clientes (id_cliente, usuario, correo_electronico, contraseña, nombre) VALUES (?, ?, ?, ?, ?)",
-        [id, username, email, password, name]
+        "INSERT INTO clientes (id_cliente, usuario, correo_electronico, contraseña) VALUES (?, ?, ?, ?)",
+        [id, username, email, password]
       );
 
       // Devolver el resultado de la inserción

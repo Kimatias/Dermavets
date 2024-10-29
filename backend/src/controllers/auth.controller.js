@@ -25,7 +25,7 @@ export class authCustomerController {
    * @throws {Error} - Lanza un error si ocurre un problema en el servidor.
    */
   static async register(req, res) {
-    const { id, email, password, confirmPassword, username, name } = req.body;
+    const { id, email, password, confirmPassword, username} = req.body;
 
     // Verificar que las contraseñas coincidan
     if (password !== confirmPassword) {
@@ -55,7 +55,6 @@ export class authCustomerController {
         username,
         email,
         passwordHash,
-        name
       );
 
       // Generar el token
@@ -71,7 +70,7 @@ export class authCustomerController {
       // Responder con éxito
       return res.status(201).json({
         message: "Usuario registrado con éxito",
-        user: { username, email, name },
+        user: { username, email},
       });
     } catch (error) {
       console.error("Error al registrar usuario: ", error); // Log en servidor
@@ -112,7 +111,7 @@ export class authCustomerController {
       }
 
       // Comparar la contraseña ingresada con la almacenada (hasheada)
-      const isMatch = await bcrypt.compare(password, customer.password);
+      const isMatch = await bcrypt.compare(password, customer.contraseña);
 
       // Si la contraseña no coincide, enviar una respuesta de error
       if (!isMatch) {
