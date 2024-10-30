@@ -20,50 +20,83 @@ html {
     font-size: 62.5%;
 }
 
+body{
+    background: linear-gradient(45deg, #279ea077, var(--blancofrio));
+    transition: background .8s ease;
 
-#main__container{
+    height: 100vh;
+}
+
+#main__container {
     transition: .2s ease;
     flex-direction: row-reverse;
 }
 
+.hidden-form{
+    display: none;
+}
+
 main {
     width: 100%;
-    height: 100vh;
+    height: 90%;
 }
 
 /* SECTION IMG */
 #section-img {
-    height: 100vh;
+    display: flex;
+    height: 750px;
+}
+
+#container-img {
+    box-shadow: 0 0 20px 0 var(--casinegro);
     position: relative;
     overflow: hidden;
-}
-
-#img-cat{
-    opacity: 0;
-}
-
-#img-dog{
-    position: absolute;
-    top: 46px;
-    left: 0;
-}
-
-#section-img img{
-    width: 100%;
     height: 90%;
-    object-fit: cover;
-
+    width: 100%;
     border-radius: 20px;
 }
 
-/* SECTION FORM */
+.img-title {
+    position: absolute;
+    display: flex;
+    text-align: end;
 
-#form__container-logo{
+    bottom: -65px;
+    right: 5px;
+    font-size: 13rem;
+
+    font-family: var(--primary-font);
+    color: var(--verde);
+    text-shadow: 0 0 10px var(--verdeoscuro);
+}
+
+#container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+#img-cat {
+    display: none;
+}
+
+/* SECTION FORM */
+#section-form{
+    padding: 30px 0;
+}
+
+#form__container-logo {
     width: 90%;
 }
 
 form {
+    display: flex;
     font-family: var(--secondary-font);
+}
+
+.form__logo {
+    width: 50%;
 }
 
 input {
@@ -71,12 +104,13 @@ input {
     height: 40px;
     border-radius: 10px;
     padding: 10px;
+
+    border: 2px solid var(--casinegro);
+    background-color: var(--blancofrio);
 }
 
 /* BTNS CHANGE OPTION */
-
-.tab-container,
-.tab-container2 {
+.tab-container{
     position: relative;
 
     display: flex;
@@ -89,8 +123,7 @@ input {
     border-radius: 30px;
 }
 
-.indicator,
-.indicator2 {
+.indicator {
     content: "";
     width: 145px;
     height: 40px;
@@ -105,12 +138,7 @@ input {
     transition: all 0.2s ease-out;
 }
 
-.indicator2{
-    left: 132px;
-}
-
-.tab,
-.tab2 {
+.tab{
     width: 130px;
     height: 28px;
     position: absolute;
@@ -119,8 +147,7 @@ input {
     opacity: 0;
 }
 
-.tab_label,
-.tab_label2 {
+.tab_label{
     width: 130px;
     height: 28px;
     color: var(--blancofrio);
@@ -149,19 +176,43 @@ input {
 
 
 /* FORM */
-.bi{
-    width: 20px;
-    height: 20px;
+#register__container-input-icon,
+#login__container-input-icon{
+    width: 100%;
 }
 
-#form__container-btn-login,
-#form__container-btn-register {
+#register__password-confirm,
+#register__password,
+#login__password{
+    border-radius: 10px 0 0 10px;
+    border: 2px solid black;
+    border-right: 0;
+}
+
+.form__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+
+    border: 2px solid var(--casinegro);
+    background-color: var(--blancofrio);
+    color: var(--cereza);
+    border-radius: 0 10px 10px 0;
+    
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#register__container-btn,
+#login__container-btn {
     width: 100%;
 }
 
 
-#login__btn-submit,
-#register__btn-submit {
+#register__btn-submit,
+#login__btn-submit {
+    justify-content: start;
     padding: 10px 40px;
     border-radius: 10px;
     background-color: var(--verde);
@@ -170,28 +221,26 @@ input {
     transition: .2s ease;
 }
 
-#login__btn-submit:hover,
-#register__btn-submit:hover {
+#login__container-btn{
+    justify-content: end;
+}
+
+#register__btn-submit:hover,
+#login__btn-submit:hover {
     background-color: var(--verdeoscuro);
     border: 2px solid var(--verdeoscuro);
 }
 
-@media (max-width: 768px) {
-    #main__container-login {
-        flex-direction: column-reverse;
-        margin: 30px 0;
-        gap: 30px;
+@media (max-width: 1023px) {
+    #main__container{
+        min-height: 100vh;
     }
 
-    #login__section-img-cat,
-    #login__section-form,
-    #register__section-img-dog,
-    #register__section-form {
-        width: 100%;
+    #section-img {
+        display: none;
     }
 
-    #login__section-img-cat,
-    #register__section-img-dog {
-        height: 100%;
+    #section-form{
+        width: 90%;
     }
 }
