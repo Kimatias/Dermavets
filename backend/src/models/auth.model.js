@@ -53,7 +53,7 @@ export class authCustomerModel {
 
       // Insertar el nuevo cliente
       const [result] = await connection.query(
-        "INSERT INTO clientes (id_cliente, usuario, correo_electronico, contraseña) VALUES (?, ?, ?, ?)",
+        "INSERT INTO clientes (id_cliente, usuario, correo_electronico, password) VALUES (?, ?, ?, ?)",
         [id, username, email, password]
       );
 

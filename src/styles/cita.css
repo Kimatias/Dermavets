@@ -1,0 +1,68 @@
+:root {
+    /*Colores*/
+    --verde: #279ea0;
+    --cereza: #ec4555;
+    --verdeoscuro: #2a4a54;
+    --vinotinto: #632329;
+    --blancofrio: #f6f5f4;
+    --casinegro: #1d1b1d;
+    --primary-font: "Lalezar", system-ui;
+    --secondary-font: "Yusei Magic", system-ui;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+#profileSection.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 10px auto; /* Centra el contenedor en la página */
+    max-width: 1000px;
+    border-radius: 30px;
+}
+
+/* Imagen principal del perfil */
+.profile-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Detalles del perfil */
+.profile-details {
+    flex: 1;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--cereza);
+}
+
+.profile-email {
+    font-size: 1.2rem;
+    color: #0c0c0c;
+}
+
+.profile-type {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+/* Imagen en miniatura */
+.profile-thumbnail img {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+}

@@ -102,6 +102,7 @@ export class authCustomerController {
     try {
       // Buscar al cliente en la base de datos por su correo electrónico
       const [customer] = await authCustomerModel.findCustomerByEmail(email);
+      console.log("🚀 ~ authCustomerController ~ login ~ customer:", customer)
 
       // Si el cliente no existe, enviar una respuesta de error
       if (!customer) {
@@ -111,7 +112,8 @@ export class authCustomerController {
       }
 
       // Comparar la contraseña ingresada con la almacenada (hasheada)
-      const isMatch = await bcrypt.compare(password, customer.contraseña);
+      const isMatch = await bcrypt.compare(password, customer.password);
+      console.log("🚀 ~ authCustomerController ~ login ~ customer.contraseña:", customer.password)
 
       // Si la contraseña no coincide, enviar una respuesta de error
       if (!isMatch) {
@@ -121,8 +123,14 @@ export class authCustomerController {
       }
 
       // Crear y guardar el token de acceso JWT en una cookie
-      const token = await createAccessToken({ id: customer.id_customer });
-      res.cookie("token", token, {});
+      const token = await createAccessToken({ id: customer.id_cliente});
+      console.log("🚀 ~ authCustomerController ~ login ~ token:", token)
+      // Establecer cookie con el token
+      res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none", // Permite que el token sea enviado desde otros dominios
+      });
 
       // Enviar una respuesta de éxito con los datos del cliente
       return res.status(200).json({

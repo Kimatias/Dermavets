@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
     <header class="header">
         <div class="vet-name">
@@ -22,7 +24,67 @@
             <p>Nosotros</p>
         </nav>
     </header>
-    <main>   
+    <main>
+        <h1 class="text-4xl font-bold mb-4">Este es el inicio</h1>
+        <div id="user-info" class="mb-4"></div>
+        <div id="login-button" class="hidden">
+            <button onclick="redirectToLogin()"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Verifícate iniciando
+                sesión</button>
+        </div>
+
     </main>
+    <script>
+        async function checkUserStatus() {
+            try {
+                const response = await fetch('http://localhost:3000/api/verify', {
+                    method: 'POST',
+                    credentials: 'include',
+                });
+
+                const data = await response.json();
+
+                if (data.verified) {
+                    document.getElementById('user-info').innerHTML = `
+                        <h2 class="text-2xl">${data.message}</h2>
+                        <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition">Cerrar sesión</button>
+                    `;
+                } else {
+                    document.getElementById('login-button').classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('Error al verificar el estado del usuario:', error);
+                document.getElementById('login-button').classList.remove('hidden'); // Muestra el botón en caso de error
+            }
+        }
+
+        async function logout() {
+            try {
+                const response = await fetch('http://localhost:3000/api/logout', {
+                    method: 'GET',
+                    credentials: 'include', // Asegúrate de incluir las cookies
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(data.message); // Mensaje de cierre de sesión exitoso
+                    window.location.reload(); // Recarga la página para reflejar el cambio de estado
+                } else {
+                    alert('Error al cerrar sesión. Inténtalo de nuevo.');
+                }
+            } catch (error) {
+                console.error('Error al cerrar sesión:', error);
+                alert('Error en la conexión. Inténtalo de nuevo.');
+            }
+        }
+
+        function redirectToLogin() {
+            window.location.href = '/public/Login.html'; // Cambia esto a la ruta de tu página de inicio de sesión
+        }
+
+        // Ejecutar la función al cargar la página
+        checkUserStatus();
+    </script>
 </body>
+
 </html>
