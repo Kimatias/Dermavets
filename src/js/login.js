@@ -515,17 +515,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "#register__password-confirm"
     ).value;
 
-    // Validación en el frontend
-    if (!username || !email || !password || !confirmPassword) {
-      alert("Por favor, completa todos los campos.");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      alert("Las contraseñas no coinciden.");
-      return;
-    }
-
     try {
       const response = await fetch("http://localhost:3000/api/register", {
         method: "POST",
@@ -533,32 +522,46 @@ document.addEventListener("DOMContentLoaded", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, email, password, confirmPassword }),
+        credentials: "include", // Esto permite enviar la cookie
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.log("🚀 ~ handleRegister ~ errorData:", errorData);
-        alert(
-          `Error al registrar: ${errorData || "Ocurrió un error inesperado"}`
-        );
+        Swal.fire({
+          icon: "error",
+          title: "Error al registrar",
+          text: errorData|| "Ocurrió un error inesperado",
+        });
         return;
       }
 
       const data = await response.json();
-      console.log("🚀 ~ handleRegister ~ data:", data);
-      alert(data.message || "Registro Exitoso");
+      Swal.fire({
+        icon: "success",
+        title: "Registro Exitoso",
+        text: data.message || "Usuario registrado con éxito",
+        showConfirmButton: false,
+        timer: 2000, // Duración del mensaje en ms
+      }).then(() => {
+        // Redirigir a index.html después del mensaje
+        window.location.href = "index.html";
+      });
     } catch (error) {
       console.error("Error de conexión o servidor:", error);
-      alert("Error de conexión o servidor. Intenta más tarde.");
+      Swal.fire({
+        icon: "error",
+        title: "Error de conexión",
+        text: "Intenta más tarde.",
+      });
     }
   }
 
   async function handleLogin(e) {
     e.preventDefault();
-
+  
     const email = document.querySelector("#login__email").value.trim();
     const password = document.querySelector("#login__password").value;
-
+  
     try {
       const response = await fetch("http://localhost:3000/api/login", {
         method: "POST",
@@ -566,28 +569,42 @@ document.addEventListener("DOMContentLoaded", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
+        credentials: "include", // Esto permite enviar la cookie
       });
-
+  
       // Manejo de errores en la respuesta
       if (!response.ok) {
         const errorData = await response.json();
-        console.log("🚀 ~ handleLogin ~ errorData:", errorData);
-        alert(
-          `Error al iniciar sesión: ${
-            errorData.message || "Ocurrió un error inesperado"
-          }`
-        );
+        Swal.fire({
+          icon: "error",
+          title: "Error al iniciar sesión",
+          text: errorData.message || "Ocurrió un error inesperado",
+        });
         return;
       }
-
+  
       const data = await response.json();
-      console.log("🚀 ~ handleLogin ~ data:", data);
-      alert(data.message || "Inicio de sesión Exitoso");
+      Swal.fire({
+        icon: "success",
+        title: "Inicio de sesión exitoso",
+        text: data.message || "Bienvenido de nuevo",
+        showConfirmButton: false,
+        timer: 2000, // Duración del mensaje en ms
+      }).then(() => {
+        // Redirigir a index.html después del mensaje
+        window.location.href = "index.html";
+      });
+  
     } catch (error) {
       console.error("Error de conexión o servidor:", error);
-      alert("Error de conexión o servidor. Intenta más tarde.");
+      Swal.fire({
+        icon: "error",
+        title: "Error de conexión",
+        text: "Intenta más tarde.",
+      });
     }
   }
+  
 
   document
     .querySelector("#form__register")

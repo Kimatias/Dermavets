@@ -1,7 +1,7 @@
 import { pool } from "../database/connection.js"; // Usamos pool directamente
 
-export class authCustomerModel {
-  static async findCustomerByEmail(email) {
+export class authModel {
+  static async findByEmail(email) {
     let connection;
     try {
       // Obtener conexión del pool
@@ -23,7 +23,7 @@ export class authCustomerModel {
     }
   }
 
-  static async findCustomerByUsername(username) {
+  static async findByUsername(username) {
     let connection;
     try {
       // Obtener conexión del pool
@@ -45,7 +45,7 @@ export class authCustomerModel {
     }
   }
 
-  static async insertCustomer(id, username, email, password) {
+  static async insert(id, username, email, password) {
     let connection;
     try {
       // Obtener conexión del pool
@@ -67,7 +67,7 @@ export class authCustomerModel {
     }
   }
 
-  static async verifyTokenCustomer(id) {
+  static async verifyToken(id) {
     let connection;
     try {
       // Obtener conexión del pool
@@ -88,4 +88,6 @@ export class authCustomerModel {
       if (connection) connection.release(); // Liberar la conexión
     }
   }
+
+  
 }

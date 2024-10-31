@@ -1,68 +1,213 @@
-:root {
-    /*Colores*/
-    --verde: #279ea0;
-    --cereza: #ec4555;
-    --verdeoscuro: #2a4a54;
-    --vinotinto: #632329;
-    --blancofrio: #f6f5f4;
-    --casinegro: #1d1b1d;
-    --primary-font: "Lalezar", system-ui;
-    --secondary-font: "Yusei Magic", system-ui;
+/* General */
+body {
+    font-family: Arial, sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.profile-section .profile-img {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #ddd;
 }
 
-/* Contenedor principal */
-#profileSection.profile-container {
+.profile-section .pet-img {
+    width: 80px;
+}
+
+.profile-section .profile-name {
+    font-size: 1.5em;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.profile-section .profile-email,
+.profile-section .profile-type {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.appointment-section .title {
+    font-size: 2em;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.calendar {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1.2em;
+}
+
+.btn-primary {
+    background-color: #20c997;
+    border: none;
+}
+
+.btn-outline-primary {
+    color: #20c997;
+    border-color: #20c997;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    background-color: #20c997;
+}
+
+.btn-success {
+    background-color: #20c997;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #17a589;
+}
+.calendar {
+    max-width: 300px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin: 10px auto; /* Centra el contenedor en la página */
-    max-width: 1000px;
-    border-radius: 30px;
+    padding: 10px;
+    background-color: #20c997;
+    color: white;
 }
 
-/* Imagen principal del perfil */
-.profile-image img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+.calendar-nav {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
 }
 
-/* Detalles del perfil */
-.profile-details {
-    flex: 1;
-    margin: 0 20px;
+.calendar-month-year {
+    font-weight: bold;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th, .calendar-table td {
+    width: 14.28%; /* Dividir 100% por 7 días */
+    padding: 10px;
     text-align: center;
 }
 
-.profile-name {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--cereza);
+.calendar-table th {
+    background-color: #f1f1f1;
+    color: #666;
 }
 
-.profile-email {
-    font-size: 1.2rem;
-    color: #0c0c0c;
+.calendar-table td {
+    cursor: pointer;
 }
 
-.profile-type {
-    font-size: 1.5rem;
-    color: #000000;
+.calendar-table td:hover {
+    background-color: #e1f7e7;
 }
 
-/* Imagen en miniatura */
-.profile-thumbnail img {
-    width: 180px;
-    height: 180px;
-    border-radius: 8px;
-    object-fit: cover;
+.calendar-table .today {
+    background-color: #20c997;
+    color: white;
+    border-radius: 50%;
+}
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Hacer que las imágenes de perfil y mascota sean más pequeñas */
+    .profile-section .profile-img,
+    .profile-section .pet-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Ajustar el tamaño del texto del perfil */
+    .profile-section .profile-name {
+        font-size: 1.2em;
+    }
+
+    .profile-section .profile-email,
+    .profile-section .profile-type {
+        font-size: 0.9em;
+    }
+
+    /* Hacer que las columnas ocupen el 100% del ancho */
+    .appointment-section .col-md-4 {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* Alinear elementos en columna */
+    .profile-section .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustar la visualización del título de la sección de citas */
+    .appointment-section .title {
+        font-size: 1.5em;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (menos de 576px) */
+@media (max-width: 576px) {
+    /* Reducir aún más el tamaño de las imágenes y textos */
+    .profile-section .profile-img,
+    .profile-section .pet-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .profile-section .profile-name {
+        font-size: 1em;
+    }
+
+    .profile-section .profile-email,
+    .profile-section .profile-type {
+        font-size: 0.8em;
+    }
+
+    /* Hacer que los botones y otros elementos ocupen el 100% del ancho */
+    .btn,
+    .form-select,
+    .form-control {
+        width: 100%;
+    }
+
+    /* Aumentar el espaciado entre elementos */
+    .profile-section .d-flex {
+        gap: 10px;
+    }
+
+    .appointment-section .title {
+        font-size: 1.3em;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .calendar {
+        font-size: 1em;
+    }
 }
