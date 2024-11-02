@@ -88,6 +88,4 @@ export class authModel {
       if (connection) connection.release(); // Liberar la conexión
     }
   }
-
-  
 }

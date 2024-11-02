@@ -1,213 +1,168 @@
-/* General */
+:root {
+    /* Paleta de Colores */
+    --verde: #279ea0;
+    --cereza: #ec4555;
+    --verdeoscuro: #2a4a54;
+    --blancofrio: #f6f5f4;
+    --grisoscuro: #1d1b1d;
+
+    /* Otros Estilos */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset y Estructura */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Yusei Magic', sans-serif;
+    color: var(--grisoscuro);
 }
 
-.profile-section .profile-img {
-    width: 100px;
-    height: 100px;
-    border: 5px solid #ddd;
+/* Barra de desplazamiento personalizada */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--verde);
+    border-radius: 10px;
+    border: 3px solid #fff;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cereza);
 }
 
-.profile-section .pet-img {
-    width: 80px;
+/* Botones */
+button, .btn {
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+.btn-primary, .btn-success, .btn-secondary {
+    background-color: var(--verde);
+    color: var(--blancofrio);
+    border: none;
+}
+.btn-primary:hover, .btn-success:hover, .btn-secondary:hover {
+    background-color: var(--verdeoscuro);
+}
+.btn-outline-secondary {
+    color: var(--verde);
+    border: 1px solid var(--verde);
+}
+.btn-outline-secondary:hover {
+    color: var(--blancofrio);
+    background-color: var(--verde);
 }
 
-.profile-section .profile-name {
-    font-size: 1.5em;
-    color: #e74c3c;
-    font-weight: bold;
+/* Cards de Consulta */
+.consulta-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.consulta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
+}
+.consulta-card input:checked + .consulta-card {
+    border: 2px solid var(--verdeoscuro);
+    background-color: #f8f9fa;
+}
+.consulta-icon img {
+    width: 40px;
 }
 
-.profile-section .profile-email,
-.profile-section .profile-type {
-    font-size: 1.1em;
-    color: #333;
-}
-
-.appointment-section .title {
-    font-size: 2em;
-    color: #e74c3c;
-    font-weight: bold;
-}
-
+/* Estilos de Tarjetas (Card) */
 .card {
-    background-color: #f9f9f9;
-    border: none;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--blancofrio);
+}
+.card label, .card h5 {
+    color: var(--grisoscuro);
+    font-weight: bold;
 }
 
-.calendar {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
-    font-size: 1.2em;
-}
-
-.btn-primary {
-    background-color: #20c997;
-    border: none;
-}
-
-.btn-outline-primary {
-    color: #20c997;
-    border-color: #20c997;
-}
-
-.btn-outline-primary:hover {
-    color: white;
-    background-color: #20c997;
-}
-
-.btn-success {
-    background-color: #20c997;
-    border: none;
-}
-
-.btn-success:hover {
-    background-color: #17a589;
-}
+/* Calendario Flatpickr en Tarjeta */
 .calendar {
     max-width: 300px;
     margin: 0 auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
 }
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #20c997;
-    color: white;
-}
-
-.calendar-nav {
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    color: white;
-    cursor: pointer;
-}
-
-.calendar-month-year {
-    font-weight: bold;
-}
-
-.calendar-table {
+input[type="text"].form-control {
+    display: block;
     width: 100%;
-    border-collapse: collapse;
-}
-
-.calendar-table th, .calendar-table td {
-    width: 14.28%; /* Dividir 100% por 7 días */
-    padding: 10px;
     text-align: center;
 }
-
-.calendar-table th {
-    background-color: #f1f1f1;
-    color: #666;
+.flatpickr-calendar {
+    border-radius: var(--border-radius);
 }
-
-.calendar-table td {
-    cursor: pointer;
-}
-
-.calendar-table td:hover {
-    background-color: #e1f7e7;
-}
-
-.calendar-table .today {
-    background-color: #20c997;
-    color: white;
+.flatpickr-calendar .day {
+    padding: 0.5rem;
     border-radius: 50%;
+    transition: background-color 0.3s;
+}
+.flatpickr-calendar .today {
+    background-color: var(--verde);
+    color: var(--blancofrio);
+}
+.flatpickr-calendar .day:hover {
+    background-color: var(--cereza);
+    color: var(--blancofrio);
 }
 
+/* Título de la sección y botón de citas */
+.title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.75rem;
+}
+.appointment-section {
+    margin-top: 2rem;
+}
+.appointment-section h3 {
+    color: var(--verdeoscuro);
+}
+.appointment-section .btn {
+    margin-top: 0.5rem;
+}
+.centrarCalendario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* Ajustes para pantallas pequeñas */
+/* Diseño Responsivo */
 @media (max-width: 768px) {
-    /* Hacer que las imágenes de perfil y mascota sean más pequeñas */
-    .profile-section .profile-img,
-    .profile-section .pet-img {
-        width: 60px;
-        height: 60px;
+    .appointment-section h3 {
+        font-size: 1.5rem;
     }
-
-    /* Ajustar el tamaño del texto del perfil */
-    .profile-section .profile-name {
-        font-size: 1.2em;
+    .btn-outline-secondary {
+        margin-top: 1rem;
     }
-
-    .profile-section .profile-email,
-    .profile-section .profile-type {
-        font-size: 0.9em;
-    }
-
-    /* Hacer que las columnas ocupen el 100% del ancho */
-    .appointment-section .col-md-4 {
-        width: 100%;
-        margin-top: 15px;
-    }
-
-    /* Alinear elementos en columna */
-    .profile-section .d-flex {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Ajustar la visualización del título de la sección de citas */
-    .appointment-section .title {
-        font-size: 1.5em;
+    .card {
+        padding: 1rem;
     }
 }
 
-/* Ajustes para pantallas muy pequeñas (menos de 576px) */
 @media (max-width: 576px) {
-    /* Reducir aún más el tamaño de las imágenes y textos */
-    .profile-section .profile-img,
-    .profile-section .pet-img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .profile-section .profile-name {
-        font-size: 1em;
-    }
-
-    .profile-section .profile-email,
-    .profile-section .profile-type {
-        font-size: 0.8em;
-    }
-
-    /* Hacer que los botones y otros elementos ocupen el 100% del ancho */
-    .btn,
-    .form-select,
-    .form-control {
+    .btn, .form-select, .form-control {
         width: 100%;
     }
-
-    /* Aumentar el espaciado entre elementos */
-    .profile-section .d-flex {
-        gap: 10px;
-    }
-
-    .appointment-section .title {
-        font-size: 1.3em;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    .calendar {
-        font-size: 1em;
+    .appointment-section .title, .btn-outline-secondary {
+        text-align: center;
+        display: block;
     }
 }

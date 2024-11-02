@@ -4,81 +4,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendar Cita</title>
+    <meta name="description"
+        content="Agenda tu cita en Dermavet. Consultas veterinarias presenciales y virtuales para la mejor atención de tu mascota.">
+    <meta name="keywords" content="dermavet, veterinaria, agendar cita, consulta veterinaria">
+    <title>Dermavet | Agendar Cita</title>
+
+    <!-- Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Yusei+Magic&display=swap"
+        as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Yusei+Magic&display=swap" rel="stylesheet"
+        defer>
+
+    <!-- CSS Externo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="../src/styles/cita.css">
+    <link rel="shortcut icon" href="../src/assets/Logo.svg" type="image/x-icon">
 </head>
 
 <body>
-    <!-- Sección de perfil -->
-    <section class="profile-section text-center my-4">
-        <div class="container">
-            <div class="d-flex justify-content-center align-items-center">
-                <img src="../src/assets/image.png" alt="Imagen de perfil" class="profile-img rounded-circle">
-                <div class="profile-info ms-3">
-                    <h2 class="profile-name">Lina Gomez</h2>
-                    <p class="profile-email">lina-gomez@dermavets.com</p>
-                    <p class="profile-type">CAT</p>
-                </div>
-                <img src="../src/assets/imagegato.png" alt="Imagen de mascota" class="pet-img ms-3">
-            </div>
-        </div>
-    </section>
+    <header class="container my-5 text-center">
+        <h1>Dermavet - Agenda tu Cita</h1>
+        <p>Consulta veterinaria presencial y virtual para el cuidado de tu mascota</p>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#citasModal"
+            aria-label="Ver mis citas">
+            <img src="../src/assets/calendar-month.svg" alt="icono de calendario" width="20"> Ver mis citas
+        </button>
+    </header>
 
-    <!-- Sección de agendar cita -->
-    <section class="appointment-section text-center my-5">
-        <h3 class="title">AGENDAR CITA</h3>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <input type="checkbox" id="presencial" class="form-check-input">
-                    <label for="presencial" class="form-check-label">Consulta presencial</label>
-                </div>
-                <div class="col-md-3">
-                    <input type="checkbox" id="virtual" class="form-check-input">
-                    <label for="virtual" class="form-check-label">Consulta virtual</label>
-                </div>
-            </div>
-
-            <div class="row mt-4 justify-content-center">
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <div class="calendar">
-                            <!-- Puedes integrar un calendario aquí -->
-                            <p>Calendario</p>
+    <main class="container my-5">
+        <!-- Sección de Agendar Cita -->
+        <section class="appointment-section my-5">
+            <h3 class="appointment-title flex-grow-1 text-center">
+                <img src="../src/assets/calendar-month.svg" alt="icono de calendario" width="40" class="me-2">
+                Agenda tu Cita
+            </h3>
+            <!-- Opciones de Consulta -->
+            <div class="d-flex justify-content-center mb-4">
+                <article class="col-md-4 mb-4 text-center">
+                    <input type="radio" name="consulta" id="presencial" class="form-check-input visually-hidden"
+                        checked>
+                    <label for="presencial"
+                        class="appointment-option p-3 border rounded shadow-sm d-flex align-items-center justify-content-center">
+                        <img src="../src/assets/building-hospital.svg" alt="Icono de consulta presencial" width="40"
+                            class="me-3">
+                        <div>
+                            <h5 class="mb-1">Consulta Presencial</h5>
+                            <p class="mb-0 text-muted">Visita en la clínica para una consulta completa.</p>
                         </div>
-                        <button class="btn btn-primary w-100 mt-3">Hecho</button>
-                    </div>
+                    </label>
+                </article>
+
+                <article class="col-md-4 mb-4 text-center">
+                    <input type="radio" name="consulta" id="virtual" class="form-check-input visually-hidden">
+                    <label for="virtual"
+                        class="appointment-option p-3 border rounded shadow-sm d-flex align-items-center justify-content-center">
+                        <img src="../src/assets/device-desktop.svg" alt="Icono de consulta virtual" width="40"
+                            class="me-3">
+                        <div>
+                            <h5 class="mb-1">Consulta Virtual</h5>
+                            <p class="mb-0 text-muted">Asesoría en línea para comodidad y rapidez.</p>
+                        </div>
+                    </label>
+                </article>
+            </div>
+            <section class="service-selection my-5">
+                <header class="text-center mb-4">
+                    <h3 class="service-title">
+                        <img src="../src/assets/calendar-month.svg" alt="icono de calendario" width="40" class="me-2">
+                        Selecciona el Servicio
+                    </h3>
+                </header>
+
+                <div class="row justify-content-center">
+                    <article class="col-md-4 mb-4 text-center">
+                        <input type="radio" name="servicio" id="consulta-basica"
+                            class="form-check-input visually-hidden" checked>
+                        <label for="consulta-basica"
+                            class="service-option p-3 border rounded shadow-sm d-flex align-items-center justify-content-center">
+                            <img src="../src/assets/stethoscope.svg" alt="icono de consulta básica" width="40"
+                                class="me-3">
+                            <div>
+                                <h5 class="mb-1">Consulta Básica</h5>
+                                <p class="mb-0 text-muted">Revisión general y diagnóstico inicial.</p>
+                            </div>
+                        </label>
+                    </article>
+
+                    <article class="col-md-4 mb-4 text-center">
+                        <input type="radio" name="servicio" id="consulta-dermatologica"
+                            class="form-check-input visually-hidden">
+                        <label for="consulta-dermatologica"
+                            class="service-option p-3 border rounded shadow-sm d-flex align-items-center justify-content-center">
+                            <img src="../src/assets/skin-care.svg" alt="icono de consulta dermatológica" width="40"
+                                class="me-3">
+                            <div>
+                                <h5 class="mb-1">Consulta Dermatológica</h5>
+                                <p class="mb-0 text-muted">Especializada en problemas de piel.</p>
+                            </div>
+                        </label>
+                    </article>
+
+                    <article class="col-md-4 mb-4 text-center">
+                        <input type="radio" name="servicio" id="vacunacion" class="form-check-input visually-hidden">
+                        <label for="vacunacion"
+                            class="service-option p-3 border rounded shadow-sm d-flex align-items-center justify-content-center">
+                            <img src="../src/assets/vaccine.svg" alt="icono de vacunación" width="40" class="me-3">
+                            <div>
+                                <h5 class="mb-1">Vacunación</h5>
+                                <p class="mb-0 text-muted">Protección de salud preventiva.</p>
+                            </div>
+                        </label>
+                    </article>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <label for="selectHora">Selecciona la hora:</label>
-                        <select id="selectHora" class="form-select">
+            </section>
+
+            <!-- Selección de Fecha y Hora -->
+            <div class="row justify-content-center gx-3 my-4">
+                <section class="col-md-5 mb-4">
+                    <div class="card p-4 text-center border rounded-3">
+                        <label for="fecha"
+                            class="form-label fw-bold fs-5 d-flex align-items-center justify-content-center">
+                            <img src="../src/assets/calendar-month.svg" alt="icono de calendario" width="30"
+                                class="me-2"> Selecciona la fecha
+                        </label>
+                        <div class="centrarCalendario">
+                            <input type="text" id="fecha" class="form-control mt-2 flatpickr-calendar"
+                            placeholder="Selecciona una fecha">
+                        </div>
+                       
+                        <button id="cancelBtn" class="btn btn-outline-secondary mt-3">Cancelar</button>
+                    </div>
+                </section>
+
+                <section class="col-md-5 mb-4">
+                    <div class="card p-4 border rounded-3">
+                        <label for="appointmentTime" class="form-label fw-bold fs-5 d-flex align-items-center">
+                            <img src="../src/assets/clock.svg" alt="icono de reloj" width="30" class="me-2"> Selecciona
+                            la hora
+                        </label>
+                        <select id="selectHora" class="form-select mt-2" aria-label="Seleccione una hora">
+                            <option value="" disabled selected>Seleccione una hora</option>
                             <option>9:00 - 11:00</option>
                             <option>11:00 - 13:00</option>
                             <option>13:00 - 15:00</option>
                         </select>
 
-                        <label class="mt-3" for="mascotas">Mascotas:</label>
+                        <label for="mascotas" class="form-label mt-3 fw-bold fs-5 d-flex align-items-center">
+                            <img src="../src/assets/dog-bowl.svg" alt="icono de mascota" width="30" class="me-2"> Número
+                            de mascotas
+                        </label>
                         <div class="d-flex align-items-center justify-content-center">
-                            <button class="btn btn-outline-primary" id="decrease">-</button>
-                            <input type="number" id="mascotas" class="form-control text-center mx-2" value="1" min="1">
-                            <button class="btn btn-outline-primary" id="increase">+</button>
+                            <button class="btn btn-outline-secondary" id="decrease" aria-label="Disminuir mascotas">
+                                <img src="../src/assets/minus.svg" alt="icono de disminuir">
+                            </button>
+                            <input type="number" id="mascotas" class="form-control text-center mx-2" value="1" min="1"
+                                style="width: 60px;" aria-label="Cantidad de mascotas">
+                            <button class="btn btn-outline-secondary" id="increase" aria-label="Aumentar mascotas">
+                                <img src="../src/assets/plus.svg" alt="icono de aumentar">
+                            </button>
                         </div>
-
                         <div class="form-check mt-3">
-                            <input type="checkbox" class="form-check-input" id="terms">
+                            <input type="checkbox" class="form-check-input" id="terms"
+                                aria-label="Acepto los términos y condiciones">
                             <label for="terms" class="form-check-label">Acepto los términos y condiciones</label>
                         </div>
-
-                        <button class="btn btn-success w-100 mt-3">Confirmar</button>
+                        <button class="btn btn-success w-100 mt-3" id="confirmarBtn"
+                            aria-label="Confirmar cita">Confirmar cita</button>
                     </div>
+                </section>
+            </div>
+        </section>
+
+
+
+        <!-- Modal para Citas Programadas -->
+        <div class="modal fade" id="citasModal" tabindex="-1" aria-labelledby="citasModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h5 class="modal-title" id="citasModalLabel">📅 Mis Citas Programadas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </header>
+                    <div class="modal-body">
+                        <ul id="citasList" class="list-group">
+                            <li class="list-group-item d-flex align-items-center">
+                                <span>🕒 10:00 AM - 12:00 PM</span>
+                                <span class="ms-auto text-muted">Consulta Presencial</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </footer>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="../src/js/cita.js"></script>
 </body>
 
 </html>
