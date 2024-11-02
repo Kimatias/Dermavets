@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dermavets | Home </title>
+
+    <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./src/styles/styles.css">
+
+    <!-- HOJA DE ESTILOS -->
+    <link rel="stylesheet" href="./src/styles/styles-index.css">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./src/assets/Logo.svg" type="image/x-icon">
 </head>
 <body>
     <header class="header">
@@ -23,16 +29,23 @@
                 <input class="browser-bar" type="text" placeholder="¿Qué buscas para tu mascota?"><img id="lupa" src="./src/assets/search.svg" alt="">
             </div>
             <div class="container-iconos">
-                <img id="user" class="icono-header" src="./src/assets/person-fill.svg" alt="icono_de_usuario">
-                <img id="carrito" class="icono-header" src="./src/assets/cart-plus.svg" alt="icono_de_carrito_compras">
+                <a href="./public/Login.html"><img id="user" class="icono-header" src="./src/assets/person-fill.svg" alt="icono_de_usuario"></a>
+                <img id="carrito" class="icono-header" src="./src/assets/cart-shopping-solid.svg" alt="icono_de_carrito_compras">
             </div>
         </div>
         <nav class="nav-bar">
-            <p>Inicio</p>
-            <p>Productos</p>
-            <p>Nosotros</p>
+            <a href="/">Inicio</a>
+            <a href="/">Productos</a>
+            <a href="/">Nosotros</a>
         </nav>
+        <div class="mobile-menu inactive">
+            <a href="./index.html">Inicio</a>
+            <a href="/">Productos</a>                       <!-- Falta agregar el link -->
+            <a href="/">Nosotros</a>                        <!-- Falta agregar el link -->
+            <a href="./public/Login.html">Log In | Registro</a>
+        </div>
     </header>
+    <a href="https://api.whatsapp.com/send?phone=573171834266" target="_blank"><img id="boton-whatsApp" src="./src/assets/whatsapp.png" alt=""></a>
     <main> 
         <section class="container-welcome">
             <div class="texto">
@@ -46,48 +59,129 @@
             <h2>Productos</h2>
             <div class="products">
                 <article class="product-card">
-                    <div class="heart-detail"></div>
+                    <div class="heart-detail">
+                        <img id="heart" src="./src/assets/heart-fill.svg" alt="">
+                    </div>
                     <img src="./src/assets/img/productos/alimento/Gatos/chunky-gatos.jpg" alt="">
                     <h3>Chunky gatos</h3>
-                    <p>1 lb</p>
+                    <p>Adultos 500 gr</p>
                     <div>
-                        <p id="precio"><span>$</span>8.100</p>
+                        <p id="precio"><span>$</span> 8.100</p>
                         <button class="cart-plus">Añadir al carrito</button>
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="heart-detail"></div>
+                    <div class="heart-detail">
+                        <img id="heart" src="./src/assets/heart-fill.svg" alt="">
+                    </div>
                     <img src="./src/assets/img/productos/alimento/Perros/nutrecan-croquetas.jpg" alt="">
                     <h3>Nutrecan</h3>
                     <p>Croquetas 800 gr</p>
                     <div>
-                        <p id="precio"><span>$</span>6.500</p>
+                        <p id="precio"><span>$</span> 6.500</p>
                         <button class="cart-plus">Añadir al carrito</button>
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="heart-detail"></div>
+                    <div class="heart-detail">
+                        <img id="heart" src="./src/assets/heart-fill.svg" alt="">
+                    </div>
                     <img src="./src/assets/img/productos/alimento/Perros/dogourmet-adultos-1000.jpg" alt="">
                     <h3>Dogourmet</h3>
                     <p>Adultos 1 kg</p>
                     <div>
-                        <p id="precio"><span>$</span>6.500</p>
+                        <p id="precio"><span>$</span> 6.500</p>
                         <button class="cart-plus">Añadir al carrito</button>
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="heart-detail"></div>
+                    <div class="heart-detail">
+                        <img id="heart" src="./src/assets/heart-fill.svg" alt="">
+                    </div>
                     <img src="./src/assets/img/productos/alimento/Gatos/Q-ida-cat-500.webp" alt="">
                     <h3>Q-ida cat</h3>
                     <p>Adultos 500 gr</p>
                     <div>
-                        <p id="precio"><span>$</span>5.600</p>
+                        <p id="precio"><span>$</span> 5.600</p>
+                        <button class="cart-plus">Añadir al carrito</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="heart-detail">
+                        <img id="heart" src="./src/assets/heart-fill.svg" alt="">
+                    </div>
+                    <img src="./src/assets/img/productos/medicinas/meloxipet.png" alt="">
+                    <h3>Meloxipet</h3>
+                    <p>Suspensión 10 ml</p>
+                    <div>
+                        <p id="precio"><span>$</span> 14.500</p>
+                        <button class="cart-plus">Añadir al carrito</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="heart-detail">
+                        <img id="heart" src="./src/assets/heart-fill.svg" alt="">
+                    </div>
+                    <img src="./src/assets/img/productos/medicinas/alapiel.webp" alt="">
+                    <h3>Alapiel</h3>
+                    <p>Crema 50 gr</p>
+                    <div>
+                        <p id="precio"><span>$</span> 25.000</p>
                         <button class="cart-plus">Añadir al carrito</button>
                     </div>
                 </article>
             </div>
             <p id="see-more">Ver más...</p>
-        </section>  
+        </section>
+        <section class="container-testimonios">
+            <h2>Testimonios</h2>
+            <p>Nuestros clientes y sus mascotas son nuestra razón de ser. Por eso en Dermavets siempre encontrarás calidez en la atención para ti y tu mascota.</p>
+            <div class="testimonios">
+                <article class="testimonios-card">
+                    <img src="./src/assets/img/gatos/Gato-b&n.JPG" alt="gato en blanco y negro">
+                    <h3>Eder Guzmán</h3>
+                    <p>Muy buena atención, me gustó su compromiso con nuestras mascotas</p>
+                </article>
+                <article class="testimonios-card">
+                    <img src="./src/assets/img/perros/perro-jugando.jpg" alt="perro jugando">
+                    <h3>Yeimi Ruíz</h3>
+                    <p>¡Excelente atención!</p>
+                </article>
+                <article class="testimonios-card">
+                    <img src="./src/assets/img/perros/dog-3.jpeg" alt="Perros">
+                    <h3>Nidia Sánchez</h3>
+                    <p>Atención excelente. Muy especial la atención con nuestra mascota. Lo recomiendo!</p>
+                </article>
+            </div>
+            <img id="dog1" src="./src/assets/dog-animado1.svg" alt="">
+        </section> 
+        <section class="container-map">
+            <h2>Ubicación</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d644.8672504363893!2d-75.14346708964463!3d4.395236505001652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38d1afee82fbe1%3A0x7ca5bf8b6420a132!2sCentro%20Veterinario%20DermaVets%20Ibagu%C3%A9!5e0!3m2!1ses-419!2sco!4v1730163989373!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>Carrera 21 sur # 145-77. Arboleda Campestre. </p>
+            <p>Conjunto Yarumo, Torre 26 - apt 204</p>
+            <p id="ciudad">Ibagué, Colombia</p>
+        </section> 
     </main>
+    <footer>
+        <div class="container-redes">
+            <div class="redes">
+                <p>Nos puedes encontrar en</p>
+                <div>
+                    <a href="https://api.whatsapp.com/send?phone=573171834266" target="_blank"><img src="./src/assets/Whatsapp.svg" alt="whatsApp" ></a>
+                    <a href="https://www.instagram.com/dermavets1/" target="_blank"><img src="./src/assets/Instagram.svg" alt="instagram"></a>
+                    <a href="https://web.facebook.com/profile.php?id=100081980144296&_rdc=2&_rdr" target="_blank"><img src="./src/assets/Facebook.svg" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="vet-name">
+                <img class="logo" src="./src/assets/Logo.svg" alt="logo-Dermavets">
+                <h4>Dermavets</h4>
+            </div>
+        </div> 
+        <p>Copyright © 2024 Dermavets | All rights reserved</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="./src/js/script-index.js"></script>
 </body>
 </html>
