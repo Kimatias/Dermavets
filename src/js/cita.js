@@ -1,9 +1,14 @@
+// Asegúrate de importar el idioma español de flatpickr (puede variar según la implementación):
+// import flatpickr from "flatpickr";
+// import { Spanish } from "flatpickr/dist/l10n/es.js";
+// flatpickr.localize(Spanish); // Localiza en español
+
 // Inicialización del calendario y configuración
 const calendario = flatpickr("#fecha", {
   inline: true,
   minDate: "today",
   dateFormat: "Y-m-d",
-  locale: "es",
+  locale: "es", // Asegúrate de tener el archivo de idioma español cargado
   onChange: actualizarDisponibilidadHoras,
 });
 
@@ -17,6 +22,7 @@ const citasList = document.getElementById("citasList");
 
 // Actualiza la disponibilidad de horas según las citas
 function actualizarDisponibilidadHoras(selectedDates) {
+  if (selectedDates.length === 0) return; // Evita errores si no se selecciona una fecha
   const fechaSeleccionada = selectedDates[0].toISOString().split("T")[0];
   const horasOcupadas = citas
     .filter((cita) => cita.fecha === fechaSeleccionada)
@@ -27,14 +33,31 @@ function actualizarDisponibilidadHoras(selectedDates) {
   );
 }
 
-// Verifica si el formulario está completo
+// Verifica si el formulario está completo y muestra mensajes específicos
 function validarFormulario() {
   const fecha = calendario.input.value;
   const hora = selectHora.value;
   const consultaSeleccionada = document.querySelector("input[name='consulta']:checked");
+  const modalidadSeleccionada = document.querySelector("input[name='modalidad']:checked");
 
-  if (!fecha || !hora || !consultaSeleccionada || !termsCheckbox.checked) {
-    Swal.fire("❗ Error", "Completa todos los campos requeridos.", "error");
+  if (!fecha) {
+    Swal.fire("❗ Error", "Selecciona una fecha.", "error");
+    return false;
+  }
+  if (!hora) {
+    Swal.fire("❗ Error", "Selecciona una hora.", "error");
+    return false;
+  }
+  if (!consultaSeleccionada) {
+    Swal.fire("❗ Error", "Selecciona el tipo de consulta.", "error");
+    return false;
+  }
+  if (!modalidadSeleccionada) {
+    Swal.fire("❗ Error", "Selecciona si es presencial o virtual.", "error");
+    return false;
+  }
+  if (!termsCheckbox.checked) {
+    Swal.fire("❗ Error", "Acepta los términos y condiciones.", "error");
     return false;
   }
   return true;
@@ -44,21 +67,24 @@ function validarFormulario() {
 function guardarCita() {
   const fecha = calendario.input.value;
   const hora = selectHora.value;
+  const consulta = document.querySelector("input[name='consulta']:checked").value;
+  const modalidad = document.querySelector("input[name='modalidad']:checked").value;
   const mascotas = +document.getElementById("mascotas").value;
 
-  citas.push({ fecha, hora, mascotas });
+  // Añadir la cita a la lista
+  citas.push({ fecha, hora, consulta, modalidad, mascotas });
   localStorage.setItem("citas", JSON.stringify(citas));
 
   actualizarDisponibilidadHoras([new Date(fecha)]);
-  mostrarConfirmacion(fecha, hora);
+  mostrarConfirmacion(fecha, hora, consulta, modalidad);
   resetFormulario();
 }
 
 // Muestra un mensaje de confirmación de la cita
-function mostrarConfirmacion(fecha, hora) {
+function mostrarConfirmacion(fecha, hora, consulta, modalidad) {
   Swal.fire(
     "✅ Cita Confirmada",
-    `Su cita fue agendada para el ${fecha} a las ${hora}.`,
+    `Su cita fue agendada para el ${fecha} a las ${hora}.\nServicio: ${consulta}\nModalidad: ${modalidad}`,
     "success"
   );
 }
@@ -73,7 +99,11 @@ function resetFormulario() {
 // Muestra la lista de citas programadas en el modal
 function mostrarCitas() {
   citasList.innerHTML = citas
-    .map(({ fecha, hora, mascotas }) => `<li class="list-group-item">Fecha: ${fecha}, Hora: ${hora}, Mascotas: ${mascotas}</li>`)
+    .map(({ fecha, hora, consulta, modalidad, mascotas }) => 
+      `<li class="list-group-item">
+         Fecha: ${fecha}, Hora: ${hora}, Servicio: ${consulta}, Modalidad: ${modalidad}, Mascotas: ${mascotas}
+       </li>`
+    )
     .join("");
 }
 
