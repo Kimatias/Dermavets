@@ -106,16 +106,16 @@ function passwordFunction(typeOfForm) {
         const spanPasword = document.querySelector('#register__span-password');
 
         if (isInRegister) {
-            const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>_\-]).{8,}$/;
+            const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>_\-])\S{8,}$/;
 
             if (passwordPattern.test(password)) {
                 spanPasword.textContent = messages.passwordValid;
                 spanPasword.style.color = colores.greenLight;
-                passwordConfirmFunction();
+                isPasswordEqual();
             } else {
                 spanPasword.textContent = messages.passwordInvalid;
                 spanPasword.style.color = colores.pink;
-                passwordConfirmFunction();
+                isPasswordEqual();
             }
         } else {
             if (password) {
@@ -436,6 +436,9 @@ document.querySelector('.tab--1').addEventListener('click', () => {
                 element.value = '';
             })
 
+            document.querySelector('#register__password').type = 'password';
+            document.querySelector('#register__password-confirm').type = 'password';
+
             // SETEO DE VALORES
             isInRegister = true;
             reseatElements();
@@ -476,6 +479,8 @@ document.querySelector('.tab--2').addEventListener('click', () => {
             clearInput.forEach(element => {
                 element.value = '';
             })
+            
+            document.querySelector('#register__password').type = 'password';
     
             // SETEO DE VALORES
             isInRegister = false;
