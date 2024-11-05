@@ -129,6 +129,11 @@ function toggleMobileMenu() {
 }
 
 function applyFilters() {
+    let selectedDog = false;
+    let selectedCat = false;
+    let selectedFish = false;
+    let thereAreProducts = false;
+
     parametersFilter = [];
     productsFilter = [];
     currentPage = 1;
@@ -137,41 +142,85 @@ function applyFilters() {
 
     const selectedCategory = document.querySelectorAll('input[type="checkbox"]:checked');
 
+    selectedCategory.forEach(input => {
+        if (input.id == 'dog') {
+            selectedDog = true;
+        }
+
+        if (input.id == 'cat') {
+            selectedCat = true;
+        }
+
+        if (input.id == 'fish') {
+            selectedFish = true;
+        }
+
+        if (input.id != 'dog' && input.id != 'cat' && input.id != 'fish') {
+            thereAreProducts = true;
+        }
+    });
+
     selectedCategory.forEach(checked => {
-        if (checked.id == 'dog') {
-            selectedCategory.forEach(food =>{
-                if (food.id != 'dog' && food.id != 'cat' && food.id != 'fish') {
+        if (!selectedCat && !selectedFish && !selectedDog) {
+            parametersFilter.push({
+                mark: checked.id,
+            });
+        }
+
+        if (selectedDog) {
+                if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
                     parametersFilter.push({
-                        mark: food.id,
+                        mark: checked.id,
                         animal: 'dog'
                     });
                 }
-            })
+        } 
 
+        if (selectedCat) {
+            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                parametersFilter.push({
+                    mark: checked.id,
+                    animal: 'cat'
+                });
+            }
+        } 
+        
+        if (selectedFish) {
+            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                parametersFilter.push({
+                    mark: checked.id,
+                    animal: 'fish'
+                });
+            }
         }
 
-        if (checked.id == 'cat') {
-            selectedCategory.forEach(food =>{
-                if (food.id!= 'dog' && food.id!= 'cat' && food.id!= 'fish') {
-                    parametersFilter.push({
-                        mark: food.id,
-                        animal: 'cat'
-                    });
-                }
-            });
-        }
+        if (!thereAreProducts) {
+            if (selectedDog) {
+                productsListDB.forEach(product => {
+                    if (product.animal == 'dog') {
+                        productsFilter.push(product);
+                    }
+                });
+            }
+            
+            if (selectedCat) {
+                productsListDB.forEach(product => {
+                    if (product.animal == 'cat') {
+                        productsFilter.push(product);
+                    }
+                });
+            }
 
-        if (checked.id == 'fish') {
-            selectedCategory.forEach(food =>{
-                if (food.id!= 'dog' && food.id!= 'cat' && food.id!= 'fish') {
-                    parametersFilter.push({
-                        mark: food.id,
-                        animal: 'fish'
-                    });
-                }
-            });
+            if (selectedFish) {
+                productsListDB.forEach(product => {
+                    if (product.animal == 'fish') {
+                        productsFilter.push(product);
+                    }
+                });
+            }
+            thereAreProducts = true;
         }
-    });
+        });
 
     containerProductsHTML.innerHTML = "";
 
@@ -181,7 +230,9 @@ function applyFilters() {
             if (productDB.mark == productFilter.mark && productDB.animal == productFilter.animal) {
                 productsFilter.push(productDB);
             }
-
+            if (productDB.mark == productFilter.mark && !selectedCat && !selectedFish && !selectedDog) {
+                productsFilter.push(productDB);
+            }
         });
 
     });
@@ -272,7 +323,7 @@ function nextPage() {
     }
 }
 
-function goToRegister(){
+function goToRegister() {
     window.location.href = "./login.html";
 }
 // Inicializa mostrando la primera página

@@ -18,9 +18,10 @@ const previousBtn = document.querySelector('#previous-page');
 const nextBtn = document.querySelector('#next-page');
 
 let addToCartBtn;
+let addToFavoritesBtn;
 
 let currentPage = 1;
-const productsPerPage = 3;
+const productsPerPage = 12;
 
 const productsListDB = [
     {
@@ -30,7 +31,7 @@ const productsListDB = [
         description: 'Product 1',
         price: 150,
         img: 'nutrecan-croquetas.jpg',
-        animals: 'dog'
+        animal: 'dog'
     },
     {
         id: 2,
@@ -39,7 +40,7 @@ const productsListDB = [
         description: 'Product 2',
         price: 200,
         img: 'donkat-adultos-7000.jpg',
-        animals: 'cat'
+        animal: 'cat'
     },
     {
         id: 3,
@@ -48,7 +49,7 @@ const productsListDB = [
         description: 'Product 3',
         price: 100,
         img: 'Q-ida-cat-500.webp',
-        animals: 'cat'
+        animal: 'cat'
     },
     {
         id: 4,
@@ -57,7 +58,7 @@ const productsListDB = [
         description: 'Product 4',
         price: 250,
         img: 'comida-peces.webp',
-        animals: 'fish'
+        animal: 'fish'
     },
     {
         id: 5,
@@ -66,7 +67,7 @@ const productsListDB = [
         description: 'Product 5',
         price: 100,
         img: 'Q-ida-can-1000.jpg',
-        animals: 'dog'
+        animal: 'dog'
     }
 
 ];
@@ -81,8 +82,6 @@ let parametersFilter = [];
 menuBurguer.addEventListener('click', toggleMobileMenu);
 
 function filterForAnimal() {
-
-    console.log(dogInput.checked, catInput.checked, fishInput.checked);
 
     if (catInput.checked && dogInput.checked) {
         productCatDog.forEach(product => product.style.display = 'inline-block');
@@ -130,6 +129,11 @@ function toggleMobileMenu() {
 }
 
 function applyFilters() {
+    let selectedDog = false;
+    let selectedCat = false;
+    let selectedFish = false;
+    let thereAreProducts = false;
+
     parametersFilter = [];
     productsFilter = [];
     currentPage = 1;
@@ -138,21 +142,97 @@ function applyFilters() {
 
     const selectedCategory = document.querySelectorAll('input[type="checkbox"]:checked');
 
-    selectedCategory.forEach(idProduct => {
-        if (idProduct.id != 'dog' && idProduct.id != 'cat' && idProduct.id != 'fish') {
-            parametersFilter.push(idProduct.id);
+    selectedCategory.forEach(input => {
+        if (input.id == 'dog') {
+            selectedDog = true;
+        }
+
+        if (input.id == 'cat') {
+            selectedCat = true;
+        }
+
+        if (input.id == 'fish') {
+            selectedFish = true;
+        }
+
+        if (input.id != 'dog' && input.id != 'cat' && input.id != 'fish') {
+            thereAreProducts = true;
         }
     });
+
+    selectedCategory.forEach(checked => {
+        if (!selectedCat && !selectedFish && !selectedDog) {
+            parametersFilter.push({
+                mark: checked.id,
+            });
+        }
+
+        if (selectedDog) {
+                if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                    parametersFilter.push({
+                        mark: checked.id,
+                        animal: 'dog'
+                    });
+                }
+        } 
+
+        if (selectedCat) {
+            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                parametersFilter.push({
+                    mark: checked.id,
+                    animal: 'cat'
+                });
+            }
+        } 
+        
+        if (selectedFish) {
+            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                parametersFilter.push({
+                    mark: checked.id,
+                    animal: 'fish'
+                });
+            }
+        }
+
+        if (!thereAreProducts) {
+            if (selectedDog) {
+                productsListDB.forEach(product => {
+                    if (product.animal == 'dog') {
+                        productsFilter.push(product);
+                    }
+                });
+            }
+            
+            if (selectedCat) {
+                productsListDB.forEach(product => {
+                    if (product.animal == 'cat') {
+                        productsFilter.push(product);
+                    }
+                });
+            }
+
+            if (selectedFish) {
+                productsListDB.forEach(product => {
+                    if (product.animal == 'fish') {
+                        productsFilter.push(product);
+                    }
+                });
+            }
+            thereAreProducts = true;
+        }
+        });
 
     containerProductsHTML.innerHTML = "";
 
     parametersFilter.forEach(productFilter => {
         productsListDB.forEach(productDB => {
 
-            if (productDB.mark == productFilter) {
+            if (productDB.mark == productFilter.mark && productDB.animal == productFilter.animal) {
                 productsFilter.push(productDB);
             }
-
+            if (productDB.mark == productFilter.mark && !selectedCat && !selectedFish && !selectedDog) {
+                productsFilter.push(productDB);
+            }
         });
 
     });
@@ -197,7 +277,7 @@ function displayProducts(page) {
                 <div class="heart-detail">
                     <img id="heart" src="../src/assets/heart-fill.svg" alt="">
                 </div>
-                <img src="../src/assets/img/productos/alimento/${product.animals == 'cat' ? 'Gatos' : product.animals == 'dog' ? 'Perros' : 'Peces'}/${product.img}" alt="${product.img}">
+                <img src="../src/assets/img/productos/alimento/${product.animal == 'cat' ? 'Gatos' : product.animal == 'dog' ? 'Perros' : 'Peces'}/${product.img}" alt="${product.img}">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <p id="precio"><span>$</span> ${product.price}</p>
@@ -209,6 +289,15 @@ function displayProducts(page) {
     });
 
     addToCartBtn = document.querySelectorAll('.btn-add-cart');
+    addToFavoritesBtn = document.querySelectorAll('.heart-detail');
+
+    // AÑADIR A FAVORITOS
+    addToFavoritesBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            goToRegister();
+        });
+    });
+
     // AÑADIR AL CARRO
     addToCartBtn.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -238,12 +327,9 @@ function nextPage() {
     }
 }
 
-function addToCartFunction(productName) {
-    const product = productsFilter.find(product => product.name === productName);
-    console.log("Añadido al carrito:", product.id);
-    // Lógica adicional para añadir al carrito
+function goToRegister() {
+    window.location.href = "./login.html";
 }
-
 // Inicializa mostrando la primera página
 displayProducts(currentPage);
 
@@ -299,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         try {
-            const res = await fetch('http://localhost:5000/api/productsUser', {
+            const res = await fetch('http://localhost:5000/api/products', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -318,6 +404,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Error al obtener productos: ' + error.message);
         }
     }
-
-    document.querySelector('#form__register').addEventListener('submit', requestProducts)
 })
+

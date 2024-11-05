@@ -38,6 +38,8 @@ eventoBtn(false, 'login');
 const clearSpan = document.querySelectorAll('.clear-span');
 const clearInput = document.querySelectorAll('.clear-input');
 
+const btnGoBack = document.querySelector('#btn-go-back');
+
 let isOkPasswordRegister;
 let isOkNameRegister;
 let isOkEmailRegister;
@@ -104,7 +106,8 @@ function passwordFunction(typeOfForm) {
     if (typeOfForm === 'register') {
         const password = document.querySelector('#register__password').value;
         const spanPasword = document.querySelector('#register__span-password');
-
+        passwordConfirmFunction();
+        
         if (isInRegister) {
             const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>_\-])\S{8,}$/;
 
@@ -373,6 +376,11 @@ function reseatElements() {
     window.scrollTo(0, 0);
 }
 
+//IR PARA ATRAS
+btnGoBack.addEventListener('click', ()=>{
+    window.location.href = './index.html';
+})
+
 // SELECCIÓN DESDE EL DOM Y ADDEVENTLISTENER
 document.querySelector('#register__email').addEventListener('input', () => {
     emailFunction('register');
@@ -408,9 +416,12 @@ document.querySelector('.tab--1').addEventListener('click', () => {
     if (!isInRegister) {
         setTimeout(() => {
             display.style.opacity = 0;
+            btnGoBack.style.display = 'none';
             document.body.style.background = 'linear-gradient(45deg, #279ea077, #ec455577)';
         }, 300)
         setTimeout(() => {
+            btnGoBack.style.display = 'flex';
+
             eventoBtn(false);
             document.body.style.background = 'linear-gradient(45deg, #279ea077, #ffffff)';
             display.style.flexDirection = 'row-reverse';
@@ -452,9 +463,12 @@ document.querySelector('.tab--2').addEventListener('click', () => {
     if (isInRegister) {
         setTimeout(() => {
             display.style.opacity = 0;
+            btnGoBack.style.display = 'none';
             document.body.style.background = 'linear-gradient(220deg, #ec455577, #279ea077)';
         }, 300)
         setTimeout(() => {
+            btnGoBack.style.display = 'flex';
+
             document.body.style.background = 'linear-gradient(220deg, #ec455577, #ffffff)';
             display.style.flexDirection = 'row';
     
