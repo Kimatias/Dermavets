@@ -631,22 +631,22 @@ footer p {
     display: none;
   }
 
-  .logo {              /*nuevo elemento para media query*/
+  .logo {              
     width: 50px;
     height: 50px;
     margin: 10px;      
   }                    
 
-  .container-iconos {     /*nuevo elemento para media query*/
+  .container-iconos {     
     margin-right: 0px;    
   }
 
-  #user {
+  #carrito {
     display: none;
   }
 
-  #carrito {
-    margin: 0px 10px;   /*modificacion linea*/
+  #user-picture {
+    margin: 0px 10px;   
   }
 
   /*ESTILOS DEL MAIN*/
