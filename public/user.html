@@ -1,110 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../src/styles/user.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/styles/user.css" />
+    <link rel="stylesheet" href="../src/styles/footer.css" />
+    <link rel="stylesheet" href="../src/styles/navbar.css" />
     <title>Dermavets-user</title>
-</head>
-<body>
-    <header class="header">
-        <div class="up-nav-bar">
-            <img id="menu-hamburguer" src="../src/assets/list.svg" alt="hamburguesa">
-            <div class="vet-name">
-                <img class="logo" src="../src/assets/image 1@3x.svg" alt="logo-Dermavets">
-                <h1>DermaVets</h1>
-            </div>
-            <div class="search">
-                <input class="browser-bar" type="text" placeholder="¿Qué buscas para tu mascota?"><img id="lupa" src="../src/assets/search.svg" alt="buscador">
-            </div>
-            <div class="container-iconos">
-                <a href="./public/Login.html"><img id="user" class="icono-header" src="../src/assets/person-fill.svg" alt="icono_de_usuario"></a>
-                <img id="carrito" class="icono-header" src="../src/assets/cart-shopping-solid.svg" alt="icono_de_carrito_compras">
-            </div>
-        </div>
-        <nav class="nav-bar">
-            <a href="/">Inicio</a>
-            <a href="/">Productos</a>
-            <a href="/">Nosotros</a>
-        </nav>
-        <div class="mobile-menu inactive">
-            <a href="./index.html">Inicio</a>
-            <a href="/">Productos</a>                       <!-- Falta agregar el link -->
-            <a href="/">Nosotros</a>                        <!-- Falta agregar el link -->
-            <a href="./public/Login.html">Log In | Registro</a>
-        </div>
-</header>
-
-<main>
-
-    <section class="datos">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    <main>
+      <section class="datos">
         <div class="imagenes">
-            <img src="../src/assets/user/Foto.svg" alt="imagen_usuario">
-            <img id="mascota" src="../src/assets/user/Cat1 1.svg" alt="imagen_mascota">
+          <img src="../src/assets/user/Foto.svg" alt="imagen_usuario" />
+          <img
+            id="mascota"
+            src="../src/assets/user/Cat1 1.svg"
+            alt="imagen_mascota"
+          />
         </div>
-    
+
         <div class="datos_usuario">
-            <h1>Lina Gomez</h1>
-            <p>lina-gomez@dermavets.com</p>
+          <h1>Lina Gomez</h1>
+          <p>lina-gomez@dermavets.com</p>
         </div>
-    </section>
+      </section>
 
-    <section class="nav_usuario">
+      <section class="nav_usuario">
         <article class="ancles">
-            <a href="#pedidos">
-               <img src="../src/assets/user/image 26.svg" alt="icono_pedidos"> Pedidos   
-            </a>
+          <a href="#pedidos">
+            <img src="../src/assets/user/image 26.svg" alt="icono_pedidos" />
+            Pedidos
+          </a>
 
-            <a href="#citas">
-                <img src="../src/assets/user/image 27.svg" alt="icono_pedidos">Información   
-                </a>
+          <a href="#citas">
+            <img
+              src="../src/assets/user/image 27.svg"
+              alt="icono_pedidos"
+            />Información
+          </a>
 
-            <a href="#informacion">
-                 <img src="../src/assets/user/image 30.svg" alt="icono_pedidos">Ayuda 
-            </a> 
-            
-            <a href="#examanes">
-                <img src="../src/assets/user/image 28.svg" alt="icono_pedidos">Citas   
-            </a>
+          <a href="#informacion">
+            <img
+              src="../src/assets/user/image 30.svg"
+              alt="icono_pedidos"
+            />Ayuda
+          </a>
 
+          <a href="#examanes">
+            <img
+              src="../src/assets/user/image 28.svg"
+              alt="icono_pedidos"
+            />Citas
+          </a>
 
-            <a href="#ayuda">
-                <img src="../src/assets/user/image 29.svg" alt="icono_pedidos">Examenes   
-            </a>
+          <a href="#ayuda">
+            <img
+              src="../src/assets/user/image 29.svg"
+              alt="icono_pedidos"
+            />Examenes
+          </a>
 
-            <a id="log_out" href="#cerrar sesion">
-                <img src="../src/assets/power.svg" alt="icono_pedidos">Cerrar sesión                   
-            </a>
-
+          <a id="log_out" href="#cerrar sesion">
+            <img src="../src/assets/power.svg" alt="icono_pedidos" />Cerrar
+            sesión
+          </a>
         </article>
-    </section>
-</main>
-<footer>
-    <div class="container-redes">
-        <div class="redes">
-            <p>Nos puedes encontrar en</p>
-            <div>
-                <a href="https://api.whatsapp.com/send?phone=573171834266" target="_blank"><img src="../src/assets/Whatsapp.svg" alt="whatsApp" ></a>
-                <a href="https://www.instagram.com/dermavets1/" target="_blank"><img src="../src/assets/Instagram.svg" alt="instagram"></a>
-                <a href="https://web.facebook.com/profile.php?id=100081980144296&_rdc=2&_rdr" target="_blank"><img src="../src/assets/Facebook.svg" alt="Facebook"></a>
-            </div>
-        </div>
-        <div class="vet-name">
-            <img class="logo" src="../src/assets/Logo.svg" alt="logo-Dermavets">
-            <h4>Dermavets</h4>
-        </div>
-   </div> 
-   <p>Copyright © 2024 Dermavets | All rights reserved</p>
+      </section>
+    </main>
+    <!-- Footer -->
+    <div id="footer-container"></div>
 
-
-</footer>
-
-
-<script src="/src/js/global.js"></script>
-
-
-    
-</body>
+    <script src="/src/js/global.js"></script>
+    <script defer src="../src/js/navbar.js"></script>
+    <script src="../src/js/footer.js"></script>
+  </body>
 </html>
