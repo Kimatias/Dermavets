@@ -1,0 +1,501 @@
+
+/* Reset básico */
+body, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root 
+    {
+    --verde:#279ea0;
+    --cereza:#ec4555;
+    --verdeoscuro: #2a4a54;
+    --vinotinto: #632329;
+    --blancofrio:#f6f5f4;
+    --casinegro:#1d1b1d;
+    --primary-font: "Lalezar", system-ui;
+    --secondary-font: "Yusei Magic", system-ui;
+    }
+/* Encabezado */
+/*ESTILOS DEL HEADER*/
+.header {
+    position: sticky;
+    top: 0;
+    width: auto;
+    background-color: #ffffff;
+    z-index: 1;
+  }
+  
+  .up-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #menu-hamburguer {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  
+  .vet-name {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+  }
+  
+  h1 {
+    font-size: 3.0rem;
+    font-family: var(--primary-font);
+    color: var(--casinegro);
+    letter-spacing: 1px;
+  }
+  
+  .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: 35px;
+    border: solid 1px var(--verde);
+    border-radius: 8px;
+  }
+  
+  .browser-bar {
+    height: 25px;
+    width: 200px;
+    border: none;
+  }
+  
+  #lupa {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+  }
+  
+  .container-iconos {
+    margin-right: 30px;
+    cursor: pointer;
+  }
+  
+  .icono-header {
+    height: 25px;
+    width: 25px;
+  }
+  
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    padding: 0 20px;
+    background-color: var(--verde);
+    color:var(--blancofrio);
+  }
+  
+  .nav-bar a {
+    display: inline-block;
+    margin: 10px;
+    color: var(--blancofrio);
+    font-size: 1.5rem;
+    font-family: var(--secondary-font);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .nav-bar a:hover {
+    color: var(--verdeoscuro);
+  }
+  
+  /*ESTILOS DE MENU MOBILE (DENTRO DEL HEADER)*/
+  
+  .mobile-menu {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--verde);
+  }
+  
+  .mobile-menu a {
+    padding: 10px;
+    color: var(--blancofrio);
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .inactive {    /*clase creada para desactivar o activar la vista del menu mobile al dar click*/
+    display: none;
+  }
+  
+  .animacion-menu {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+      }
+  
+.mobile-menu a:hover {
+  color: var(--verdeoscuro);
+}
+/* Secciones Generales */
+section {
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #C84D56;
+    font-family: var(--secondary-font)
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Sección Nosotros */
+.nosotros .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column; /* Cambiado para que el título esté arriba */
+}
+
+.nosotros h2 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #C84D56;
+    text-align: center; 
+    font-family: var(--primary-font)
+}
+
+.nosotros .image {
+    width: 100%; /* Asegurar que el contenido esté centrado */
+}
+
+.nosotros .container-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nosotros .text {
+    width: 50%;
+    padding: 20px;
+    font-size: 2em;
+    font-family: var(--secondary-font)
+}
+
+.nosotros .image {
+    width: 30%;
+}
+
+.nosotros .image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* Sección Misión */
+.containerp
+{ width: 85%;
+  background-color: rgb(255, 255, 255) ;
+  border-radius: 10px;
+  padding: 10px;
+}
+.mision {
+    padding: 20px;
+    background-color: #279ea028;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mision .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    flex-direction: column; 
+    text-align: left; /
+}
+
+.mision h2 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #C84D56; 
+    align-self: flex-start; 
+    text-align: left; 
+    width: 100%;
+    margin-left: 50px;
+    font-family: var(--primary-font)
+}
+
+.mision .container-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+}
+
+.mision .text {
+    text-align: left; 
+    max-width: 500px;
+    padding: 20px;
+    font-size: 2em;
+    font-family: var(--secondary-font)
+}
+
+.mision .image {
+    width: 30%;
+}
+
+.mision .image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Sección vision */
+.containerV
+{ width: 85%;
+  background-color: rgb(255, 255, 255) ;
+  border-radius: 10px;
+  padding: 10px;
+}
+.vision {
+    padding: 20px;
+    background-color: #ec455628;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vision .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    flex-direction: column; 
+    text-align: left; /
+}
+
+.vision h2 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #09c2a9; 
+    align-self: flex-start; 
+    text-align: right; 
+    width: 90%;
+    margin-left: 50px;
+    font-family: var(--primary-font)
+}
+
+.vision .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.vision .text p {
+    font-size: 2em;
+    text-align: left; 
+    max-width: 500px;
+    padding-left: 20px;
+    font-family: var(--secondary-font)
+}
+
+.vision .image {
+    width: 30%;
+}
+
+.vision .image img {
+    width: 100%;
+    border-radius: 10px;
+}
+/* Sección La Médica */
+.medica {
+    padding: 20px;
+    text-align: center;
+}
+
+.medica h2 {
+        color: #d9534f; 
+        font-size: 4rem;
+        margin-bottom: 10px; 
+        position: relative;
+        top: -20px; 
+        font-family: var(--primary-font)
+    }
+
+.medica .card {
+    display: inline-block;
+    padding: 40px 20px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+    position: relative; 
+   
+}
+
+.medica .profile-container {
+    position: absolute;
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.medica .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid #ffffff; 
+    width: 100%;
+}
+
+.medica h3 {
+    color: #46a9a6; 
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: var(--primary-font)
+}
+
+.medica p {
+    font-size: 2em;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    font-family: var(--secondary-font)
+}
+
+/*ESTILOS DEL FOOTER*/
+
+footer {
+    padding: 5% 10%;
+    color: var(--blancofrio);
+    background-color: var(--casinegro);
+    font-family: var(--primary-font);
+  }
+  
+  footer h4 {
+    color: var(--blancofrio);
+    font-size: 3.0rem;
+    letter-spacing: 1px;
+  }
+  
+  .container-redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .container-redes p{
+    font-size: 2.2rem;
+  }
+  
+  footer p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  
+  .redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .redes img {
+    width: 70px;
+    padding: 10px;
+  }
+  
+  .redes img:hover {
+    border-radius: 50%;
+    box-shadow: var(--verde) 0.5em 0.5em 1.5em, var(--verde) -0.5em -0.5em 1.5em; ;
+  }
+
+  .container-redes .logo {
+    margin-left: 0px;
+  }
+  
+  /*MEDIA QUERIES*/
+  
+  @media (max-width: 704px){
+    
+    /*ESTILOS DEL HEADER*/
+  
+    .nav-bar {
+      display: none;
+    }
+  
+    .browser-bar {
+      display: none;
+    }
+  
+    .header {
+      background-color: #279ea0;
+    }
+  
+    .up-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    #menu-hamburguer {
+      display: block;
+    }
+  
+    .search {
+      display: none;
+    }
+  
+    #lupa {
+      display: none;
+    }
+  
+    #user {
+      display: none;
+    }
+  
+    #carrito {
+      margin-right: 10px;
+    }
+  
+    /*ESTILOS DEL FOOTER*/
+  
+    .container-redes {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /*QUERY PARA OCULTAR EL MENU MOBILE EN TAMAÑOS DE PANTALLA GRANDES*/
+  
+  @media (min-width: 704px){
+    .mobile-menu {
+      display: none;
+    }
+  }
+  
+  
+  
