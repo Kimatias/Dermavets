@@ -32,7 +32,7 @@ const messageErrorServidor = `<div id="box-message">
             </div>`
 
 btnGoBack.addEventListener('click', () => {
-    window.location.href = './login.html';
+    window.location.href = './Login.html';
 });
 async function enviarCorreoDeRecuperacion(email, token) {
     const transporter = nodemailer.createTransport({
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const btnOk = document.querySelector('.message-ok');
 
                 btnOk.addEventListener('click', () => {
-                    window.location.href = './login.js';
+                    window.location.href = './Login.js';
 
                 });
             } else {
