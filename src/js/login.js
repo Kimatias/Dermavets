@@ -1,45 +1,44 @@
 const colores = {
-  pink: "#ec4555",
-  green: "#279ea0",
-  greenLight: "#008000",
-  greenDark: "#2a4a54",
-  gray: "#808080",
-  white: "#ffffff",
-};
+    pink: '#ec4555',
+    green: '#279ea0',
+    greenLight: '#008000',
+    greenDark: '#2a4a54',
+    gray: '#808080',
+    white: '#ffffff',
+}
 
 const messages = {
-  passwordConfirmValid: "¡La contraseña es la misma!",
-  passwordConfirmInalid: "¡La contraseña no es la misma!",
-  passwordValid: "¡Contraseña válida!",
-  passwordInvalid:
-    "La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y un carácter especial.",
-  nameValid: "¡Usuario válido!",
-  nameInvalid: "El Usuario no es válido!",
-  emailValid: "¡Email válido!",
-  emailInvalid: "El Email no es válido!",
+    passwordConfirmValid: '¡La contraseña es la misma!',
+    passwordConfirmInalid: '¡La contraseña no es la misma!',
+    passwordValid: '¡Contraseña válida!',
+    passwordInvalid: 'La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y un carácter especial.',
+    nameValid: '¡Usuario válido!',
+    nameInvalid: 'El Usuario no es válido!',
+    emailValid: '¡Email válido!',
+    emailInvalid: 'El Email no es válido!',
 };
 
-const display = document.querySelector("#main__container");
-const formRegister = document.querySelector("#form__register");
-const formLogin = document.querySelector("#form__login");
+const display = document.querySelector('#main__container');
+const formRegister = document.querySelector('#form__register');
+const formLogin = document.querySelector('#form__login');
 
-const spanTitleImg = document.querySelector(".img-title");
-const imgCat = document.querySelector("#img-cat");
-const imgDog = document.querySelector("#img-dog");
+const spanTitleImg = document.querySelector('.img-title');
+const imgCat = document.querySelector('#img-cat');
+const imgDog = document.querySelector('#img-dog');
 
-const iconPasswordRegister = document.querySelector("#register__icon-password");
-const iconPasswordConfirmRegister = document.querySelector(
-  "#register__icon-password-confirm"
-);
-const btnSubmitRegister = document.querySelector("#register__btn-submit");
+const iconPasswordRegister = document.querySelector('#register__icon-password');
+const iconPasswordConfirmRegister = document.querySelector('#register__icon-password-confirm');
+const btnSubmitRegister = document.querySelector('#register__btn-submit');
 
-const iconPasswordLogin = document.querySelector("#login__icon-password");
-const btnSubmitLogin = document.querySelector("#login__btn-submit");
-eventoBtn(false, "register");
-eventoBtn(false, "login");
+const iconPasswordLogin = document.querySelector('#login__icon-password');
+const btnSubmitLogin = document.querySelector('#login__btn-submit');
+eventoBtn(false, 'register');
+eventoBtn(false, 'login');
 
-const clearSpan = document.querySelectorAll(".clear-span");
-const clearInput = document.querySelectorAll(".clear-input");
+const clearSpan = document.querySelectorAll('.clear-span');
+const clearInput = document.querySelectorAll('.clear-input');
+
+const btnGoBack = document.querySelector('#btn-go-back');
 
 let isOkPasswordRegister;
 let isOkNameRegister;
@@ -52,6 +51,7 @@ let isInRegister = true;
 let isIconPasswordReActive = false;
 let isIconPasswordConfirmReActive = false;
 let isIconPasswordLoActive = false;
+
 
 // CONFIRMA SI TODO FUE DIGITADO CORRECTAMENTE
 function isAllGood(typeOfForm) {
@@ -180,6 +180,7 @@ function nameFunction() {
 
 // CONFIRMA EN TIEMPO REAL SI EL EMAIL CUMPLE CON PARAMETROS
 function emailFunction(typeOfForm) {
+
   if (typeOfForm === "register") {
     const email = document.querySelector("#register__email").value;
     if (isInRegister) {
@@ -384,6 +385,10 @@ function reseatElements() {
   window.scrollTo(0, 0);
 }
 
+btnGoBack.addEventListener('click', ()=>{
+  window.location.href = './index.html';
+})
+
 // SELECCIÓN DESDE EL DOM Y ADDEVENTLISTENER
 document.querySelector("#register__email").addEventListener("input", () => {
   emailFunction("register");
@@ -453,6 +458,9 @@ document.querySelector(".tab--1").addEventListener("click", () => {
         element.value = "";
       });
 
+      document.querySelector('#register__password').type = 'password';
+      document.querySelector('#register__password-confirm').type = 'password';
+
       // SETEO DE VALORES
       isInRegister = true;
       reseatElements();
@@ -493,6 +501,8 @@ document.querySelector(".tab--2").addEventListener("click", () => {
       clearInput.forEach((element) => {
         element.value = "";
       });
+
+      document.querySelector('#register__password').type = 'password';
 
       // SETEO DE VALORES
       isInRegister = false;
