@@ -1,0 +1,83 @@
+:root {
+  /*Colores*/
+  --verde: #279ea0;
+  --cereza: #ec4555;
+  --verdeoscuro: #2a4a54;
+  --vinotinto: #632329;
+  --blancofrio: #f6f5f4;
+  --casinegro: #1d1b1d;
+  --grisaceo: #696987;
+  --primary-font: "Lalezar", system-ui;
+  --secondary-font: "Yusei Magic", system-ui;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+    font-size: 80%;
+  }
+/*ESTILOS DEL FOOTER*/
+
+footer {
+  padding: 5% 10%;
+  color: var(--blancofrio);
+  background-color: var(--casinegro);
+  font-family: var(--primary-font);
+}
+
+footer h4 {
+  color: var(--blancofrio);
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.container-redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container-redes p {
+  font-size: 2.2rem;
+}
+
+footer p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.redes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.redes img {
+  width: 50px;
+  margin: 10px;
+}
+
+.redes img:hover {
+  border-radius: 50%;
+  box-shadow: var(--verde) 0.5em 0.5em 1.5em, var(--verde) -0.5em -0.5em 1.5em;
+}
+
+.container-redes .logo {
+  margin-left: 0px;
+}
+
+/*Media queries*/
+
+@media (max-width: 704px) {
+  /*ESTILOS DEL FOOTER*/
+
+  .container-redes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
