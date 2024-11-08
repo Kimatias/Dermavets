@@ -4,6 +4,8 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../config.js";
 import { authModel } from "../models/auth.model.js";
 
+
+
 export class authController {
   static async register(req, res) {
     const { id, email, password, confirmPassword, username } = req.body;
@@ -85,7 +87,7 @@ export class authController {
 
       // Crear y guardar el token de acceso JWT en una cookie
       const token = await createAccessToken({ id: customer.id_cliente });
-      res.cookie("token", token);
+      
 
       
 
