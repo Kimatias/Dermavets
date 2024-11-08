@@ -10,7 +10,7 @@ function createHeaderComponent() {
       <div class="up-nav-bar">
           <img id="menu-hamburguer" src="../src/assets/list.svg" alt="">
           <div class="vet-name">
-              <img class="logo" src="../src/assets/icons/Logo.svg" alt="logo-Dermavets">
+              <img class="logo" src="../src/assets/Logo.svg" alt="logo-Dermavets">
               <h1>DermaVets</h1>
           </div>
           <div class="search">
@@ -18,18 +18,18 @@ function createHeaderComponent() {
           </div>
           <div class="container-iconos">
               <a href="/public/Login.html"><img id="user" class="icono-header" src="../src/assets/person-fill.svg" alt="icono_de_usuario"></a>
-              <img id="carrito" class="icono-header" src="../src/assets/cart-shopping-solid.svg" alt="icono_de_carrito_compras">
+              <a href="/public/Carrito.html"><img id="carrito" class="icono-header" src="../src/assets/cart-shopping-solid.svg" alt="icono_de_carrito_compras"></a>
           </div>
       </div>
       <nav class="nav-bar">
           <a href="/public/index.html">Inicio</a>
-          <a href="/">Productos</a>
-          <a href="/">Nosotros</a>
+          <a href="/public/products.html">Productos</a>
+          <a href="/public/Nosotros.html">Nosotros</a>
       </nav>
       <div class="mobile-menu inactive">
           <a href="/public/index.html">Inicio</a>
-          <a href="/">Productos</a>
-          <a href="/">Nosotros</a>
+          <a href="/public/products.html">Productos</a>
+          <a href="/public/Nosotros.html">Nosotros</a>
           <a href="/public/Login.html">Log In | Registro</a>
       </div>
   `;

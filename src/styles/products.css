@@ -494,8 +494,8 @@ footer p {
 
 .redes img {
   width: 70px;
-  padding: 10px;
-  transition: .3s ease-in-out;
+  /*padding: 10px;*/
+  /*transition: .3s ease-in-out;*/
 }
 
 .redes img:hover {

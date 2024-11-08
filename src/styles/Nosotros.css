@@ -387,7 +387,7 @@ section p {
 
 /*ESTILOS DEL FOOTER*/
 
-footer {
+/*footer {
     padding: 5% 10%;
     color: var(--blancofrio);
     background-color: var(--casinegro);
@@ -425,7 +425,6 @@ footer {
   
   .redes img {
     width: 70px;
-    padding: 10px;
   }
   
   .redes img:hover {
@@ -435,7 +434,7 @@ footer {
 
   .container-redes .logo {
     margin-left: 0px;
-  }
+  }*/
   
   /*MEDIA QUERIES*/
   

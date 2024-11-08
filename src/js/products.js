@@ -1,5 +1,5 @@
-const menuBurguer = document.querySelector('#menu-hamburguer');
-const mobileMenu = document.querySelector('.mobile-menu');
+/*const menuBurguer = document.querySelector('#menu-hamburguer');
+const mobileMenu = document.querySelector('.mobile-menu');*/
 
 const containerProductsHTML = document.querySelector('.products');
 const dogInput = document.querySelector('#dog')
@@ -79,7 +79,7 @@ let productsFilter = [...productsListDB];
 let parametersFilter = [];
 
 
-menuBurguer.addEventListener('click', toggleMobileMenu);
+/*menuBurguer.addEventListener('click', toggleMobileMenu);*/
 
 function filterForAnimal() {
 
@@ -123,10 +123,10 @@ function filterForAnimal() {
     }
 }
 
-function toggleMobileMenu() {
+/*function toggleMobileMenu() {
     mobileMenu.classList.toggle('inactive');
     mobileMenu.classList.toggle('animacion-menu');
-}
+}*/
 
 function applyFilters() {
     let selectedDog = false;

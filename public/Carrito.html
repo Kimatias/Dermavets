@@ -4,147 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DermaVets</title>
+
+    <!-- CSS Externo -->
+   <link rel="stylesheet" href="../src/styles/navbar.css" />
+   <link rel="stylesheet" href="../src/styles/footer.css" />
+
     <link rel="stylesheet" href="../src/styles/Carrito.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
    <!-- FAVICON -->
     <link rel="shortcut icon" href="../src/assets/Logo.svg" type="image/x-icon">
 </head>
 </head>
 <body>
-    <!-- Encabezado -->
-    <header class="header">
-        <div class="up-nav-bar">
-            <img id="menu-hamburguer" src="../src/assets/list.svg" alt="">
-            <div class="vet-name">
-                <img class="logo" src="../src/assets/Logo.svg" alt="logo-Dermavets">
-                <h1>DermaVets</h1>
-            </div>
-            <div class="search">
-                <input class="browser-bar" type="text" placeholder="¿Qué buscas para tu mascota?"><img id="lupa" src="../src/assets/search.svg" alt="">
-            </div>
-            <div class="container-iconos">
-                <a href="./public/Login.html"><img id="user" class="icono-header" src="../src/assets/person-fill.svg" alt="icono_de_usuario"></a>
-                <img id="carrito" class="icono-header" src="../src/assets/cart-shopping-solid.svg" alt="icono_de_carrito_compras">
-            </div>
-        </div>
-        <nav class="nav-bar">
-            <a href="/">Inicio</a>
-            <a href="/">Productos</a>
-            <a href="/">Nosotros</a>
-        </nav>
-        <div class="mobile-menu inactive">
-            <a href="./index.html">Inicio</a>
-            <a href="/">Productos</a>                       <!-- Falta agregar el link -->
-            <a href="/">Nosotros</a>                        <!-- Falta agregar el link -->
-            <a href="./index.html">Log out</a>
-        </div>
-    </header>
+    <!-- Navbar -->
+    <div id="navbar-container" class="header"></div>
+
     <!-- Main Content -->
-<main class="container">
-      <!-- Order Section -->
-    <section class="order-section">
-        <div class="containerS">
-            <h1>Haz tu pedido</h1>
-        <img src="../src/assets/img/Carrito/Gato.jpg" alt="Pet Icon">
-        </div>
-    </section>
+    <main class="container">
+        <!-- Order Section -->
+        <section class="order-section">
+            <div class="containerS">
+                <h1>Haz tu pedido</h1>
+            <img src="../src/assets/img/Carrito/Gato.jpg" alt="Pet Icon">
+            </div>
+        </section>
 
-    <!-- Checkout Section -->
-    <section class="checkout-section">
-        <!-- Payment Form -->
-        <div class="checkout-form">
-            <h2>Checkout</h2>
-            <div class="payment-methods">
-                <img src="../src/assets/img/Carrito/paypal.jpg" alt="PayPal">
-                <img src="../src/assets/img/Carrito/American express.jpg" alt="American-Express">
-                <img src="../src/assets/img/Carrito/Visa.jpg" alt="Visa">
-                <img src="../src/assets/img/Carrito/mastercard.jpg" alt="MasterCard">
-            </div>
-            <form>
-                <label>Name on Card</label>
-                <input type="text" placeholder="Enter Name" required>
-                <label>Card Number</label>
-                <input type="text" placeholder="Enter Card Number" required>
-                <label>Expiration Date</label>
-                <input type="month" placeholder="Enter Expiration Date" required>
-                <label>CVC</label>
-                <input type="text" placeholder="Enter CVC" required>
-                <button>Confirm Payment</button>
-            </form>
-        </div>
-        
-        <!-- Summary Section -->
-        <div class="summary">
-           <h2> Summary</h2>
-           <div class="product">
-            <img src="../src/assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
-            <div class="product-info">
-                <h3 class="product-name">Pectikol </h3>
-                <p class="product-price">$12.000</p>
-            </div>
-        </div>
-        <hr>
-        <div class="product">
-        <img src="../src/assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
-            <div class="product-info">
-                <h3 class="product-name">Pectikol </h3>
-                <p class="product-price">$12.000</p>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="product">
-            <img src="../src/assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
-            <div class="product-info">
-                <h3 class="product-name">Pectikol </h3>
-                <p class="product-price">$12.000</p>
-            </div>
-        </div>
-    <hr>
-            <div class="total">
-              <span>Subtotal:</span>
-              <span id="subtotal">$0.00</span>
+        <!-- Checkout Section -->
+        <section class="checkout-section">
+            <!-- Payment Form -->
+            <div class="checkout-form">
+                <h2>Checkout</h2>
+                <div class="payment-methods">
+                    <img src="../src/assets/img/Carrito/paypal.jpg" alt="PayPal">
+                    <img src="../src/assets/img/Carrito/American express.jpg" alt="American-Express">
+                    <img src="../src/assets/img/Carrito/Visa.jpg" alt="Visa">
+                    <img src="../src/assets/img/Carrito/mastercard.jpg" alt="MasterCard">
+                </div>
+                <form>
+                    <label>Name on Card</label>
+                    <input type="text" placeholder="Enter Name" required>
+                    <label>Card Number</label>
+                    <input type="text" placeholder="Enter Card Number" required>
+                    <label>Expiration Date</label>
+                    <input type="month" placeholder="Enter Expiration Date" required>
+                    <label>CVC</label>
+                    <input type="text" placeholder="Enter CVC" required>
+                    <button>Confirm Payment</button>
+                </form>
             </div>
             
-            <div class="total">
-              <span>Descuento:</span>
-              <span id="discount">0%</span>
-            </div>
-            
-            <div class="total">
-              <span>IVA:</span>
-              <span id="iva">$0.00</span>
-            </div>
-            
-            <div class="total">
-              <span>Total:</span>
-              <span id="total">$0.00</span>
-            </div>
-
-          </div>
-
-    <!-- Pie de página -->
-    <footer class="footer">
-        <div class="container-redes">
-            <div class="redes">
-                <p>Nos puedes encontrar en</p>
-                <div>
-                    <a href="https://api.whatsapp.com/send?phone=573171834266" target="_blank"><img src="../src/assets/Whatsapp.svg" alt="whatsApp" ></a>
-                    <a href="https://www.instagram.com/dermavets1/" target="_blank"><img src="../src/assets/Instagram.svg" alt="instagram"></a>
-                    <a href="https://web.facebook.com/profile.php?id=100081980144296&_rdc=2&_rdr" target="_blank"><img src="../src/assets/Facebook.svg" alt="Facebook"></a>
+            <!-- Summary Section -->
+            <div class="summary">
+            <h2> Summary</h2>
+            <div class="product">
+                <img src="../src/assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
+                <div class="product-info">
+                    <h3 class="product-name">Pectikol </h3>
+                    <p class="product-price">$12.000</p>
                 </div>
             </div>
-            <div class="vet-name">
-                <img class="logo" src="../src/assets/Logo.svg" alt="logo-Dermavets">
-                <h4>Dermavets</h4>
+            <hr>
+            <div class="product">
+            <img src="../src/assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
+                <div class="product-info">
+                    <h3 class="product-name">Pectikol </h3>
+                    <p class="product-price">$12.000</p>
+                </div>
             </div>
-       </div> 
-       <p>Copyright © 2024 Dermavets | All rights reserved</p>
-       
-</footer>
-<script src="../src/js/global.js"></script>
+
+            <hr>
+
+            <div class="product">
+                <img src="../src/assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
+                <div class="product-info">
+                    <h3 class="product-name">Pectikol </h3>
+                    <p class="product-price">$12.000</p>
+                </div>
+            </div>
+        <hr>
+                <div class="total">
+                <span>Subtotal:</span>
+                <span id="subtotal">$0.00</span>
+                </div>
+                
+                <div class="total">
+                <span>Descuento:</span>
+                <span id="discount">0%</span>
+                </div>
+                
+                <div class="total">
+                <span>IVA:</span>
+                <span id="iva">$0.00</span>
+                </div>
+                
+                <div class="total">
+                <span>Total:</span>
+                <span id="total">$0.00</span>
+                </div>
+
+            </div>
+    </main>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script defer src="../src/js/navbar.js"></script>
+    <script src="../src/js/footer.js"></script>
 </body>
 </html>
