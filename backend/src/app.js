@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.routes.js";
+import profileRoutes from "./routes/profile.routes.js";
+import { handleNotFound } from "./middlewares/validateEndpoints.js";
 import { FRONTEND_PORT } from "./config.js";
 import cookieParser from "cookie-parser";
 
@@ -38,5 +40,7 @@ app.use(
 
 // Rutas de autenticación y tareas
 app.use("/api", authRoutes);
+app.use("/api", profileRoutes);
+app.use(handleNotFound);
 
 export default app;

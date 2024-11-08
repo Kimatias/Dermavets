@@ -1,0 +1,449 @@
+:root {
+    /* Paleta de Colores */
+    --verde: #279ea0;
+    --cereza: #ec4555;
+    --verdeoscuro: #2a4a54;
+    --blancofrio: #f6f5f4;
+    --grisoscuro: #1d1b1d;
+
+    /* Otros Estilos */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset y Estructura */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Yusei Magic', sans-serif;
+    color: var(--grisoscuro);
+}
+
+/* Barra de desplazamiento personalizada */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--blancofrio);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--verde);
+    border-radius: 10px;
+    border: 3px solid var(--blancofrio);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cereza);
+}
+
+/* Botones */
+button,
+.btn {
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+    color: var(--blancofrio);
+}
+
+.btn-primary,
+.btn-success,
+.btn-secondary {
+    background-color: var(--verde);
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-secondary:hover {
+    background-color: var(--verdeoscuro);
+}
+
+.btn-outline-secondary {
+    color: var(--verde);
+    border: 1px solid var(--verde);
+}
+
+.btn-outline-secondary:hover {
+    color: var(--blancofrio);
+    background-color: var(--verde);
+}
+
+/* Modal */
+.modal-content {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--blancofrio);
+}
+
+.modal-header {
+    background-color: var(--blancofrio);
+    border-bottom: 1px solid var(--verdeoscuro);
+}
+
+.modal-footer {
+    background-color: var(--blancofrio);
+    border-top: 1px solid var(--verdeoscuro);
+}
+
+.modal-title {
+    color: var(--cereza);
+}
+
+.modal-body .list-group-item {
+    background-color: var(--blancofrio);
+    color: var(--grisoscuro);
+    border: 1px solid var(--verdeoscuro);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    transition: background-color 0.3s;
+}
+
+.modal-body .list-group-item:hover {
+    background-color: rgba(39, 158, 160, 0.1);
+}
+
+.list-group-item span {
+    font-weight: bold;
+}
+
+/* Cards de Consulta */
+.consulta-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.consulta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
+}
+
+.consulta-card input:checked+.consulta-card {
+    border: 2px solid var(--verdeoscuro);
+    background-color: #f8f9fa;
+}
+
+.consulta-icon img {
+    width: 40px;
+}
+
+/* Estilos de Tarjetas (Card) */
+.card {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--blancofrio);
+}
+
+.card label,
+.card h5 {
+    color: var(--grisoscuro);
+    font-weight: bold;
+}
+
+/* Calendario Flatpickr en Tarjeta */
+.calendar {
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+}
+
+input[type="text"].form-control {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--grisoscuro);
+}
+
+.flatpickr-calendar {
+    border-radius: var(--border-radius);
+    background-color: var(--blancofrio);
+}
+
+.flatpickr-calendar .day {
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    color: var(--grisoscuro);
+}
+
+.flatpickr-calendar .today {
+    background-color: var(--verde);
+    color: var(--blancofrio);
+}
+
+.flatpickr-calendar .day:hover {
+    background-color: var(--cereza);
+    color: var(--blancofrio);
+}
+
+/* Título de la sección y botón de citas */
+.title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.75rem;
+}
+
+.appointment-section {
+    margin-top: 2rem;
+    color: var(--cereza);
+}
+
+.appointment-section h3 {
+    color: var(--verdeoscuro);
+}
+
+.appointment-section .btn {
+    margin-top: 0.5rem;
+}
+
+.centrarCalendario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Consultas {
+    margin: 10px;
+}
+
+.tituloRojo {
+    color: var(--cereza);
+}
+
+/* Modal de Citas Programadas */
+#citasModal .modal-content {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--blancofrio);
+
+}
+
+#citasModal .modal-header {
+    background-color: var(--blancofrio);
+    border-bottom: 2px solid var(--verde);
+    color: var(--cereza);
+    display: flex;
+    align-items: center;
+}
+
+#citasModal .modal-title {
+    color: var(--verdeoscuro);
+    font-weight: bold;
+}
+
+#citasModal .btn-close {
+    color: var(--grisoscuro);
+    opacity: 0.7;
+}
+
+#citasModal .btn-close:hover {
+    color: var(--cereza);
+    opacity: 1;
+}
+
+/* Lista de citas en el cuerpo del modal */
+#citasModal .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    background-color: var(--blancofrio);
+}
+
+#citasModal .list-group-item {
+    background-color: var(--blancofrio);
+    color: var(--grisoscuro);
+    border-bottom: 1px solid var(--verdeoscuro);
+    padding: 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 2px;
+}
+
+#citasModal .list-group-item:hover {
+    background-color: rgba(39, 158, 160, 0.1);
+}
+
+#citasModal .list-group-item .fw-bold {
+    color: var(--grisoscuro);
+    font-weight: bold;
+}
+
+/* Badges de tipo de consulta */
+#citasModal .badge.bg-secondary {
+    background-color: var(--verde);
+    color: var(--blancofrio);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+#citasModal .badge.bg-success {
+    background-color: var(--cereza);
+    color: var(--blancofrio);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+/* Pie del modal */
+#citasModal .modal-footer {
+    background-color: var(--blancofrio);
+    border-top: 2px solid var(--verde);
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+#citasModal .modal-footer .btn {
+    background-color: var(--verde);
+    color: var(--blancofrio);
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+#citasModal .modal-footer .btn:hover {
+    background-color: var(--verdeoscuro);
+}
+
+/* Estilo base del label */
+.appointment-option {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto al estar seleccionado */
+input[type="radio"]:checked+.appointment-option {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    /* Sombra más notable */
+    border-color: var(--verdeoscuro);
+    /* Usa el color de tu variable o el color que prefieras */
+    background-color: var(--blancofrio);
+    /* Fondo sutilmente más claro */
+}
+
+/* Opcional: efecto hover */
+.appointment-option:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Estilo base del label */
+.service-option {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto al estar seleccionado */
+input[type="radio"]:checked+.service-option {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    /* Sombra para resaltar */
+    border-color: var(--verdeoscuro);
+    /* Cambia el color del borde al seleccionado */
+    background-color: var(--blancofrio);
+    /* Fondo sutilmente más claro */
+}
+
+/* Opcional: efecto hover */
+.service-option:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Asegura que la tarjeta y el contenido no se desborden en pantallas más pequeñas */
+.card {
+    max-width: 100%;
+    overflow: hidden;
+    /* Evita que el contenido se salga de los bordes */
+}
+
+.centrarCalendario input[type="text"].form-control {
+    width: 100%;
+    max-width: 280px;
+    /* Tamaño máximo del calendario */
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 988px) {
+    .card {
+        padding: 1rem;
+        /* Reduce el padding en modo tablet */
+    }
+
+    /* Centrar contenido y ajustar tamaños */
+    .centrarCalendario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Aumenta la legibilidad de los textos en pantallas pequeñas */
+    .form-label {
+        font-size: 1rem;
+    }
+
+    /* Ajusta el ancho del botón */
+    .btn-outline-secondary {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .appointment-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .btn-outline-secondary {
+        margin-top: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    /* Ajustes para que el modal y otros elementos no se desborden */
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-body {
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    .list-group-item {
+        font-size: 0.9rem;
+    }
+
+    .calendar {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .btn,
+    .form-select,
+    .form-control {
+        width: 100%;
+    }
+
+    .appointment-section .title,
+    .btn-outline-secondary {
+        text-align: center;
+        display: block;
+    }
+
+    .container-consultas {
+        display: flex;
+        flex-direction: column;
+    }
+}

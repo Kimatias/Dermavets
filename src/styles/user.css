@@ -18,7 +18,7 @@
 
 /*ESTILOS DEL HEADER*/
 
-.header {
+/*.header {
   position: sticky;
   top: 0;
   width: auto;
@@ -111,11 +111,11 @@ h1 {
   font-family: var(--secondary-font);
   text-decoration: none;
   cursor: pointer;
-}
+}*/
 
 /*ESTILOS DE MENU MOBILE (DENTRO DEL HEADER)*/
 
-.mobile-menu {
+/*.mobile-menu {
   padding: 10px 0px;
   display: flex;
   flex-direction: column;
@@ -135,7 +135,7 @@ h1 {
   }
 
 .inactive {    /*clase creada para desactivar o activar la vista del menu mobile al dar click*/
-  display: none;
+  /*display: none;
 }
 
 .animacion-menu {
@@ -144,7 +144,7 @@ h1 {
   @starting-style {
     opacity: 0;
   }
-}
+}*/
 /* Estilos nav_usuario */
 
 .datos {
@@ -241,7 +241,7 @@ article img{
 
 /*ESTILOS DEL FOOTER*/
 
-footer {
+/*footer {
   padding: 5% 10%;
   color: var(--blancofrio);
   background-color: var(--casinegro);
@@ -288,7 +288,7 @@ footer p {
 
 .container-redes .logo {
   margin-left: 0px;
-}
+}*/
 
 /*MEDIA QUERIES*/
 

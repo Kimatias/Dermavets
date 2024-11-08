@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermavets | Productos </title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../src/styles/products.css">
+
+    <!-- CSS Externo -->
+   <link rel="stylesheet" href="../src/styles/navbar.css" />
+   <link rel="stylesheet" href="../src/styles/footer.css" />
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="../src/assets/Logo.svg" type="image/x-icon">
+
+    <!-- BOOTSTRAP ICON -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- CODIGO HEADER -->
+    <!-- Navbar -->
+    <div id="navbar-container" class="header"></div>
+
+    <main>
+        <aside id="aside-filter">
+            <div id="container-filter">
+                <h2 id="title-filter">Filtrar por:</h2>
+                <section id="container-categories">
+
+                    <div class="categories-filter-animal category">
+                        <div id="categories-filter-animal__title" class="title center">
+                            <h2>Mascota</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
+
+                        <div id="categories-filter-animal__list" class="list">
+                            <input type="checkbox" id="dog" name="category-animal">
+                            <label for="dog">Perro</label><br>
+
+                            <input type="checkbox" id="cat" name="category-animal">
+                            <label for="cat">Gato</label><br>
+
+                            <input type="checkbox" id="fish" name="category-animal">
+                            <label for="fish">Pez</label><br>
+                        </div>
+                    </div>
+
+                    <div class="categories-filter-marks category">
+                        <div id="categories-filter-marks__title" class="title center">
+                            <h2>Marca</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
+
+                        <div id="categories-filter-marks__list" class="list">
+                            <div class="container-input">
+                                <input type="checkbox" id="donkat" name="category-mark" class="its-for-cat">
+                                <label for="donkat" class="its-for-cat">Donkat</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="q-ida" name="category-mark" class="its-for-cat-dog">
+                                <label for="q-ida" class="its-for-cat-dog">Q-ida</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="mirringo" name="category-mark" class="its-for-cat">
+                                <label for="mirringo" class="its-for-cat">Mirringo</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="monello" name="category-mark" class="its-for-cat">
+                                <label for="monello" class="its-for-cat">Monello</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="chunky" name="category-mark" class="its-for-cat-dog">
+                                <label for="chunky" class="its-for-cat-dog">Chunky</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="minishuu" name="category-mark" class="its-for-cat">
+                                <label for="minishuu" class="its-for-cat">Minishuu</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="ringo" name="category-mark" class="its-for-dog">
+                                <label for="ringo" class="its-for-dog">Ringo</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="nutriss" name="category-mark" class="its-for-dog">
+                                <label for="nutriss" class="its-for-dog">Nutriss</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="nutrecan" name="category-mark" class="its-for-dog">
+                                <label for="nutrecan" class="its-for-dog">Nutrecan</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="dogourmet" name="category-mark" class="its-for-dog">
+                                <label for="dogourmet" class="its-for-dog">Dogourmet</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="incros" name="category-mark" class="its-for-fish">
+                                <label for="incros" class="its-for-fish">Incros</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="categories-filter-medicine category">
+                        <div id="categories-filter-medicine__title" class="title center">
+                            <h2>Medicamentos</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
+
+                        <div id="categories-filter-medicine__list" class="list">
+
+                            <div class="container-input">
+                                <input type="checkbox" id="amitraz" name="category-medicine" class="its-for-dog">
+                                <label for="amitraz" class="its-for-dog">Amitraz</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="cipermetrina" name="category-medicine" class="its-for-dog">
+                                <label for="cipermetrina" class="its-for-dog">Cipermetrina</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="galgocal" name="category-medicine"
+                                    class="its-for-cat-dog">
+                                <label for="galgocal" class="its-for-cat-dog">Galgocal</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="fipronil" name="category-medicine"
+                                    class="its-for-cat-dog">
+                                <label for="fipronil" class="its-for-cat-dog">Fipronil</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="paracanis" name="category-medicine" class="its-for-dog">
+                                <label for="paracanis" class="its-for-dog">Paracanis NF</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="alapiel" name="category-medicine"
+                                    class="its-for-cat-dog">
+                                <label for="alapiel" class="its-for-cat-dog">Alapiel</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="saniderm" name="category-medicine"
+                                    class="its-for-cat-dog">
+                                <label for="saniderm" class="its-for-cat-dog">Saniderm</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="rondel" name="category-medicine" class="its-for-dog">
+                                <label for="rondel" class="its-for-dog">Rondel</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="canatox" name="category-medicine" class="its-for-dog">
+                                <label for="canatox" class="its-for-dog">Canatox</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="ojux-v" name="category-medicine" class="its-for-cat-dog">
+                                <label for="ojux-v" class="its-for-cat-dog">Ojux v</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="dolidol" name="category-medicine"
+                                    class="its-for-cat-dog">
+                                <label for="dolidol" class="its-for-cat-dog">Dolidol</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="meloxipet" name="category-medicine"
+                                    class="its-for-cat-dog">
+                                <label for="meloxipet" class="its-for-cat-dog">Meloxipet</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="sedolax" name="category-medicine"
+                                    class="its-for-cat-dog">
+                                <label for="sedolax" class="its-for-cat-dog">Sedolax</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="ixer" name="category-medicine" class="its-for-cat-dog">
+                                <label for="ixer" class="its-for-cat-dog">Ixer</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="categories-filter-hygiene category">
+                        <div id="categories-filter-hygiene__title" class="title center">
+                            <h2>Higiene</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
+
+                        <div id="categories-filter-hygiene__list" class="list">
+                            <div class="container-input">
+                                <input type="checkbox" id="shampoo" name="category-hygiene" class="its-for-cat-dog">
+                                <label for="" class="its-for-cat-dog">Shampoo</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="jabon" name="category-hygiene" class="its-for-cat-dog">
+                                <label for="jabon" class="its-for-cat-dog">Jabón</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="arena" name="category-hygiene" class="its-for-cat">
+                                <label for="arena" class="its-for-cat">Arena</label>
+                            </div>
+
+                            <div class="container-input">
+                                <input type="checkbox" id="tetero" name="category-hygiene" class="its-for-cat-dog">
+                                <label for="tetero" class="its-for-cat-dog">Tetero</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="container-btn-filter">
+                <button id="btn-filter">Filtrar</button>
+                <button id="btn-reset">Resetear</button>
+            </div>
+        </aside>
+
+        <!-- PRODUCTS/ -->
+        <section class="container-products">
+            <h2>Productos</h2>
+            <div class="products">
+                <article class="product-card">
+                    <div class="heart-detail">
+                        <img id="heart" src="../src/assets/heart-fill.svg" alt="">
+                    </div>
+                    <img src="../src/assets/img/productos/alimento/Gatos/chunky-gatos.jpg" alt="">
+                    <h3>Chunky gatos</h3>
+                    <p>Adultos 500 gr</p>
+                    <p id="precio"><span>$</span> 8.100</p>
+                    <div class="container__btn-cart">
+                        <button class="btn-add-cart">Añadir al carrito</button>
+                    </div>
+                </article>
+            </div>
+            <div id="pagination">
+                <button id="previous-page" class="pagination__btn">Anterior</button>
+                <span id="page-number">1</span>
+                <button id="next-page" class="pagination__btn">Siguiente</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- CODIGO FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="../src/js/products.js"></script>
+    <script src="../src/js/navbar.js"></script>
+    <script src="../src/js/footer.js"></script>
+</body>
+
+</html>

@@ -20,7 +20,9 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "1.10.0",
     "mysql2": "^3.11.3",
-    "zod": "3.23.8"
+    "zod": "3.23.8",
+    "express-fileupload": "^1.5.1",
+    "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
