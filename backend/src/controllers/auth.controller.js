@@ -103,6 +103,8 @@ export class authCustomerController {
       // Buscar al cliente en la base de datos por su correo electrónico
       const [customer] = await authCustomerModel.findCustomerByEmail(email);
 
+      console.log(customer)
+
       // Si el cliente no existe, enviar una respuesta de error
       if (!customer) {
         return res
@@ -121,8 +123,11 @@ export class authCustomerController {
       }
 
       // Crear y guardar el token de acceso JWT en una cookie
-      const token = await createAccessToken({ id: customer.id_customer });
-      res.cookie("token", token, {});
+      const token = await createAccessToken({ id: customer.id_cliente });
+      res.cookie("token", token);
+
+      console.log(token)
+      console.log(customer.id_customer)
 
       // Enviar una respuesta de éxito con los datos del cliente
       return res.status(200).json({

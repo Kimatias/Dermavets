@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.routes.js";
 import { FRONTEND_PORT } from "./config.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 // Configuración avanzada de CORS
@@ -26,6 +27,9 @@ app.use(
   
   // Middleware de registro de peticiones HTTP
   app.use(morgan("dev"));
+
+  // Middleware para analizar cookies
+  app.use(cookieParser());
   
   // Middleware para interpretar JSON en las peticiones
   app.use(express.json());

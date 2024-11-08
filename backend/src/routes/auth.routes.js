@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { authCustomerController } from "../controllers/auth.controller.js";
+import {userController} from "../controllers/user.controller.js";
 
 const router = Router();
 
@@ -51,5 +52,6 @@ router.post("/logout", authCustomerController.logout);
  * de verificar el token del cliente.
  */
 router.get("/verify", authCustomerController.verifyToken);
+router.get("/getUser", userController.getUser);
 
 export default router;
