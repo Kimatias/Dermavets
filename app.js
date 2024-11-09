@@ -1,0 +1,51 @@
+import express from "express";
+import morgan from "morgan";
+import authRoutes from "./src/routes/auth.routes.js";
+import profileRoutes from "./src/routes/profile.routes.js";
+import { handleNotFound } from "./src/middlewares/validateEndpoints.js";
+import cookieParser from "cookie-parser";
+import path from "path";
+import cors from "cors";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+
+app.disable("x-powered-by");
+
+app.use(cors({
+  origin: "http://localhost:3000", // Dominio del frontend
+  credentials: true, // Permitir credenciales (cookies)
+}));
+
+// Middleware para analizar cookies
+app.use(cookieParser());
+
+// Middleware de registro de peticiones HTTP
+app.use(morgan("dev"));
+
+// Middleware para interpretar JSON en las peticiones
+app.use(express.json());
+
+// Unificar carpeta de archivos estáticos
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "Login.html"));
+});
+app.get("/protegida", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "pg.html"));
+});
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+
+// Rutas de autenticación y tareas
+app.use("/api", authRoutes);
+app.use("/api", profileRoutes);
+app.use(handleNotFound);
+
+export default app;
