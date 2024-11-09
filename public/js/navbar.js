@@ -45,7 +45,7 @@ async function createHeaderComponent() {
             <a href="/public/index.html">Inicio</a>
             <a href="/public/products.html">Productos</a>
             <a href="/public/Nosotros.html">Nosotros</a>
-            <a href="/login">Log In | Registro</a>
+            <a href="/public/Login.html">Log In | Registro</a>
         </div>
     `;
 

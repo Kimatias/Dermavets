@@ -149,6 +149,19 @@ h1 {
     opacity: 0;
   }
 }
+
+#logout-button {                 /*ESTILOS DEL BOTON DE LOG-OUT*/
+  margin: 10px 0px;
+  padding: 6px;
+  background-color: var(--cereza);
+  color: var(--blancofrio);
+  font-family: var(--secondary-font);
+  font-size: 1.0rem;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+
 @media (max-width: 704px) {
   /*ESTILOS DEL HEADER*/
 
