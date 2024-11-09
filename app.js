@@ -35,6 +35,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "Login.html"));
 });
+app.get("/user", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "user.html"));
+});
 app.get("/protegida", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "pg.html"));
 });
