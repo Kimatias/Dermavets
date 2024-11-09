@@ -1,6 +1,3 @@
-/*const menuBurguer = document.querySelector('#menu-hamburguer');
-const mobileMenu = document.querySelector('.mobile-menu');*/
-
 const containerProductsHTML = document.querySelector('.products');
 const dogInput = document.querySelector('#dog')
 const catInput = document.querySelector('#cat');
@@ -23,54 +20,7 @@ let addToFavoritesBtn;
 let currentPage = 1;
 const productsPerPage = 12;
 
-const productsListDB = [
-    {
-        id: 1,
-        name: 'Nutrecan',
-        mark: 'nutrecan',
-        description: 'Product 1',
-        price: 150,
-        img: 'nutrecan-croquetas.jpg',
-        animal: 'dog'
-    },
-    {
-        id: 2,
-        name: 'Donkat',
-        mark: 'donkat',
-        description: 'Product 2',
-        price: 200,
-        img: 'donkat-adultos-7000.jpg',
-        animal: 'cat'
-    },
-    {
-        id: 3,
-        name: 'Q-ida Cat',
-        mark: 'q-ida',
-        description: 'Product 3',
-        price: 100,
-        img: 'Q-ida-cat-500.webp',
-        animal: 'cat'
-    },
-    {
-        id: 4,
-        name: 'Incros',
-        mark: 'incros',
-        description: 'Product 4',
-        price: 250,
-        img: 'comida-peces.webp',
-        animal: 'fish'
-    },
-    {
-        id: 5,
-        name: 'Q-ida dog',
-        mark: 'q-ida',
-        description: 'Product 5',
-        price: 100,
-        img: 'Q-ida-can-1000.jpg',
-        animal: 'dog'
-    }
-
-];
+const productsListDB = [];
 
 const productsCartDB = [];
 
@@ -78,8 +28,13 @@ let productsFilter = [...productsListDB];
 
 let parametersFilter = [];
 
-
-/*menuBurguer.addEventListener('click', toggleMobileMenu);*/
+// CARGAR PRODUCTOS DEL JSON
+async function listProducts() {
+    const res = await fetch('./js/list-product.json');
+    const list = await res.json();
+    productsListDB.push(...list.productos);
+    applyReset()
+}
 
 function filterForAnimal() {
 
@@ -123,11 +78,6 @@ function filterForAnimal() {
     }
 }
 
-/*function toggleMobileMenu() {
-    mobileMenu.classList.toggle('inactive');
-    mobileMenu.classList.toggle('animacion-menu');
-}*/
-
 function applyFilters() {
     let selectedDog = false;
     let selectedCat = false;
@@ -168,13 +118,13 @@ function applyFilters() {
         }
 
         if (selectedDog) {
-                if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
-                    parametersFilter.push({
-                        mark: checked.id,
-                        animal: 'dog'
-                    });
-                }
-        } 
+            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                parametersFilter.push({
+                    mark: checked.id,
+                    animal: 'dog'
+                });
+            }
+        }
 
         if (selectedCat) {
             if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
@@ -183,8 +133,8 @@ function applyFilters() {
                     animal: 'cat'
                 });
             }
-        } 
-        
+        }
+
         if (selectedFish) {
             if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
                 parametersFilter.push({
@@ -202,7 +152,7 @@ function applyFilters() {
                     }
                 });
             }
-            
+
             if (selectedCat) {
                 productsListDB.forEach(product => {
                     if (product.animal == 'cat') {
@@ -220,7 +170,7 @@ function applyFilters() {
             }
             thereAreProducts = true;
         }
-        });
+    });
 
     containerProductsHTML.innerHTML = "";
 
@@ -270,22 +220,53 @@ function displayProducts(page) {
     const end = start + productsPerPage;
     const paginatedProducts = productsFilter.slice(start, end);
 
+
     // Mostrar los productos de la página actual
     paginatedProducts.forEach(product => {
-        containerProductsHTML.innerHTML += `
+        let whatAnimalIs;
+        let whatSectionIs = product.section;
+
+        product.animal.forEach(animal => {
+            if (animal == 'dog') {
+                whatAnimalIs = 'Perros';
+            } else if (animal == 'cat') {
+                whatAnimalIs = 'Gatos';
+            } else if (animal == 'fish') {
+                whatAnimalIs = 'Peces';
+            }
+        })
+
+        if (whatSectionIs == 'medicinas' || whatSectionIs == 'higiene') {
+            containerProductsHTML.innerHTML += `
             <articule class="product-card">
                 <div class="heart-detail">
-                    <img id="heart" src="../src/assets/heart-fill.svg" alt="">
+                    <img id="heart" src="./assets/heart-fill.svg" alt="Corazón favorito">
                 </div>
-                <img src="../src/assets/img/productos/alimento/${product.animal == 'cat' ? 'Gatos' : product.animal == 'dog' ? 'Perros' : 'Peces'}/${product.img}" alt="${product.img}">
+                <img src="./assets/img/productos/${whatSectionIs}/${product.img}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
-                <p id="precio"><span>$</span> ${product.price}</p>
+                <p id="precio"><span>$</span> ${(product.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
                 <div class="container__btn-cart">
                     <button class="btn-add-cart">Añadir al carrito</button>
                 </div>
             </articule>
         `;
+        } else {
+            containerProductsHTML.innerHTML += `
+            <articule class="product-card">
+                <div class="heart-detail">
+                    <img id="heart" src="./assets/heart-fill.svg" alt="Corazón favorito">
+                </div>
+                <img src="./assets/img/productos/${whatSectionIs}/${whatAnimalIs}/${product.img}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p id="precio"><span>$</span> ${(product.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
+                <div class="container__btn-cart">
+                    <button class="btn-add-cart">Añadir al carrito</button>
+                </div>
+            </articule>
+        `;
+        }
     });
 
     addToCartBtn = document.querySelectorAll('.btn-add-cart');
@@ -350,6 +331,7 @@ fishInput.addEventListener('input', filterForAnimal);
 previousBtn.addEventListener('click', previousPage);
 nextBtn.addEventListener('click', nextPage);
 
+listProducts();
 
 // MOSTRAR LISTA DE ANIMALES
 document.querySelector('#categories-filter-animal__title').addEventListener('click', () => {
@@ -374,7 +356,6 @@ document.querySelector('#categories-filter-hygiene__title').addEventListener('cl
     const listHygiene = document.querySelector('#categories-filter-hygiene__list');
     listHygiene.classList.toggle('categories-filter-hygiene__active');
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     async function requestProducts(e) {

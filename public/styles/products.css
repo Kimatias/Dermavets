@@ -377,7 +377,6 @@ main h2 {
   bottom: 8px;
   left: 8px;
   width: 15px;
-  filter: invert(1);
 }
 
 .product-card img {
