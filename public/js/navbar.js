@@ -16,17 +16,17 @@ async function isAuthenticated() {
 }
 
 // Función para cerrar sesión del usuario
-async function logoutUser() {
-  try {
-    await fetch(`${API_URL_NAVBAR}/logout`, {
-      method: "POST",
-      credentials: "include",
-    });
-    window.location.href = "/login"; // Redirecciona tras cerrar sesión
-  } catch (error) {
-    console.error("Error al cerrar sesión:", error);
-  }
-}
+// async function logoutUser() {
+//   try {
+//     await fetch(`${API_URL_NAVBAR}/logout`, {
+//       method: "POST",
+//       credentials: "include",
+//     });
+//     window.location.href = "/login"; // Redirecciona tras cerrar sesión
+//   } catch (error) {
+//     console.error("Error al cerrar sesión:", error);
+//   }
+// }
 
 // Función para crear el componente del header
 async function createHeaderComponent() {
@@ -52,7 +52,7 @@ async function createHeaderComponent() {
         </div>
     </div>
     <nav class="nav-bar">
-        <a href="/public/index.html">Inicio</a>
+        <a href="/">Inicio</a>
         <a href="/public/products.html">Productos</a>
         <a href="/public/Nosotros.html">Nosotros</a>
     </nav>
@@ -90,7 +90,7 @@ async function createHeaderComponent() {
     // Agregar evento al botón de logout
     containerIconos
       .querySelector("#logout-button")
-      .addEventListener("click", logoutUser);
+      // .addEventListener("click", logoutUser);
   }
 
   return header;
