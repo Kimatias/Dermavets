@@ -35,14 +35,29 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "Login.html"));
 });
-app.get("/protegida", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "pg.html"));
-});
 app.get("/cita", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "cita.html"));
 });
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+app.get("/carrito", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "Carrito.html"));
+});
+app.get("/nosotros", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "Nosotros.html"));
+});
+app.get("/productos", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "products.html"));
+});
+app.get("/recordarContraseña", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "recoverPassword.html"));
+});
+app.get("/actualizarContraseña", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "recoverPassword.html"));
+});
+app.get("/user", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "user.html"));
 });
 
 
