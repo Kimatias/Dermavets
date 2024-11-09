@@ -15,19 +15,6 @@ async function isAuthenticated() {
   }
 }
 
-// Función para cerrar sesión del usuario
-// async function logoutUser() {
-//   try {
-//     await fetch(`${API_URL_NAVBAR}/logout`, {
-//       method: "POST",
-//       credentials: "include",
-//     });
-//     window.location.href = "/login"; // Redirecciona tras cerrar sesión
-//   } catch (error) {
-//     console.error("Error al cerrar sesión:", error);
-//   }
-// }
-
 // Función para crear el componente del header
 async function createHeaderComponent() {
   // Crear el contenedor principal del header
@@ -85,12 +72,6 @@ async function createHeaderComponent() {
       <a href="/carrito"><img id="carrito" class="icono-header" src="./assets/cart-shopping-solid.svg" alt="carrito"></a>
     `;
 
-    // <button id="logout-button" class="icono-header">Cerrar sesión</button>
-
-    // Agregar evento al botón de logout
-    containerIconos
-      .querySelector("#logout-button")
-      // .addEventListener("click", logoutUser);
   }
 
   return header;
