@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/user.css" />
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+
+    <title>Dermavets-user</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-container" class="header"></div>
+    <main>
+      <section class="datos">
+        <div class="imagenes">
+          <img src="./assets/user/Foto.svg" alt="imagen_usuario" />
+          <img
+            id="mascota"
+            src="./assets/user/Cat1 1.svg"
+            alt="imagen_mascota"
+          />
+        </div>
+
+        <div class="datos_usuario">
+          <h1>Lina Gomez</h1>
+          <p>lina-gomez@dermavets.com</p>
+        </div>
+      </section>
+
+      <section class="nav_usuario">
+        <article class="ancles">
+          <a href="#pedidos">
+            <img src="./assets/user/image 26.svg" alt="icono_pedidos" />
+            Pedidos
+          </a>
+
+          <a href="#citas">
+            <img
+              src="./assets/user/image 27.svg"
+              alt="icono_pedidos"
+            />Información
+          </a>
+
+          <a href="#informacion">
+            <img
+              src="./assets/user/image 30.svg"
+              alt="icono_pedidos"
+            />Ayuda
+          </a>
+
+          <a href="#examanes">
+            <img
+              src="./assets/user/image 28.svg"
+              alt="icono_pedidos"
+            />Citas
+          </a>
+
+          <a href="#ayuda">
+            <img
+              src="./assets/user/image 29.svg"
+              alt="icono_pedidos"
+            />Examenes
+          </a>
+
+          <a id="log_out" href="#cerrar sesion">
+            <img src="./assets/power.svg" alt="icono_pedidos" />Cerrar
+            sesión
+          </a>
+        </article>
+      </section>
+    </main>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    
+    <script defer src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+  </body>
+</html>
