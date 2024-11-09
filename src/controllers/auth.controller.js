@@ -87,9 +87,10 @@ export class authController {
       // Establecer cookie con el token
       res.cookie("token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "none",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
       });
+
       // Enviar una respuesta de éxito con los datos del cliente
       return res.status(200).json({
         message: "Inicio de sesión exitoso.",

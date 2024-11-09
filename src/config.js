@@ -11,3 +11,5 @@ export const DB_PASSWORD=process.env.DB_PASSWORD
 export const DB_PORT = process.env.DB_PORT;
 export const FRONTEND_PORT = process.env.FRONTEND_PORT;
 export const JWT_SECRET = process.env.JWT_SECRET;
+// config.js
+export const API_URL = "http://localhost:3000/api";
