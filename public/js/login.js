@@ -552,7 +552,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "Registro Exitoso",
         text: data.message || "Usuario registrado con éxito",
         showConfirmButton: false,
-        timer: 12000,
+        timer: 2000,
       }).then(() => {
         window.location.href = "/";
       });

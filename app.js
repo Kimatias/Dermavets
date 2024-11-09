@@ -41,6 +41,9 @@ app.get("/user", (req, res) => {
 app.get("/protegida", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "pg.html"));
 });
+app.get("/cita", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "cita.html"));
+});
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });

@@ -1,7 +1,4 @@
-// Asegúrate de importar el idioma español de flatpickr (puede variar según la implementación):
-// import flatpickr from "flatpickr";
-// import { Spanish } from "flatpickr/dist/l10n/es.js";
-// flatpickr.localize(Spanish); // Localiza en español
+
 
 // Inicialización del calendario y configuración
 const calendario = flatpickr("#fecha", {
