@@ -53,13 +53,13 @@ async function createHeaderComponent() {
     </div>
     <nav class="nav-bar">
         <a href="/">Inicio</a>
-        <a href="/public/products.html">Productos</a>
-        <a href="/public/Nosotros.html">Nosotros</a>
+        <a href="/productos">Productos</a>
+        <a href="/nosotros">Nosotros</a>
     </nav>
     <div class="mobile-menu inactive" id="mobile-menu">
-        <a href="/public/index.html">Inicio</a>
-        <a href="/public/products.html">Productos</a>
-        <a href="/public/Nosotros.html">Nosotros</a>
+        <a href="/">Inicio</a>
+        <a href="/productos">Productos</a>
+        <a href="/nosotros">Nosotros</a>
         <a href="/login">Log In | Registro</a>
     </div>
   `;
@@ -87,9 +87,9 @@ async function createHeaderComponent() {
       <a href="/carrito"><img id="carrito" class="icono-header" src="./assets/cart-shopping-solid.svg" alt="carrito"></a>
     `;
     mobileMenulogout.innerHTML = `
-      <a href="/public/index.html">Inicio</a>
-      <a href="/public/products.html">Productos</a>
-      <a href="/public/Nosotros.html">Nosotros</a>
+      <a href="/">Inicio</a>
+      <a href="/productos">Productos</a>
+      <a href="/nosotros">Nosotros</a>
       <a href="/login">Logout</a>
     `;
 
