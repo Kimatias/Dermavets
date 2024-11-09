@@ -16,6 +16,8 @@
     <!-- CSS Externo -->
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/navbar.css" />
+    <!-- <script src="./js/auth.js"></script> -->
+
 
     <script src="./js/user.js"></script>
     <title>Dermavets-user</title>
@@ -23,6 +25,8 @@
   <body>
     <!-- Navbar -->
     <div id="navbar-container" class="header"></div>
+ 
+   
     <main>
       <section class="datos">
         <div class="imagenes">
@@ -39,17 +43,19 @@
 
       <section class="nav_usuario">
         <article class="ancles">
-          <a href="#pedidos">
+
+          <a href="./Carrito.html">
             <img src="./assets/user/image 26.svg" alt="icono_pedidos" />
             Pedidos
           </a>
 
-          <a href="#citas">
+          <a href="./index.html">
             <img
               src="./assets/user/image 27.svg"
               alt="icono_pedidos"
             />Información
           </a>
+
 
           <a href="#informacion">
             <img src="./assets/user/image 30.svg" alt="icono_pedidos" />Ayuda
@@ -57,15 +63,18 @@
 
           <a href="#examanes">
             <img src="./assets/user/image 28.svg" alt="icono_pedidos" />Citas
+
           </a>
 
           <a href="#ayuda">
             <img src="./assets/user/image 29.svg" alt="icono_pedidos" />Examenes
           </a>
 
+
           <a id="log_out" href="#cerrar sesion">
             <img src="./assets/power.svg" alt="icono_pedidos" />Cerrar sesión
           </a>
+
         </article>
       </section>
     </main>
@@ -74,5 +83,6 @@
 
     <script defer src="./js/navbar.js"></script>
     <script src="./js/footer.js"></script>
+    <script src="./js/logout.js"></script>
   </body>
 </html>

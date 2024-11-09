@@ -15,6 +15,7 @@ async function isAuthenticated() {
   }
 }
 
+
 // Función para cerrar sesión del usuario
 async function logoutUser() {
   try {
@@ -27,6 +28,7 @@ async function logoutUser() {
     console.error("Error al cerrar sesión:", error);
   }
 }
+
 
 // Función para crear el componente del header
 async function createHeaderComponent() {
@@ -88,6 +90,7 @@ async function createHeaderComponent() {
       <button id="logout-button" class="icono-header"> <img id="logout" src="./assets/power.svg" alt=""></button>
       <a href="/carrito"><img id="carrito" class="icono-header" src="./assets/cart-shopping-solid.svg" alt="carrito"></a>
     `;
+
     mobileMenulogout.innerHTML = `
       <a href="/">Inicio</a>
       <a href="/productos">Productos</a>
@@ -100,6 +103,7 @@ async function createHeaderComponent() {
     if (logoutButton) {
       logoutButton.addEventListener("click", logoutUser);
     }
+
   }
 
   return header;
@@ -107,6 +111,7 @@ async function createHeaderComponent() {
 
 // Uso del componente en el contenedor con id "navbar-container"
 const headerContainer = document.getElementById("navbar-container");
+
 if (headerContainer) {
   createHeaderComponent()
     .then((headerComponent) => {
@@ -118,3 +123,4 @@ if (headerContainer) {
 } else {
   console.error("No se encontró el contenedor 'navbar-container'.");
 }
+

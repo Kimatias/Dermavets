@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "Login.html"));
 });
+
 app.get("/cita", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "cita.html"));
 });
