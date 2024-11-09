@@ -47,12 +47,12 @@ async function createHeaderComponent() {
             <img id="lupa" src="./assets/search.svg" alt="search">
         </div>
         <div class="container-iconos" id="container-iconos">
-            <a href="/login"><img id="user" class="icono-header" src="./assets/person-fill.svg" alt="usuario"></a>
-            <a href="/login"><img id="carrito" class="icono-header" src="./assets/cart-shopping-solid.svg" alt="carrito"></a>
+            <a href="/Login.html"><img id="user" class="icono-header" src="./assets/person-fill.svg" alt="usuario"></a>
+            <a href="/Login.html"><img id="carrito" class="icono-header" src="./assets/cart-shopping-solid.svg" alt="carrito"></a>
         </div>
     </div>
     <nav class="nav-bar">
-        <a href="/">Inicio</a>
+        <a href="/public/index.html">Inicio</a>
         <a href="/public/products.html">Productos</a>
         <a href="/public/Nosotros.html">Nosotros</a>
     </nav>
@@ -60,7 +60,7 @@ async function createHeaderComponent() {
         <a href="/public/index.html">Inicio</a>
         <a href="/public/products.html">Productos</a>
         <a href="/public/Nosotros.html">Nosotros</a>
-        <a href="/login">Log In | Registro</a>
+        <a href="/Login.html">Log In | Registro</a>
     </div>
   `;
 
