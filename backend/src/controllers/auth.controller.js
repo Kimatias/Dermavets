@@ -39,13 +39,12 @@ export class authController {
 
       // Generar el token de acceso JWT
       const token = await createAccessToken({ id: customer.id_cliente });
+      console.log(token)
 
       // Establecer cookie con el token
-      res.cookie("token", token, {
-        httpOnly: true,
-        secure: false,
-        sameSite: "none",
-      });
+      res.cookie("token", token)
+        
+      
 
       // Responder con éxito
       return res.status(201).json({
@@ -92,11 +91,8 @@ export class authController {
       
 
       // Establecer cookie con el token
-      res.cookie("token", token, {
-        httpOnly: true,
-        secure: false,
-        sameSite: "none",
-      });
+      res.cookie("token", token)
+
       // Enviar una respuesta de éxito con los datos del cliente
       return res.status(200).json({
         message: "Inicio de sesión exitoso.",

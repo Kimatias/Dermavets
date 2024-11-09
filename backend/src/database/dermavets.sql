@@ -56,11 +56,10 @@ CREATE TABLE `citas` (
 --
 
 CREATE TABLE `clientes` (
-  `id_cliente` int NOT NULL,
-  `nombre` varchar(255) NOT NULL,
+  `id_cliente` int NOT NULL,  
   `usuario` varchar(255) NOT NULL,
   `correo_electronico` varchar(255) NOT NULL,
-  `contraseña` varchar(255) NOT NULL
+  `passsword` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------

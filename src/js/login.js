@@ -551,7 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "Registro Exitoso",
         text: data.message || "Usuario registrado con éxito",
         showConfirmButton: false,
-        timer: 2000, // Duración del mensaje en ms
+        timer: 12000, // Duración del mensaje en ms
       }).then(() => {
         // Redirigir a index.html después del mensaje
         window.location.href = "index.html";
@@ -599,10 +599,10 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "Inicio de sesión exitoso",
         text: data.message || "Bienvenido de nuevo",
         showConfirmButton: false,
-        timer: 2000, // Duración del mensaje en ms
+        timer: 12000, // Duración del mensaje en ms
       }).then(() => {
         // Redirigir a index.html después del mensaje
-        window.location.href = "index.html";
+        window.location.href = "index-user.html";
       });
   
     } catch (error) {
