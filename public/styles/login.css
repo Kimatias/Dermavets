@@ -21,15 +21,20 @@ html {
 }
 
 body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     background: linear-gradient(45deg, #279ea077, var(--blancofrio));
     transition: background .8s ease;
-
+    min-height: 830px;
     height: 100vh;
 }
 
 #main__container {
     transition: .2s ease;
     flex-direction: row-reverse;
+    height: auto;
 }
 
 .hidden-form{
