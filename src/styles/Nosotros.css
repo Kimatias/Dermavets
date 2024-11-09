@@ -144,6 +144,8 @@ body, h2, p, ul, li {
 .mobile-menu a:hover {
   color: var(--verdeoscuro);
 }
+
+
 /* Secciones Generales */
 section {
     padding: 40px 0;
@@ -185,8 +187,9 @@ section p {
 }
 
 .nosotros .image {
-    width: 100%; /* Asegurar que el contenido esté centrado */
+    width: 100%; 
 }
+
 
 .nosotros .container-content {
     display: flex;
@@ -200,7 +203,8 @@ section p {
     width: 50%;
     padding: 20px;
     font-size: 2em;
-    font-family: var(--secondary-font)
+    font-family: var(--secondary-font);
+    text-align: justify;
 }
 
 .nosotros .image {
@@ -270,7 +274,7 @@ section p {
     border-radius: 10px;
 }
 
-/* Sección vision */
+/* Sección vision*/ 
 .containerV
 { width: 85%;
   background-color: rgb(255, 255, 255) ;
@@ -383,8 +387,7 @@ section p {
     line-height: 1.5;
     margin: 0;
     font-family: var(--secondary-font)
-}
-
+} 
 /*ESTILOS DEL FOOTER*/
 
 /*footer {
@@ -495,6 +498,24 @@ section p {
       display: none;
     }
   }
-  
-  
+/* Media Query para Dispositivos Móviles */
+@media (max-width: 704px) {
+  /* Cambiar la dirección a columna en dispositivos móviles */
+  .nosotros .container-content,
+  .mision .container-content,
+  .vision .content {
+      flex-direction: column;
+  }
+
+  /* Ajuste de ancho y orden de elementos */
+  .nosotros .text, .mision .text, .vision .text {
+      width: 100%;
+      text-align: justify;
+  }
+
+  .nosotros .image, .mision .image, .vision .image {
+      width: 70%;
+      margin-top: 20px; /* Añadir margen superior para separar el texto de la imagen */
+  }
+}
   

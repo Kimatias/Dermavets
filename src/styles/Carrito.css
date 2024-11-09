@@ -298,7 +298,10 @@ margin: 0 auto;
 .hr {
   border-color:#ec4555;
 }
-
+.checkout-section,
+.summary {
+    margin-bottom: 50px; 
+}
 /*ESTILOS DEL FOOTER*/
 
 /*footer {
