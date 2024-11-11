@@ -41,26 +41,35 @@ function filterForAnimal() {
     if (catInput.checked && dogInput.checked) {
         productCatDog.forEach(product => product.style.display = 'inline-block');
     } else {
-        if (dogInput.checked || catInput.checked) {
-            productCatDog.forEach(product => product.style.display = 'inline-block');
-        } else {
+        productCatDog.forEach(product => product.style.display = 'none');
+        productCatDog.forEach(product => product.checked = false);
+
+    }
+
+    if (dogInput.checked) {
+        productDog.forEach(product => product.style.display = 'inline-block');
+        productCatDog.forEach(product => product.style.display = 'inline-block');
+    } else {
+        productDog.forEach(product => product.style.display = 'none');
+        productDog.forEach(product => product.checked = false);
+
+        if (!catInput.checked) {
             productCatDog.forEach(product => product.style.display = 'none');
             productCatDog.forEach(product => product.checked = false);
         }
     }
 
-    if (dogInput.checked) {
-        productDog.forEach(product => product.style.display = 'inline-block');
-    } else {
-        productDog.forEach(product => product.style.display = 'none');
-        productDog.forEach(product => product.checked = false);
-    }
-
     if (catInput.checked) {
         productCat.forEach(product => product.style.display = 'inline-block');
+        productCatDog.forEach(product => product.style.display = 'inline-block');
     } else {
         productCat.forEach(product => product.style.display = 'none');
         productCat.forEach(product => product.checked = false);
+
+        if (!dogInput.checked) {
+            productCatDog.forEach(product => product.style.display = 'none');
+            productCatDog.forEach(product => product.checked = false);
+        }
     }
 
     if (fishInput.checked) {
@@ -76,6 +85,20 @@ function filterForAnimal() {
         productFish.forEach(product => product.style.display = 'inline-block');
         productCatDog.forEach(product => product.style.display = 'inline-block');
     }
+}
+
+function removeDuplicateIDs(data) {
+    const uniqueItems = [];
+    const idSet = new Set();
+
+    data.forEach(item => {
+        if (!idSet.has(item.id)) {
+            uniqueItems.push(item);  // Agrega el item si el ID no está en el conjunto
+            idSet.add(item.id);       // Añade el ID al conjunto para marcarlo como visto
+        }
+    });
+
+    return uniqueItems;
 }
 
 function applyFilters() {
@@ -111,57 +134,35 @@ function applyFilters() {
     });
 
     selectedCategory.forEach(checked => {
-        if (!selectedCat && !selectedFish && !selectedDog) {
+        if (!selectedCat && !selectedFish && !selectedDog && thereAreProducts) {
             parametersFilter.push({
                 mark: checked.id,
             });
         }
 
-        if (selectedDog) {
-            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
-                parametersFilter.push({
-                    mark: checked.id,
-                    animal: 'dog'
-                });
-            }
-        }
 
-        if (selectedCat) {
-            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
-                parametersFilter.push({
-                    mark: checked.id,
-                    animal: 'cat'
-                });
-            }
-        }
-
-        if (selectedFish) {
-            if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
-                parametersFilter.push({
-                    mark: checked.id,
-                    animal: 'fish'
-                });
-            }
-        }
 
         if (!thereAreProducts) {
-            if (selectedDog) {
+
+            if (selectedDog && selectedCat) {
                 productsListDB.forEach(product => {
-                    if (product.animal == 'dog') {
+                    if (product.animal == 'dog' || product.animal == 'cat' || product.animal == 'catdog') {
                         productsFilter.push(product);
                     }
                 });
-            }
-
-            if (selectedCat) {
+            } if (selectedDog) {
                 productsListDB.forEach(product => {
-                    if (product.animal == 'cat') {
+                    if (product.animal == 'dog' || product.animal == 'catdog') {
                         productsFilter.push(product);
                     }
                 });
-            }
-
-            if (selectedFish) {
+            } if (selectedCat) {
+                productsListDB.forEach(product => {
+                    if (product.animal == 'cat' || product.animal == 'catdog') {
+                        productsFilter.push(product);
+                    }
+                });
+            } if (selectedFish) {
                 productsListDB.forEach(product => {
                     if (product.animal == 'fish') {
                         productsFilter.push(product);
@@ -169,6 +170,48 @@ function applyFilters() {
                 });
             }
             thereAreProducts = true;
+        } else {
+            if (selectedDog) {
+                if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                    if (checked.className == 'its-for-cat-dog' && checked.id != 'q-ida'  && checked.id != 'chunky') {
+                        parametersFilter.push({
+                            mark: checked.id,
+                            animal: 'catdog',
+                        });
+                    } else{
+                        parametersFilter.push({
+                            mark: checked.id,
+                            animal: 'dog',
+                        });
+                    }
+                    
+                }
+            }
+
+            if (selectedCat) {
+                if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                    if (checked.className == 'its-for-cat-dog' && checked.id != 'q-ida'  && checked.id != 'chunky') {
+                        parametersFilter.push({
+                            mark: checked.id,
+                            animal: 'catdog',
+                        });
+                    } else{
+                        parametersFilter.push({
+                            mark: checked.id,
+                            animal: 'cat',
+                        });
+                    }
+                }
+            }
+
+            if (selectedFish) {
+                if (checked.id != 'dog' && checked.id != 'cat' && checked.id != 'fish') {
+                    parametersFilter.push({
+                        mark: checked.id,
+                        animal: 'fish'
+                    });
+                }
+            }
         }
     });
 
@@ -193,6 +236,7 @@ function applyFilters() {
     } else if (productsFilter.length == 0 && selectedCategory.length > 0) {
         containerProductsHTML.innerHTML = "<span> </span> <h2 id='empty-filter'>No hay productos para esta categoría.</h2>";
     } else {
+        productsFilter = removeDuplicateIDs(productsFilter);
         displayProducts(currentPage);
     }
 
@@ -210,6 +254,7 @@ function applyReset() {
 
     displayProducts(currentPage);
 }
+
 
 function displayProducts(page) {
     containerProductsHTML.innerHTML = "";
@@ -234,6 +279,8 @@ function displayProducts(page) {
             } else if (animal == 'fish') {
                 whatAnimalIs = 'Peces';
             }
+
+
         })
 
         if (whatSectionIs == 'medicinas' || whatSectionIs == 'higiene') {

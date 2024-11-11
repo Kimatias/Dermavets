@@ -472,7 +472,7 @@
         },
         {
             "id": 48,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "galgocal-200.jpg",
             "name": "Galgocal 200",
             "mark": "galgocal",
@@ -482,7 +482,7 @@
         },
         {
             "id": 49,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "fipronil-1-10-kg.jpg",
             "name": "Fipronil pipeta",
             "mark": "fipronil",
@@ -502,7 +502,7 @@
         },
         {
             "id": 51,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "alapiel.webp",
             "name": "Alapiel crema",
             "mark": "alapiel",
@@ -512,7 +512,7 @@
         },
         {
             "id": 52,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "saniderm.jpg",
             "name": "Saniderm crema",
             "mark": "saniderm",
@@ -542,7 +542,7 @@
         },
         {
             "id": 55,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "ojux-v.webp",
             "name": "Ojux V",
             "mark": "ojux-v",
@@ -552,7 +552,7 @@
         },
         {
             "id": 56,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "dolidol.png",
             "name": "Dolidol",
             "mark": "dolidol",
@@ -562,7 +562,7 @@
         },
         {
             "id": 57,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "meloxipet.png",
             "name": "Meloxipet",
             "mark": "meloxipet",
@@ -572,7 +572,7 @@
         },
         {
             "id": 58,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "sedolax.jpg",
             "name": "Sedolax",
             "mark": "sedolax",
@@ -582,7 +582,7 @@
         },
         {
             "id": 59,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "ixer-080.jpg",
             "name": "Ixer 080",
             "mark": "ixer",
@@ -602,7 +602,7 @@
         },
         {
             "id": 61,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "jabon.png",
             "name": "Jabón barra té",
             "mark": "jabon",
@@ -622,7 +622,7 @@
         },
         {
             "id": 63,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "tetero.webp",
             "name": "Tetero",
             "mark": "tetero",
@@ -632,7 +632,7 @@
         },
         {
             "id": 64,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "galgocal-600.jpg",
             "name": "Galgocal 600",
             "mark": "galgocal",
@@ -682,7 +682,7 @@
         },
         {
             "id": 69,
-            "animal": ["dog", "cat"],
+            "animal": ["catdog"],
             "img": "jabon.png",
             "name": "Jabón insecticida",
             "mark": "jabon",
