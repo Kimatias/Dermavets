@@ -18,7 +18,7 @@ router.post("/login", validateSchema(loginSchema), authController.login);
 router.post("/logout", authRequired, authController.logout);
 
 
-router.get("/verify", authController.verifyToken);
+router.get("/verifyToken", authController.verifyToken);
 router.get("/getUser", userController.getUser);
 
 export default router;
