@@ -8,13 +8,13 @@ async function isAuthenticated() {
       method: "GET",
       credentials: "include",
     });
+
     return response.ok; // Retorna true si el usuario está autenticado
   } catch (error) {
     console.error("Error al verificar autenticación:", error);
     return false;
   }
 }
-
 
 // Función para cerrar sesión del usuario
 async function logoutUser() {
@@ -28,7 +28,6 @@ async function logoutUser() {
     console.error("Error al cerrar sesión:", error);
   }
 }
-
 
 // Función para crear el componente del header
 async function createHeaderComponent() {
@@ -103,7 +102,6 @@ async function createHeaderComponent() {
     if (logoutButton) {
       logoutButton.addEventListener("click", logoutUser);
     }
-
   }
 
   return header;
@@ -123,4 +121,3 @@ if (headerContainer) {
 } else {
   console.error("No se encontró el contenedor 'navbar-container'.");
 }
-
