@@ -1,0 +1,694 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "animal": ["cat"],
+            "img": "donkat-adultos-500.webp",
+            "name": "Donkat Adultos",
+            "mark": "donkat",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 6200
+        },
+        {
+            "id": 2,
+            "animal": ["cat"],
+            "img": "donkat-adultos-granel-500.webp",
+            "name": "Donkat Adultos Granel",
+            "mark": "donkat",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 6000
+        },
+        {
+            "id": 3,
+            "animal": ["cat"],
+            "img": "donkat-gaticos-500.jpg",
+            "name": "Donkat Gaticos",
+            "mark": "donkat",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 6400
+        },
+        {
+            "id": 4,
+            "animal": ["cat"],
+            "img": "donkat-gaticos-granel-500.webp",
+            "name": "Donkat Gaticos Granel",
+            "mark": "donkat",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 6000
+        },
+        {
+            "id": 5,
+            "animal": ["cat"],
+            "img": "donkat-gaticos-1000.jpg",
+            "name": "Donkat Gaticos",
+            "mark": "donkat",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 12500
+        },
+        {
+            "id": 6,
+            "animal": ["cat"],
+            "img": "donkat-adultos-7000.jpg",
+            "name": "Donkat Bulto",
+            "mark": "donkat",
+            "section": "alimento",
+            "description": "Contenido Neto 7Kg",
+            "price": 78900
+        },
+        {
+            "id": 7,
+            "animal": ["cat"],
+            "img": "Q-ida-cat-500.webp",
+            "name": "Q-ida cat",
+            "mark": "q-ida",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 5600
+        },
+        {
+            "id": 8,
+            "animal": ["cat"],
+            "img": "mirringo-adultos-500.jpg",
+            "name": "Mirringo Adultos",
+            "mark": "mirringo",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 6100
+        },
+        {
+            "id": 9,
+            "animal": ["cat"],
+            "img": "mirringo-adultos-1000.webp",
+            "name": "Mirringo Adultos",
+            "mark": "mirringo",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 12200
+        },
+        {
+            "id": 10,
+            "animal": ["cat"],
+            "img": "mirringo-gaticos-500.jpg",
+            "name": "Mirringo Gaticos",
+            "mark": "mirringo",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 5700
+        },
+        {
+            "id": 11,
+            "animal": ["cat"],
+            "img": "mirringo-gaticos-1000.jpg",
+            "name": "Mirringo Gaticos",
+            "mark": "mirringo",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 12200
+        },
+        {
+            "id": 12,
+            "animal": ["cat"],
+            "img": "monello-gato-adultos-1000.jpg",
+            "name": "Monello Adultos",
+            "mark": "monello",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 23900
+        },
+        {
+            "id": 13,
+            "animal": ["cat"],
+            "img": "monello-gatos-adultos-granel-500.jpg",
+            "name": "Monello Adultos Granel",
+            "mark": "monello",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 10800
+        },
+        {
+            "id": 14,
+            "animal": ["cat"],
+            "img": "monello-gaticos-500.png",
+            "name": "Monello Gaticos",
+            "mark": "monello",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 11600
+        },
+        {
+            "id": 15,
+            "animal": ["cat"],
+            "img": "monello-gatos-gaticos-granel-1000.jpg",
+            "name": "Monello Gaticos Granel",
+            "mark": "monello",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 25200
+        },
+        {
+            "id": 16,
+            "animal": ["cat"],
+            "img": "chunky-gatos.jpg",
+            "name": "Chunky Adultos",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 9700
+        },
+        {
+            "id": 17,
+            "animal": ["cat"],
+            "img": "chunky-adultos-granel-500.jpg",
+            "name": "Chunky Adultos Granel",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 7000
+        },
+        {
+            "id": 18,
+            "animal": ["cat"],
+            "img": "chunky-gaticos.jpg",
+            "name": "Chunky Gaticos",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 8100
+        },
+        {
+            "id": 19,
+            "animal": ["cat"],
+            "img": "chunky-gatos.jpg",
+            "name": "Chunky Gaticos Cordero",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 4Kg",
+            "price": 27800
+        },
+        {
+            "id": 20,
+            "animal": ["cat"],
+            "img": "minishuu.webp",
+            "name": "Minishu adultos",
+            "mark": "minishuu",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 9800
+        },
+        {
+            "id": 21,
+            "animal": ["dog"],
+            "img": "ringo-croquetas-500.webp",
+            "name": "Ringo croquetas",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 3200
+        },
+        {
+            "id": 22,
+            "animal": ["dog"],
+            "img": "ringo-croquetas-1000.webp",
+            "name": "Ringo croquetas",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 5700
+        },
+        {
+            "id": 23,
+            "animal": ["dog"],
+            "img": "ringo-croquetas-2000.jpg",
+            "name": "Ringo croquetas",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 2Kg",
+            "price": 11500
+        },
+        {
+            "id": 24,
+            "animal": ["dog"],
+            "img": "ringo-croquetas-20000.webp",
+            "name": "Ringo croquetas",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 20Kg",
+            "price": 130000
+        },
+        {
+            "id": 25,
+            "animal": ["dog"],
+            "img": "ringo-croquetas-30000.webp",
+            "name": "Ringo croquetas",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 30Kg",
+            "price": 197000
+        },
+        {
+            "id": 26,
+            "animal": ["dog"],
+            "img": "ringo-cachorros-1000.webp",
+            "name": "Ringo Cachorros",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 6500
+        },
+        {
+            "id": 27,
+            "animal": ["dog"],
+            "img": "ringo-cachorros-2000.webp",
+            "name": "Ringo Cachorros",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 2Kg",
+            "price": 12500
+        },
+        {
+            "id": 28,
+            "animal": ["dog"],
+            "img": "ringo-cachorros-premium-1000.webp",
+            "name": "Ringo Cachorros Premium",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 7300
+        },
+        {
+            "id": 29,
+            "animal": ["dog"],
+            "img": "ringo-adultos-premium-1000.jpg",
+            "name": "Ringo Adultos premium",
+            "mark": "ringo",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 6600
+        },
+        {
+            "id": 30,
+            "animal": ["dog"],
+            "img": "nutriss-1000.webp",
+            "name": "Nutriss (Pollo o carne)",
+            "mark": "nutriss",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 8600
+        },
+        {
+            "id": 31,
+            "animal": ["dog"],
+            "img": "nutriss-30000.webp",
+            "name": "Nutriss (Leche)",
+            "mark": "nutriss",
+            "section": "alimento",
+            "description": "Contenido Neto 30Kg",
+            "price": 205000
+        },
+        {
+            "id": 32,
+            "animal": ["dog"],
+            "img": "nutrecan-croquetas.jpg",
+            "name": "Nutrecan croquetas",
+            "mark": "nutrecan",
+            "section": "alimento",
+            "description": "Contenido Neto 800g",
+            "price": 6500
+        },
+        {
+            "id": 33,
+            "animal": ["dog"],
+            "img": "Q-ida-can-1000.jpg",
+            "name": "Q-ida can Adulto",
+            "mark": "q-ida",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 6500
+        },
+        {
+            "id": 34,
+            "animal": ["dog"],
+            "img": "Q-ida-cachorros-1000.jpg",
+            "name": "Q-ida can Cachorros",
+            "mark": "q-ida",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 7100
+        },
+        {
+            "id": 35,
+            "animal": ["dog"],
+            "img": "dogourmet-adultos-350.webp",
+            "name": "Dogourmet Adultos",
+            "mark": "dogourmet",
+            "section": "alimento",
+            "description": "Contenido Neto 350g",
+            "price": 3900
+        },
+        {
+            "id": 36,
+            "animal": ["dog"],
+            "img": "dogourmet-adultos-1000.jpg",
+            "name": "Dogourmet Adultos",
+            "mark": "dogourmet",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 13500
+        },
+        {
+            "id": 37,
+            "animal": ["dog"],
+            "img": "dogourmet-cachorros-350.webp",
+            "name": "Dogourmet Cachorros",
+            "mark": "dogourmet",
+            "section": "alimento",
+            "description": "Contenido Neto 350g",
+            "price": 3900
+        },
+        {
+            "id": 38,
+            "animal": ["dog"],
+            "img": "chunky-adulto-razas-pequenas-granel-500.jpg",
+            "name": "Chunky Raza pequeña Granel",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 4800
+        },
+        {
+            "id": 39,
+            "animal": ["dog"],
+            "img": "chunky-adulto-razas-pequenas-500.jpg",
+            "name": "Chunky Raza pequeña",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 5400
+        },
+        {
+            "id": 40,
+            "animal": ["dog"],
+            "img": "chunky-adulto-razas-pequenas-granel-1000.jpg",
+            "name": "Chunky Raza pequeña granel",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 1Kg",
+            "price": 9700
+        },
+        {
+            "id": 41,
+            "animal": ["dog"],
+            "img": "chunky-adultos-razas-pequenas-4000.webp",
+            "name": "Chunky Raza pequeña",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 4Kg",
+            "price": 28500
+        },
+        {
+            "id": 42,
+            "animal": ["dog"],
+            "img": "chunky-cachorros-500.webp",
+            "name": "Chunky Cachorros",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 500g",
+            "price": 5600
+        },
+        {
+            "id": 43,
+            "animal": ["dog"],
+            "img": "chunky-cachorros-2000.webp",
+            "name": "Chunky Cachorros",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 2Kg",
+            "price": 23500
+        },
+        {
+            "id": 44,
+            "animal": ["dog"],
+            "img": "chunky-cachorros-granel-500.jpg",
+            "name": "Chunky Cachorros granel",
+            "mark": "chunky",
+            "section": "alimento",
+            "description": "Contenido Neto 2Kg",
+            "price": 5100
+        },
+        {
+            "id": 45,
+            "animal": ["fish"],
+            "img": "comida-peces.webp",
+            "name": "Comida para peces",
+            "mark": "incros",
+            "section": "alimento",
+            "description": "Contenido Neto 100g",
+            "price": 2000
+        },
+        {
+            "id": 46,
+            "animal": ["dog"],
+            "img": "amitraz-20ml.jpg",
+            "name": "Frasco Amitraz",
+            "mark": "amitraz",
+            "section": "medicinas",
+            "description": "Contenido Neto 20ml",
+            "price": 9500
+        },
+        {
+            "id": 47,
+            "animal": ["dog"],
+            "img": "cipermetrina-20ml.jpg",
+            "name": "Cipermetrina",
+            "mark": "cipermetrina",
+            "section": "medicinas",
+            "description": "Contenido Neto 2Kg",
+            "price": 10000
+        },
+        {
+            "id": 48,
+            "animal": ["catdog"],
+            "img": "galgocal-200.jpg",
+            "name": "Galgocal 200",
+            "mark": "galgocal",
+            "section": "medicinas",
+            "description": "Contenido Neto 2 tabletas",
+            "price": 11000
+        },
+        {
+            "id": 49,
+            "animal": ["catdog"],
+            "img": "fipronil-1-10-kg.jpg",
+            "name": "Fipronil pipeta",
+            "mark": "fipronil",
+            "section": "medicinas",
+            "description": "Contenido Neto 1Kg a 10Kg",
+            "price": 17400
+        },
+        {
+            "id": 50,
+            "animal": ["dog"],
+            "img": "paracanis-nf-2.webp",
+            "name": "Paracanis NF",
+            "mark": "paracanis",
+            "section": "medicinas",
+            "description": "Contenido Neto 2ml",
+            "price": 6000
+        },
+        {
+            "id": 51,
+            "animal": ["catdog"],
+            "img": "alapiel.webp",
+            "name": "Alapiel crema",
+            "mark": "alapiel",
+            "section": "medicinas",
+            "description": "Contenido Neto 50g",
+            "price": 25000
+        },
+        {
+            "id": 52,
+            "animal": ["catdog"],
+            "img": "saniderm.jpg",
+            "name": "Saniderm crema",
+            "mark": "saniderm",
+            "section": "medicinas",
+            "description": "Contenido Neto 60g",
+            "price": 25000
+        },
+        {
+            "id": 53,
+            "animal": ["dog"],
+            "img": "rondel-5ml.png",
+            "name": "Rondel",
+            "mark": "rondel",
+            "section": "medicinas",
+            "description": "Contenido Neto 5ml",
+            "price": 13500
+        },
+        {
+            "id": 54,
+            "animal": ["dog"],
+            "img": "canatox.png",
+            "name": "Canatox",
+            "mark": "canatox",
+            "section": "medicinas",
+            "description": "Contenido Neto 120ml",
+            "price": 27000
+        },
+        {
+            "id": 55,
+            "animal": ["catdog"],
+            "img": "ojux-v.webp",
+            "name": "Ojux V",
+            "mark": "ojux-v",
+            "section": "medicinas",
+            "description": "Contenido Neto 16ml",
+            "price": 18000
+        },
+        {
+            "id": 56,
+            "animal": ["catdog"],
+            "img": "dolidol.png",
+            "name": "Dolidol",
+            "mark": "dolidol",
+            "section": "medicinas",
+            "description": "Contenido Neto 10ml",
+            "price": 13000
+        },
+        {
+            "id": 57,
+            "animal": ["catdog"],
+            "img": "meloxipet.png",
+            "name": "Meloxipet",
+            "mark": "meloxipet",
+            "section": "medicinas",
+            "description": "Contenido Neto 10ml",
+            "price": 14500
+        },
+        {
+            "id": 58,
+            "animal": ["catdog"],
+            "img": "sedolax.jpg",
+            "name": "Sedolax",
+            "mark": "sedolax",
+            "section": "medicinas",
+            "description": "Contenido Neto 10ml",
+            "price": 15500
+        },
+        {
+            "id": 59,
+            "animal": ["catdog"],
+            "img": "ixer-080.jpg",
+            "name": "Ixer 080",
+            "mark": "ixer",
+            "section": "medicinas",
+            "description": "Contenido Neto 120ml",
+            "price": 15800
+        },
+        {
+            "id": 60,
+            "animal": ["dog"],
+            "img": "shampoo-canamor-sobre.webp",
+            "name": "Shampoo Canamor sobre",
+            "mark": "shampoo",
+            "section": "higiene",
+            "description": "Contenido Neto 60ml",
+            "price": 5000
+        },
+        {
+            "id": 61,
+            "animal": ["catdog"],
+            "img": "jabon.png",
+            "name": "Jabón barra té",
+            "mark": "jabon",
+            "section": "higiene",
+            "description": "Contenido Neto 60gr",
+            "price": 12600
+        },
+        {
+            "id": 62,
+            "animal": ["cat"],
+            "img": "arena.webp",
+            "name": "Arena",
+            "mark": "arena",
+            "section": "higiene",
+            "description": "Contenido Neto 1Kg",
+            "price": 4000
+        },
+        {
+            "id": 63,
+            "animal": ["catdog"],
+            "img": "tetero.webp",
+            "name": "Tetero",
+            "mark": "tetero",
+            "section": "higiene",
+            "description": "Contenido Neto 1",
+            "price": 12000
+        },
+        {
+            "id": 64,
+            "animal": ["catdog"],
+            "img": "galgocal-600.jpg",
+            "name": "Galgocal 600",
+            "mark": "galgocal",
+            "section": "medicinas",
+            "description": "Contenido Neto 2 tabletas",
+            "price": 12000
+        },
+        {
+            "id": 65,
+            "animal": ["dog"],
+            "img": "paracanis-nf-5.jpg",
+            "name": "Paracanis NF",
+            "mark": "paracanis",
+            "section": "medicinas",
+            "description": "Contenido Neto 5ml",
+            "price": 10300
+        },
+        {
+            "id": 66,
+            "animal": ["dog"],
+            "img": "paracanis-nf-10.jpg",
+            "name": "Paracanis NF",
+            "mark": "paracanis",
+            "section": "medicinas",
+            "description": "Contenido Neto 10ml",
+            "price": 14500
+        },
+        {
+            "id": 67,
+            "animal": ["dog"],
+            "img": "rondel-puppy-5ml.png",
+            "name": "Rondel puppy",
+            "mark": "ronel",
+            "section": "medicinas",
+            "description": "Contenido Neto 5ml",
+            "price": 13500
+        },
+        {
+            "id": 68,
+            "animal": ["dog"],
+            "img": "shampoo-canamor-frasco.webp",
+            "name": "Shampoo Canamor frasco",
+            "mark": "shampoo",
+            "section": "higiene",
+            "description": "Contenido Neto 250ml",
+            "price": 25300
+        },
+        {
+            "id": 69,
+            "animal": ["catdog"],
+            "img": "jabon.png",
+            "name": "Jabón insecticida",
+            "mark": "jabon",
+            "section": "higiene",
+            "description": "Contenido Neto 70g",
+            "price": 13600
+        }
+    ]
+}

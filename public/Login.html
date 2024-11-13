@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermavets | Login </title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./styles/login.css">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./assets/Logo.svg" type="image/x-icon">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- BOOTSTRAP ICON -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <span id="btn-go-back"><i class="bi bi-arrow-left-short"></i></span>
+    <main class="container d-flex justify-content-center align-items-center">
+        <div id="main__container" class="container row col-12">
+            <section id="section-img" class="col-8 justify-content-center align-items-center container">
+                <div id="container-img">
+                    <img src="./assets/img/gatos/Gato-desenfocado.JPG" alt="Imagen de gato desenfocado"
+                        id="img-cat">
+
+                    <img src="./assets/img/perros/dog 1.png" alt="Imagen de perro" id="img-dog">
+
+                    <span class="img-title">SIGN UP</span>
+                </div>
+            </section>
+            <section id="section-form"
+                class="col-4 container d-flex justify-content-center gap-4 align-items-center flex-column">
+
+                <div id="form__container-logo" class="d-flex justify-content-center align-items-center flex-column">
+
+                    <img src="./assets/Logo.svg" alt="Logo de la página" class="form__logo">
+
+                    <h1 class="form__title">DermaVets</h1>
+
+                </div>
+
+                <div class="tab-container">
+                    <input type="radio" name="tab" id="tab1" class="tab tab--1" />
+                    <label class="tab_label" for="tab1">Registrar</label>
+
+                    <input type="radio" name="tab" id="tab2" class="tab tab--2" />
+                    <label class="tab_label" for="tab2">Login</label>
+
+                    <div class="indicator"></div>
+                </div>
+
+                <form id="form__register"
+                    class="justify-content-center align-items-start flex-column gap-3 col-10">
+
+                    <label for="register__email" class="fs-2 fw-bold" id="register__label-email">Correo</label>
+
+                    <input type="email" 
+                    name="email" 
+                    class="fs-4 clear-input" 
+                    id="register__email"
+                    placeholder="Intoduzca su Correo" 
+                    required>
+
+                    <span id="register__span-email" class="clear-span"></span>
+
+                    <label for="register__name" class="fs-2 fw-bold" id="register__label-name">Nombre</label>
+
+                    <input type="text" 
+                    name="name" 
+                    class="fs-4 clear-input" 
+                    id="register__name"
+                    placeholder="Intoduzca su Usuario"
+                    required>
+
+                    <span id="register__span-name" class="clear-span"></span>
+
+                    <label for="register__password" class="fs-2 fw-bold" id="register__label-password">Contraseña</label>
+
+                    <div id="register__container-input-icon" class="d-flex">
+
+                        <input type="password" 
+                        name="password" 
+                        class="fs-4 clear-input" 
+                        id="register__password"
+                        placeholder="Introduzca su Contraseña" 
+                        required>
+
+                        <i id="register__icon-password" class="bi bi-eye-slash-fill form__icon"></i>
+                    </div>
+
+                    <span id="register__span-password" class="clear-span"></span>
+
+
+                    <label for="register__password-confirm" class="fs-2 fw-bold"
+                    id="register__label-password-confirm">Confirmar Contraseña</label>
+
+                    <div id="register__container-input-icon" class="d-flex">
+                        <input type="password"
+                        name="password clear-input" 
+                        class="fs-4  clear-input"
+                        id="register__password-confirm" 
+                        placeholder="Confirma su Contraseña" 
+                        required>
+
+                        <i id="register__icon-password-confirm" class="bi bi-eye-slash-fill form__icon"></i>
+                    </div>
+
+                    <span id="register__span-password-confirm" class="clear-span"></span>
+
+
+                    <div id="register__container-btn" class="d-flex align-items-center">
+                        <button type="submit" class="fs-4" value="register" id="register__btn-submit">Registrar</button>
+                    </div>
+                </form>
+
+                <form id="form__login" 
+                class="justify-content-center align-items-start flex-column gap-3 col-10 hidden-form">
+
+                    <label for="login__email" class="fs-2 fw-bold" id="login__label-email">Email</label>
+                    <input type="email"
+                    name="email"
+                    class="fs-4  clear-input" 
+                    id="login__email"
+                    placeholder="Intoduzca su Correo" 
+                    required>
+
+                    <label for="login__password" class="fs-2 fw-bold"
+                        id="login__label-password">Contraseña</label>
+
+                    <div id="login__container-input-icon" 
+                    class="d-flex">
+
+                        <input type="password" 
+                        name="password" 
+                        class="fs-4 clear-input"
+                        id="login__password" 
+                        placeholder="Introduzca su Contraseña" 
+                        required>
+                        <i id="login__icon-password" class="bi bi-eye-slash-fill form__icon"></i>
+
+                    </div>
+
+                    <span id="login__span" class="clear-span"></span>
+
+                    <a href="/recordarContraseña" id="recover-password">Olvidaste la contraseña?</a>
+
+                    <div id="login__container-btn" class="d-flex align-items-center">
+                        <button type="submit" 
+                        class="fs-4"
+                        id="login__btn-submit">Login</button>
+                    </div>
+                    
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- BOOTSTRAP SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- SCRIPT -->
+    <script src="./js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

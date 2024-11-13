@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermaVets</title>
+
+    <!-- CSS Externo -->
+   <link rel="stylesheet" href="./styles/navbar.css" />
+   <link rel="stylesheet" href="./styles/footer.css" />
+
+    <link rel="stylesheet" href="./styles/Carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+   <!-- FAVICON -->
+    <link rel="shortcut icon" href="./assets/Logo.svg" type="image/x-icon">
+    <script src="./js/auth.js"></script>
+</head>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container" class="header"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Order Section -->
+        <section class="order-section">
+            <div class="containerS">
+                <h1>Haz tu pedido</h1>
+            <img src="./assets/img/Carrito/Gato.jpg" alt="Pet Icon">
+            </div>
+        </section>
+
+        <!-- Checkout Section -->
+        <section class="checkout-section">
+            <!-- Payment Form -->
+            <div class="checkout-form">
+                <h2>Checkout</h2>
+                <div class="payment-methods">
+                    <img src="./assets/img/Carrito/paypal.jpg" alt="PayPal">
+                    <img src="./assets/img/Carrito/American express.jpg" alt="American-Express">
+                    <img src="./assets/img/Carrito/Visa.jpg" alt="Visa">
+                    <img src="./assets/img/Carrito/mastercard.jpg" alt="MasterCard">
+                </div>
+                <form>
+                    <label>Name on Card</label>
+                    <input type="text" placeholder="Enter Name" required>
+                    <label>Card Number</label>
+                    <input type="text" placeholder="Enter Card Number" required>
+                    <label>Expiration Date</label>
+                    <input type="month" placeholder="Enter Expiration Date" required>
+                    <label>CVC</label>
+                    <input type="text" placeholder="Enter CVC" required>
+                    <button>Confirm Payment</button>
+                </form>
+            </div>
+            
+            <!-- Summary Section -->
+            <div class="summary">
+            <h2> Summary</h2>
+            <div class="product">
+                <img src="./assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
+                <div class="product-info">
+                    <h3 class="product-name">Pectikol </h3>
+                    <p class="product-price">$12.000</p>
+                </div>
+            </div>
+            <hr>
+            <div class="product">
+            <img src="./assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
+                <div class="product-info">
+                    <h3 class="product-name">Pectikol </h3>
+                    <p class="product-price">$12.000</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="product">
+                <img src="./assets/img/productos/medicinas/producto-1.jpeg" alt="Nombre del Producto">
+                <div class="product-info">
+                    <h3 class="product-name">Pectikol </h3>
+                    <p class="product-price">$12.000</p>
+                </div>
+            </div>
+        <hr>
+                <div class="total">
+                <span>Subtotal:</span>
+                <span id="subtotal">$0.00</span>
+                </div>
+                
+                <div class="total">
+                <span>Descuento:</span>
+                <span id="discount">0%</span>
+                </div>
+                
+                <div class="total">
+                <span>IVA:</span>
+                <span id="iva">$0.00</span>
+                </div>
+                
+                <div class="total">
+                <span>Total:</span>
+                <span id="total">$0.00</span>
+                </div>
+
+            </div>
+    </main>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script defer src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+</body>
+</html>
