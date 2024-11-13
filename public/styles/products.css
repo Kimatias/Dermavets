@@ -228,7 +228,7 @@ main h2 {
 .categories-filter-animal__active,
 .categories-filter-marks__active,
 .categories-filter-medicine__active,
-.categories-filter-hygiene__active  {
+.categories-filter-hygiene__active {
   height: auto;
 }
 
@@ -243,7 +243,7 @@ main h2 {
   gap: 30px;
 }
 
-#btn-filter{
+#btn-filter {
   font-family: var(--secondary-font);
   font-size: 2rem;
   padding: 10px 0;
@@ -256,7 +256,7 @@ main h2 {
   cursor: pointer;
 }
 
-#btn-filter:hover{
+#btn-filter:hover {
   background-color: var(--verdeoscuro);
   border: 2px solid var(--verdeoscuro);
 }
@@ -273,6 +273,7 @@ main h2 {
   transition: .2s ease;
   cursor: pointer;
 }
+
 #btn-reset:hover {
   background-color: var(--verde);
   border: 2px solid var(--verde);
@@ -332,7 +333,7 @@ main h2 {
   transition: background-color 0.2s ease-in-out;
 }
 
-.btn-add-cart:hover{
+.btn-add-cart:hover {
   background-color: var(--vinotinto);
   text-shadow: 0 0 5px #ff0019;
 }
@@ -385,10 +386,14 @@ main h2 {
 }
 
 h3 {
+  width: 90%;
   font-family: var(--primary-font);
-  font-size: 2.0rem;
+  font-size: 2rem;
   letter-spacing: 1px;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
 }
 
 .product-card p {
@@ -416,14 +421,14 @@ h3 {
   cursor: pointer;
 }
 
-#pagination{
+#pagination {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 30px;
 }
 
-.pagination__btn{
+.pagination__btn {
   font-family: var(--secondary-font);
   font-size: 2rem;
   justify-content: start;
@@ -441,7 +446,7 @@ h3 {
   border: 2px solid var(--verdeoscuro);
 }
 
-#page-number{
+#page-number {
   font-family: var(--secondary-font);
   font-size: 2rem;
 }
@@ -644,7 +649,7 @@ footer p {
     gap: 30px;
   }
 
-  .pagination__btn{
+  .pagination__btn {
     padding: 5px;
   }
 }
