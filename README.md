@@ -80,9 +80,9 @@ Dermavets/
 ## Autores ✍️
 
 - **Diego Suarez**
-- **franco**
+- **Franco**
 - **karen**
-- **jhonnatan**
+- **Jonathan**
 - **sebastian**
 
 
