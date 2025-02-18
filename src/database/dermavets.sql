@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 17-10-2024 a las 20:26:11
+-- Tiempo de generación: 12-11-2024 a las 23:25:49
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -56,11 +56,54 @@ CREATE TABLE `citas` (
 --
 
 CREATE TABLE `clientes` (
-  `id_cliente` int NOT NULL,  
+  `id_cliente` int NOT NULL,
   `usuario` varchar(255) NOT NULL,
   `correo_electronico` varchar(255) NOT NULL,
-  `passsword` varchar(255) NOT NULL
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id_cliente`, `usuario`, `correo_electronico`, `password`) VALUES
+(20, 'suarez', 'suarezdiego4567@gmail.com', '$2b$10$Jyyo7SdWZwtGsPqH80G8sOdb7bjItssCtUGkXQMTrIQWnRJw/ykky'),
+(21, 'test3344', 'test3344@test.com', '$2b$10$5K.1xXpkg5sZGKKdiy4Dx.29vI2X0WSrF6./agooOH3PCNlw2Zghu'),
+(22, 'Apple iMac', 'test1234@test.com', '$2b$10$v4wFxkxCEbxFak7YtohRPOXu7bgogpXEvQ07fDgi0lJcbEYMnL7US'),
+(23, 'keran', 'karen@test.com', '$2b$10$hQttcfcbYFrnKR0hjDTbMexvYMqNY39vjJrgOoN8qQArAisOF7k6i'),
+(24, 'suarezqqqqq', 'diego@test.com', '$2b$10$UdO3EMmZev1TUsD/sDtRSukvqLoVqcs.Nb/cTMehh9Mbk9XQsjHre'),
+(25, 'keran1', 'karen1@test.com', '$2b$10$Fq1v4OBC4.rstWAYMqeeTe36P58jYGNlsylqwSgRBfQUYs/YGgBpe'),
+(26, 'krwer2', 'karen21@test.com', '$2b$10$SUkxXxJq.m8ndhOBHX85sutthk0x53pSJBe1TKpOR6YLowl.vjc9y'),
+(27, 'krwer22', 'karen221@test.com', '$2b$10$MJvZRc8Qe5TeECLyUNtXDOKRjK8/ntl0KKTZNtyiSmPkGa4xuryv6'),
+(28, 'krwer223', 'karen2213@test.com', '$2b$10$GUFUOV8WrKlnARXGv3E28./kyuQlgawaUtmGZNScG2BjXKDSbqYji'),
+(29, 'krwer5223', 'karen22513@test.com', '$2b$10$MoMsfSfqBVKlaQEJPKls7O9P5DAnm/iX0f95fOFHc4nSkEqVI6d5e'),
+(30, 'krwer52523', 'karen225513@test.com', '$2b$10$6CMrQywICqyIDH0R7ziy4uGsDylxFdQ9aw8bnJB4aKytozJ2Qrc/K'),
+(31, 'kr3333wer52523', 'kare333n225513@test.com', '$2b$10$s0mFVCRHCQ5myBUoPmUL0.SxLOteYw0JtJ3.i5mPGLyEdBGBC7aa.'),
+(32, 'kr53333wer52523', 'kare3533n225513@test.com', '$2b$10$mugp.ibRqSYGOpTT43T/7O.1Fr5qEh9uypGxMSe/FHeqwAUXnpmUi'),
+(33, 'suarezeeeeeeeeeeeeeeee', 'test123@test.com', '$2b$10$0qNI1o4hnfETB4OX2PrAcOOcj.z8Y.xIRa4ceEZWUv52cqySjid86'),
+(34, 'suarezffff', 'suarezdiego4555567@gmail.com', '$2b$10$iUpkCfSFWflRCEfc4wDN1.3PKuumWs26mtaO7FEW/l326ODooHIXK'),
+(35, 'suarezffffu', 'suarezdiego45555867@gmail.com', '$2b$10$hk/xnCZ.K07d7LZej/OqFudzSWayQPDPdbOXeqt6/wvTpsUvU/MpC'),
+(36, 'suarezffffuu', 'suarezdiego455655867@gmail.com', '$2b$10$rwz092GDAn228wxtRhsLXefh57men7PP.LzWZ/0Q.XlvBW9Sm/JK.'),
+(37, 'suarezfsdfdsfsd', 'jemiryk@mailinator.com', '$2b$10$gROwEdh.dPhmAvtBKD2QYOPtuc71F1uomowHEqHoScj1pqa/yqk36'),
+(38, 'wrfsdsfdsfffwefwsdf', 'test126663@test.com', '$2b$10$OVjEbHjbdFXVBsjvvCxYr.x/9DQA7QJPo83Ui8AlLqGMLTW0EKyCu'),
+(39, 'suarezsdfdsfdsf', '32423test@test.com', '$2b$10$Q8AakENxz8SXzsxnr/gDzufppKoxUCJ850P33xGOKJ.QxA9KUmQwO'),
+(40, 'llll', 'yjfjfj@jdjfjf.vo', '$2b$10$ZeF6r6r81xzPD2vr6EAHUesT/zHTgNDFvkfplHtHwOF6pgly/Eplu'),
+(41, 'Iola Schroeder', 'myvija@mailinator.com', '$2b$10$BmY0TyqKIofFztMIke0mNu9wsbLDNBoFp5Ms.3VRFvKBO81/wuWty'),
+(42, 'Echo Riley', 'hocydut@mailinator.com', '$2b$10$DDYry1n.hlBSeo92v9HJpOPKzRxNSSoEr6pgffA9rGEv/jan0cnT2'),
+(43, 'dsfdsf', 'diego123@test.com', '$2b$10$TW4uPjdx1WoGI1psyg0shO8K/Ud1i6oHLe2k7dLpYrL5Cn157.ULm'),
+(44, 'suarezfdsfrew', 'test3123@test.com', '$2b$10$27k5sXtHUZ6QVzxY4o/qb.mXBTGIzgXDRTLAe7vLxyBrAd3H7iCUe'),
+(45, 'Whilemina Carson', 'walinune@mailinator.com', '$2b$10$d8hPWPeAYLkY0AMAMZ1dAuXERTIR9w5/erZYt0da8wfoBB.bLORgS'),
+(46, 'Whilemina Carson g', 'walinune111@mailinator.com', '$2b$10$zU/Bpuo7F1KDmUdA8TP/AOgROBCI.pnIAzXTdelUnJ3QdiYz3TLNS'),
+(47, 'dfghjklxcvbnmdfghjkl', 'diego234567@test.com', '$2b$10$EeYfdHHnkeLAF5GLnbkLIeEiI4N2Hs0dB6RnxWgA80nZO8LiAeLm.'),
+(48, 'fdssdfdssssssssssssssssssssssssssssssssssss', 'diegos615483456730@gmail.com', '$2b$10$y89CuDVbfd2A.dXYwJaBxeTaVoDGLRQ6ZlbrXI3Cg4p5XeaZsMxZy'),
+(49, 'fdssdfdssssssssssrrrssssssssssssssssssssssssss', 'diegos61548345rr6730@gmail.com', '$2b$10$ENkuVlbVJ/ZQlfuhG/eZn.lbBUIkgcCvAJMNcjqekwQ5AjQg.fkYe'),
+(50, 'sdfghjkl fghjkl', 'suarezdiego45345678967@gmail.com', '$2b$10$spmON4Nt.OhrbdgaSF1HseNyDuBAIqvflJB0HogCQMp47klw2gEuO'),
+(51, 'xdfghjkl', 'diegos61cghjk54830@gmail.com', '$2b$10$ZFyQxV.X.sqGN7xAHfw/sOYvrgOhA73Kz8WSE2C30FTmmnaQDY1R2'),
+(52, 'fghjk', 'test12334567@test.com', '$2b$10$VLeCWKQoicJMad5spCcLtefbrHEr.BARNl8H07xFct9KXu9h6etzu'),
+(53, 'sdfghjkkokokokokoko', 'test@test.com', '$2b$10$oWT34MMiZgp4cpZmBJy.uu1ERxv3fmmg3zoWpUaP1z5KDRZzB3brO'),
+(54, 'jfdssdfsdadsfdsfdsffdsf', 'test1232222222222222222222222@test.com', '$2b$10$v/5SA0Xk63fLcylG5caL2ewZ3srYSWZ4NQYk/PTkmAlEXvrBeWKuK'),
+(55, 'sdafgdfh dsgah', 'test12erdgh3@test.com', '$2b$10$7r0YbcqC59oV8xeJjxaNvuLoefanheuY0nozWzv977FLNJKbU9kVu'),
+(56, 'fgfhj f gds da df d fds fd', 'dfs23564789087654324@dsk.vv', '$2b$10$sUN/H6qk6xnb/J1TOMY93uNvyI9xf2MK.rRfVcyY1iK910T2J6fTa');
 
 -- --------------------------------------------------------
 
@@ -315,7 +358,7 @@ ALTER TABLE `citas`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `datos_extra`
@@ -430,3 +473,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
