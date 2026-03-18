@@ -160,7 +160,7 @@ section {
 section h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #C84D56;
+    color: var(--cereza);
     font-family: var(--secondary-font)
 }
 
@@ -181,7 +181,7 @@ section p {
 .nosotros h2 {
     font-size: 4em;
     margin-bottom: 20px;
-    color: #C84D56;
+    color: var(--cereza);
     text-align: center; 
     font-family: var(--primary-font)
 }
@@ -242,7 +242,7 @@ section p {
 .mision h2 {
     font-size: 4em;
     margin-bottom: 20px;
-    color: #C84D56; 
+    color: var(--cereza); 
     align-self: flex-start; 
     text-align: left; 
     width: 100%;
@@ -299,7 +299,7 @@ section p {
 .vision h2 {
     font-size: 4em;
     margin-bottom: 20px;
-    color: #09c2a9; 
+    color: var(--verde); 
     align-self: flex-start; 
     text-align: right; 
     width: 90%;
@@ -337,7 +337,7 @@ section p {
 }
 
 .medica h2 {
-        color: #d9534f; 
+        color: var(--cereza); 
         font-size: 4rem;
         margin-bottom: 10px; 
         position: relative;
@@ -374,7 +374,7 @@ section p {
 }
 
 .medica h3 {
-    color: #46a9a6; 
+    color: var(--verde); 
     font-size: 2.5em;
     margin-top: 20px;
     margin-bottom: 10px;

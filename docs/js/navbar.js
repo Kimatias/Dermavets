@@ -41,7 +41,7 @@ async function createHeaderComponent() {
         <img id="menu-hamburguer" src="./assets/list.svg" alt="menu">
         <div class="vet-name">
             <img class="logo" src="./assets/Logo.svg" alt="logo-Dermavets">
-            <h1>DermaVets</h1>
+            <h1>VitaZoa</h1>
         </div>
         <div class="search">
             <input class="browser-bar" type="text" placeholder="¿Qué buscas para tu mascota?">

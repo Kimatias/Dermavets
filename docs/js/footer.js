@@ -13,7 +13,7 @@ function createFooterComponent() {
                     <a href="https://api.whatsapp.com/send?phone=573171834266" target="_blank">
                         <img src="./assets/Whatsapp.svg" alt="whatsApp">
                     </a>
-                    <a href="https://www.instagram.com/dermavets1/" target="_blank">
+                    <a href="https://www.instagram.com/vitazoa/" target="_blank">
                         <img src="./assets/Instagram.svg" alt="instagram">
                     </a>
                     <a href="https://web.facebook.com/profile.php?id=100081980144296&_rdc=2&_rdr" target="_blank">
@@ -23,10 +23,10 @@ function createFooterComponent() {
             </div>
             <div class="vet-name">
                 <img class="logo" src="./assets/Logo.svg" alt="logo-Dermavets">
-                <h4>Dermavets</h4>
+                <h4>VitaZoa</h4>
             </div>
         </div> 
-        <p>Copyright © 2024 Dermavets | All rights reserved</p>
+        <p>Copyright © 2026 VitaZoa | All rights reserved</p>
     `;
 
   return footer;

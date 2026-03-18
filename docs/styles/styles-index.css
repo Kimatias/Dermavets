@@ -79,6 +79,7 @@ h2 {
 
 #img-gato {
   width: 45%;
+  min-width: 222px;  /***CAMBIO NUEVO***/
   border-radius: 25px;
   object-fit: cover;
 }
